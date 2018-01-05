@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Timeline | anime.js - にほんご。</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="http://tr.you84815.space/animejs/favicon.ico">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+    <link rel="stylesheet" href="./css/fx.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-106478577-1', 'auto');
+      //ga('send', 'pageview');
+    </script>
+    <script src="./js/highlight.pack.js"></script>
+    <script src="./js/barba.min.js"></script>
+    <script src="./js/base.js"></script>
+    <script src="./js/anime.min.js"></script>
+  </head>
+</html>
+<body>
+  <header>
+    <div class="icon"><a class="no-barba" href="http://tr.you84815.space/"><img src="./img/icon.png"></a></div>
+    <div class="navi_toggle" onclick="toggleMenu()"><i class="menu-icon material-icons" id="navi_icon"></i></div>
+    <div class="title">anime.js - <a class="no-barba" href="http://tr.you84815.space/">にほんご。</a></div>
+  </header>
+  <script>
+    toggleMenu = function() {
+      let navi = document.getElementsByClassName("navi");
+      navi[0].classList.toggle('show');
+      let navi_icon = document.getElementById("navi_icon");
+      navi_icon.classList.toggle('active');
+    }
+  </script>
+  <div id="barba-wrapper">
+    <div class="barba-container">
+      <div class="wrapper">
+        <div class="navi">
+          <ul>
+            <li><a href="./">Home</a></li>
+            <li><a href="./introduction.html">Introduction</a></li>
+            <li><a href="./usage.html">Usage</a></li>
+            <li><a href="./targets.html">Targets</a>
+              <ul class="hidden" id="navi_targets">
+                <li class="css-selector"><a href="./targets.html#css-selector">CSSセレクタ</a></li>
+                <li class="dom-node"><a href="./targets.html#dom-node">DOM要素</a></li>
+                <li class="node-list"><a href="./targets.html#node-list">ノードリスト</a></li>
+                <li class="object"><a href="./targets.html#object">オブジェクト</a></li>
+                <li class="array"><a href="./targets.html#array">要素配列</a></li>
+              </ul>
+            </li>
+            <li><a href="./properties.html">Properties</a>
+              <ul class="hidden" id="navi_properties">
+                <li class="css"><a href="./properties.html#css">CSS</a></li>
+                <li class="css-transforms"><a href="./properties.html#css-transforms">transform(CSS)</a></li>
+                <li class="object-properties"><a href="./properties.html#object-properties">オブジェクトプロパティ</a></li>
+                <li class="dom-attributes"><a href="./properties.html#dom-attributes">DOM属性</a></li>
+                <li class="svg-attributes"><a href="./properties.html#svg-attributes">SVG属性</a></li>
+              </ul>
+            </li>
+            <li><a href="./property-parameters.html">Property parameters</a>
+              <ul class="hidden" id="navi_property-parameters">
+                <li class="duration"><a href="./property-parameters.html#p-duration">duration(時間)</a></li>
+                <li class="delay"><a href="./property-parameters.html#p-delay">delay(遅延)</a></li>
+                <li class="easing"><a href="./property-parameters.html#p-easing">easint(イージング)</a></li>
+                <li class="specific-property"><a href="./property-parameters.html#p-specific-property">特定のプロパティ</a></li>
+              </ul>
+            </li>
+            <li><a href="./function-based-parameters.html">Function based parameters</a>
+              <ul class="hidden" id="navi_function-based-parameters">
+                <li class="duration"><a href="./function-based-parameters.html#f-duration">duration(時間)</a></li>
+                <li class="delay"><a href="./function-based-parameters.html#f-delay">delay(遅延)</a></li>
+                <li class="elasticity"><a href="./function-based-parameters.html#f-elasticity">elasticity(弾性)</a></li>
+                <li class="combined"><a href="./function-based-parameters.html#f-combined">組み合わせ</a></li>
+              </ul>
+            </li>
+            <li><a href="./animation-parameters.html">Animation parameters</a>
+              <ul class="hidden" id="navi_animation-parameters">
+                <li class="direction-alternate"><a href="./animation-parameters.html#direction-alternate">再生方向(alternate)</a></li>
+                <li class="direction-reverse"><a href="./animation-parameters.html#direction-reverse">再生方向(逆再生)</a></li>
+                <li class="loopn"><a href="./animation-parameters.html#loopn">ループ(N回)</a></li>
+                <li class="loop-alternate"><a href="./animation-parameters.html#loop-alternate">ループalternate(N回)</a></li>
+                <li class="loop-reverse"><a href="./animation-parameters.html#loop-reverse">ループ逆再生(N回)</a></li>
+                <li class="infinite-loop"><a href="./animation-parameters.html#infinite-loop">無限ループ</a></li>
+                <li class="infinite-loop-alternate"><a href="./animation-parameters.html#infinite-loop-alternate">無限ループalternate</a></li>
+                <li class="infinite-loop-reverse"><a href="./animation-parameters.html#infinite-loop-reverse">無限ループ逆再生</a></li>
+              </ul>
+            </li>
+            <li><a href="./property-values.html">Property values</a>
+              <ul class="hidden" id="navi_property-values">
+                <li class="unitless"><a href="./property-values.html#unitless">単位無指定</a></li>
+                <li class="specific-unit"><a href="./property-values.html#specific-unit">単位指定</a></li>
+                <li class="relative"><a href="./property-values.html#relative">相対値</a></li>
+                <li class="v-colors"><a href="./property-values.html#v-colors">カラー</a></li>
+                <li class="specific-initial-value"><a href="./property-values.html#specific-initial-value">初期値指定</a></li>
+                <li class="function-based-values"><a href="./property-values.html#function-based-values">関数ベース値</a></li>
+                <li class="v-keyframes"><a href="./property-values.html#v-keyframes">キーフレーム</a></li>
+              </ul>
+            </li>
+            <li><a class="active" href="./timeline.html">Timeline</a>
+              <ul id="navi_timeline">
+                <li class="basic-timeline"><a href="./timeline.html#basic-timeline">タイムライン</a></li>
+                <li class="relative-offset"><a href="./timeline.html#relative-offset">オフセット(相対値)</a></li>
+                <li class="absolute-offset"><a href="./timeline.html#absolute-offset">オフセット(絶対値)</a></li>
+                <li class="basic-timeline-parameters"><a href="./timeline.html#basic-timeline-parameters">タイムラインパラメータ</a></li>
+                <li class="parameters-inheritance"><a href="./timeline.html#parameters-inheritance">パラメータの継承</a></li>
+              </ul>
+            </li>
+            <li><a href="./playback.html">Playback</a>
+              <ul class="hidden" id="navi_playback">
+                <li class="play-pause"><a href="./playback.html#play-pause">再生 / 停止</a></li>
+                <li class="restart"><a href="./playback.html#restart">リスタート</a></li>
+                <li class="reverse"><a href="./playback.html#reverse">逆再生</a></li>
+                <li class="seek"><a href="./playback.html#seek">シーク</a></li>
+                <li class="timeline-controls"><a href="./playback.html#timeline-controls">タイムラインコントロール</a></li>
+              </ul>
+            </li>
+            <li><a href="./callback.html">Callback</a>
+              <ul class="hidden" id="navi_callback">
+                <li class="all-callbacks"><a href="./callback.html#c-all-callbacks">all</a></li>
+                <li class="update"><a href="./callback.html#c-update">update</a></li>
+                <li class="begin"><a href="./callback.html#c-begin">begin</a></li>
+                <li class="run"><a href="./callback.html#c-run">run</a></li>
+                <li class="complete"><a href="./callback.html#c-complete">complete</a></li>
+              </ul>
+            </li>
+            <li><a href="./promises.html">Promise</a></li>
+            <li><a href="./svg.html">SVG</a>
+              <ul class="hidden" id="navi_svg">
+                <li class="motion-path"><a href="./svg.html#motion-path">モーションパス</a></li>
+                <li class="morphing"><a href="./svg.html#morphing">モーフィング</a></li>
+                <li class="line-drawing"><a href="./svg.html#line-drawing">線画アニメーション</a></li>
+              </ul>
+            </li>
+            <li><a href="./easing.html">Easing</a>
+              <ul class="hidden" id="navi_easing">
+                <li class="built-in"><a href="./easing.html#built-in">ビルトイン関数</a></li>
+                <li class="e-elasticity"><a href="./easing.html#e-elasticity">弾性</a></li>
+                <li class="custom-bezier"><a href="./easing.html#custom-bezier">カスタムベジェ曲線</a></li>
+                <li class="custom-easing"><a href="./easing.html#custom-easing">カスタムイージング</a></li>
+              </ul>
+            </li>
+            <li><a href="./helper.html">Helpers</a>
+              <ul class="hidden" id="navi_helper">
+                <li class="speed"><a href="./helper.html#speed">.speed</a></li>
+                <li class="running"><a href="./helper.html#running">.running</a></li>
+                <li class="remove"><a href="./helper.html#remove">.remove()</a></li>
+                <li class="getValue"><a href="./helper.html#getValue">.getValue()</a></li>
+                <li class="path"><a href="./helper.html#path">.path()</a></li>
+                <li class="setDashoffset"><a href="./helper.html#setDashoffset">.setDashoffset()</a></li>
+                <li class="easings"><a href="./helper.html#easings">.easings</a></li>
+                <li class="bezier"><a href="./helper.html#bezier">.bezier()</a></li>
+                <li class="timeline"><a class="active" href="./helper.html#timeline">.timeline()</a></li>
+                <li class="random"><a href="./helper.html#random">.random()</a></li>
+              </ul>
+            </li>
+            <hr>
+            <li>HTML Source
+              <div id="navi_source"><a href="https://github.com/tobijibu/animejs/archive/master.zip"><i class="menu-icon material-icons">&#xE884;</i></a><a href="https://github.com/tobijibu/animejs/"><i class="menu-icon material-icons">&#xE86F;</i></a></div>
+            </li>
+          </ul>
+        </div>
+        <div class="main">
+          <h1>Timeline</h1>
+          <h2 id="basic-timeline">タイムライン</h2>
+          <p>タイムラインを作成し、順番にアニメーションします。</p>
+          <pre><code class="js">var myTimeline = anime.timeline();</code></pre><br>
+          <p>タイムラインは、アニメーションと同様、<code>direction</code>、<code>loop</code>、<code>autoplay</code>を受け取ります。</p>
+          <pre><code class="js">var myTimeline = anime.timeline({
+  direction: 'alternate',
+  loop: 3,
+  autoplay: false
+});</code></pre><br>
+          <p><code>.add()</code>を使ってアニメーションをタイムラインに追加します。</p>
+          <pre><code class="js">myTimeline
+  .add({
+    targets: '.square',
+    translateX: 250
+  })
+  .add({
+    targets: '.circle',
+    translateX: 250
+  })
+  .add({
+    targets: '.triangle',
+    translateX: 250
+  });</code></pre>
+          <p><code>myTimeline.children</code>で、タイムラインの子アニメーションにアクセスします。</p>
+          <h3>デモ</h3>
+          <p>要素をクリックするとアニメーションを開始します。</p>
+          <div id="basicTimeline">
+            <div class="line">
+              <div class="square shadow"></div>
+              <div class="square el"></div>
+            </div>
+            <div class="line">
+              <div class="circle shadow"></div>
+              <div class="circle el"></div>
+            </div>
+            <div class="line">
+              <div class="triangle shadow"></div>
+              <div class="triangle el"></div>
+            </div>
+          </div>
+          <h4>JavaScript</h4>
+          <pre><code class="js">var basicTimeline = anime.timeline();
+ 
+basicTimeline
+  .add({
+    targets: '#basicTimeline .square.el',
+    translateX: 250,
+    easing: 'easeOutExpo'
+  })
+  .add({
+    targets: '#basicTimeline .circle.el',
+    translateX: 250,
+    easing: 'easeOutExpo'
+  })
+  .add({
+    targets: '#basicTimeline .triangle.el',
+    translateX: 250,
+    easing: 'easeOutExpo'
+  });</code></pre>
+          <h4>HTML</h4>
+          <pre><code class="html">&#x3C;div id=&#x22;basicTimeline&#x22;&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;square el&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;circle shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;circle el&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;triangle shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;triangle el&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+          <h4>CSS</h4>
+          <pre><code class="css">.shadow {
+  position: absolute;
+  opacity: .2;
+}
+ 
+.square {
+  pointer-events: none;
+  width: 28px;
+  height: 28px;
+  margin: 1px;
+  font-size: 12px;
+}
+ 
+.circle {
+  border-radius: 50%;
+  pointer-events: none;
+  width: 28px;
+  height: 28px;
+  margin: 1px;
+  font-size: 12px;
+}
+ 
+.triangle {
+  pointer-events: none;
+  position: relative;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 14px 24px 14px;
+  border-color: transparent transparent currentColor transparent;
+}</code></pre>
+          <h2 id="relative-offset">オフセット(相対値)</h2>
+          <p><code>offset</code>はタイムラインのアニメーション開始時間を定義します。
+            相対値は、前のアニメーションの時間に関連させたアニメーション開始時間を定義します。
+          </p>
+          <table class="my-table">
+            <tr>
+              <th>type</th>
+              <th>例</th>
+              <th>説明</th>
+            </tr>
+            <tr>
+              <td><code>+=</code></td>
+              <td><code>'+=100'</code></td>
+              <td>前のアニメーションが終了した100ms後に開始します。</td>
+            </tr>
+            <tr>
+              <td><code>-=</code></td>
+              <td><code>'-=100'</code></td>
+              <td>前のアニメーションが終了する100ms前に開始します。</td>
+            </tr>
+            <tr>
+              <td><code>*=</code></td>
+              <td><code>'*=2'</code></td>
+              <td>前のアニメーションの2倍の時間で開始します。</td>
+            </tr>
+          </table>
+          <pre><code class="js">myTimeline
+  .add({
+    targets: '.square',
+    translateX: 250
+  })
+  .add({
+    targets: '.circle',
+    translateX: 250,
+    offset: '-=600' // 前のアニメーションが終了する600ms前に開始します。
+  })
+  .add({
+    targets: '.triangle',
+    translateX: 250,
+    offset: '-=800' // 前のアニメーションが終了する800ms前に開始します。
+  });</code></pre>
+          <h3>デモ</h3>
+          <p>要素をクリックするとアニメーションを開始します。</p>
+          <div id="relativeOffset">
+            <div class="line">
+              <div class="square shadow"></div>
+              <div class="square el"></div>
+            </div>
+            <div class="line">
+              <div class="circle shadow"></div>
+              <div class="circle el"></div>
+            </div>
+            <div class="line">
+              <div class="triangle shadow"></div>
+              <div class="triangle el"></div>
+            </div>
+          </div>
+          <h4>JavaScript</h4>
+          <pre><code class="js">var relativeOffset = anime.timeline();
+ 
+relativeOffset
+  .add({
+    targets: '#relativeOffset .square.el',
+    translateX: 250,
+    easing: 'easeOutExpo',
+  })
+  .add({
+    targets: '#relativeOffset .circle.el',
+    translateX: 250,
+    easing: 'easeOutExpo',
+    offset: '-=600' // 前のアニメーションが終了する600ms前に開始します。
+  })
+  .add({
+    targets: '#relativeOffset .triangle.el',
+    translateX: 250,
+    easing: 'easeOutExpo',
+    offset: '-=800' // 前のアニメーションが終了する800ms前に開始します。
+  });</code></pre>
+          <h4>HTML</h4>
+          <pre><code class="html">&#x3C;div id=&#x22;relativeOffset&#x22;&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;square el&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;circle shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;circle el&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;triangle shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;triangle el&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+          <h4>CSS</h4>
+          <pre><code class="css">.shadow {
+  position: absolute;
+  opacity: .2;
+}
+ 
+.square {
+  pointer-events: none;
+  width: 28px;
+  height: 28px;
+  margin: 1px;
+  font-size: 12px;
+}
+ 
+.circle {
+  border-radius: 50%;
+  pointer-events: none;
+  width: 28px;
+  height: 28px;
+  margin: 1px;
+  font-size: 12px;
+}
+ 
+.triangle {
+  pointer-events: none;
+  position: relative;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 14px 24px 14px;
+  border-color: transparent transparent currentColor transparent;
+}</code></pre>
+          <h2 id="absolute-offset">オフセット(絶対値)</h2>
+          <p><code>offset</code>はタイムラインのアニメーション開始時間を定義します。
+            絶対値は、他のアニメーションとは関係なく、絶対的なアニメーション開始時間を定義します。
+          </p>
+          <pre><code class="js">myTimeline
+  .add({
+    targets: '.square',
+    translateX: 250,
+    offset: 1000 // Starts at 1000ms
+  })
+  .add({
+    targets: '.circle',
+    translateX: 250,
+    offset: 500 // Starts at 500ms
+  })
+  .add({
+    targets: '.triangle',
+    translateX: 250,
+    offset: 0 // Starts at 0ms
+  });</code></pre>
+          <h3>デモ</h3>
+          <p>要素をクリックするとアニメーションを開始します。</p>
+          <div id="absoluteOffset">
+            <div class="line">
+              <div class="square shadow"></div>
+              <div class="square el"></div>
+            </div>
+            <div class="line">
+              <div class="circle shadow"></div>
+              <div class="circle el"></div>
+            </div>
+            <div class="line">
+              <div class="triangle shadow"></div>
+              <div class="triangle el"></div>
+            </div>
+          </div>
+          <h4>JavaScript</h4>
+          <pre><code class="js">var absoluteOffset = anime.timeline();
+ 
+absoluteOffset
+  .add({
+    targets: '#absoluteOffset .square.el',
+    translateX: 250,
+    easing: 'easeOutExpo',
+    offset: 1000 // タイムラインの1000ms時点で開始します。
+  })
+  .add({
+    targets: '#absoluteOffset .circle.el',
+    translateX: 250,
+    easing: 'easeOutExpo',
+    offset: 500 // タイムラインの500ms時点で開始します。
+  })
+  .add({
+    targets: '#absoluteOffset .triangle.el',
+    translateX: 250,
+    easing: 'easeOutExpo',
+    offset: 0 // タイムラインの0ms時点で開始します。
+  });</code></pre>
+          <h4>HTML</h4>
+          <pre><code class="html">&#x3C;div id=&#x22;absoluteOffset&#x22;&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;square el&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;circle shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;circle el&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;triangle shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;triangle el&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+          <h4>CSS</h4>
+          <pre><code class="css">.shadow {
+  position: absolute;
+  opacity: .2;
+}
+ 
+.square {
+  pointer-events: none;
+  width: 28px;
+  height: 28px;
+  margin: 1px;
+  font-size: 12px;
+}
+ 
+.circle {
+  border-radius: 50%;
+  pointer-events: none;
+  width: 28px;
+  height: 28px;
+  margin: 1px;
+  font-size: 12px;
+}
+ 
+.triangle {
+  pointer-events: none;
+  position: relative;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 14px 24px 14px;
+  border-color: transparent transparent currentColor transparent;
+}</code></pre>
+          <h2 id="basic-timeline-parameters">タイムラインパラメータ</h2>
+          <h3>デモ</h3>
+          <div id="timelineParameters">
+            <div class="line">
+              <div class="square shadow"></div>
+              <div class="square el"></div>
+            </div>
+            <div class="line">
+              <div class="circle shadow"></div>
+              <div class="circle el"></div>
+            </div>
+            <div class="line">
+              <div class="triangle shadow"></div>
+              <div class="triangle el"></div>
+            </div>
+          </div>
+          <h4>JavaScript</h4>
+          <pre><code class="js">var timelineParameters = anime.timeline({
+  direction: 'alternate',
+  loop: true
+});
+ 
+timelineParameters
+  .add({
+    targets: '#timelineParameters .square.el',
+    translateX: [ { value: 80 }, { value: 160 }, { value: 250 } ],
+    translateY: [ { value: 30 }, { value: 60 }, { value: 60 } ],
+    duration: 3000
+  })
+  .add({
+    targets: '#timelineParameters .circle.el',
+    translateX: [ { value: 80 }, { value: 160 }, { value: 250 } ],
+    translateY: [ { value: 30 }, { value: -30 }, { value: -30 } ],
+    duration: 3000,
+    offset: 200
+  })
+  .add({
+    targets: '#timelineParameters .triangle.el',
+    translateX: [ { value: 80 }, { value: 250 } ],
+    translateY: [ { value: -60 }, { value: -30 }, { value: -30 } ],
+    duration: 3000,
+    offset: 400
+  });</code></pre>
+          <h4>HTML</h4>
+          <pre><code class="html">&#x3C;div id=&#x22;timelineParameters&#x22;&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;square el&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;circle shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;circle el&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;triangle shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;triangle el&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+          <h4>CSS</h4>
+          <pre><code class="css">.shadow {
+  position: absolute;
+  opacity: .2;
+}
+ 
+.square {
+  pointer-events: none;
+  width: 28px;
+  height: 28px;
+  margin: 1px;
+  font-size: 12px;
+}
+ 
+.circle {
+  border-radius: 50%;
+  pointer-events: none;
+  width: 28px;
+  height: 28px;
+  margin: 1px;
+  font-size: 12px;
+}
+ 
+.triangle {
+  pointer-events: none;
+  position: relative;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 14px 24px 14px;
+  border-color: transparent transparent currentColor transparent;
+}</code></pre>
+          <h2 id="parameters-inheritance">パラメータの継承</h2>
+          <h3>デモ</h3>
+          <div id="TLParamsInheritance">
+            <div class="line">
+              <div class="square shadow"></div>
+              <div class="square el"></div>
+            </div>
+            <div class="line">
+              <div class="circle shadow"></div>
+              <div class="circle el"></div>
+            </div>
+            <div class="line">
+              <div class="triangle shadow"></div>
+              <div class="triangle el"></div>
+            </div>
+          </div>
+          <h4>JavaScript</h4>
+          <pre><code class="js">var TLParamsInheritance = anime.timeline({
+  targets: '#TLParamsInheritance .el',
+  delay: function(el, i) { return i * 200 },
+  duration: 500,
+  easing: 'easeOutExpo',
+  direction: 'alternate',
+  loop: true
+});
+ 
+TLParamsInheritance
+  .add({
+    translateX: 250,
+  })
+  .add({
+    opacity: .5,
+    translateX: 250,
+    scale: 2,
+  })
+  .add({
+    translateX: 0,
+    scale: 1
+  });</code></pre>
+          <h4>HTML</h4>
+          <pre><code class="html">&#x3C;div id=&#x22;TLParamsInheritance&#x22;&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;square el&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;circle shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;circle el&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;triangle shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;triangle el&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+          <h4>CSS</h4>
+          <pre><code class="css">.shadow {
+  position: absolute;
+  opacity: .2;
+}
+ 
+.square {
+  pointer-events: none;
+  width: 28px;
+  height: 28px;
+  margin: 1px;
+  font-size: 12px;
+}
+ 
+.circle {
+  border-radius: 50%;
+  pointer-events: none;
+  width: 28px;
+  height: 28px;
+  margin: 1px;
+  font-size: 12px;
+}
+ 
+.triangle {
+  pointer-events: none;
+  position: relative;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 14px 24px 14px;
+  border-color: transparent transparent currentColor transparent;
+}</code></pre>
+          <script class="load">
+            createObj = function() {
+              // basic timeline
+              if (document.querySelector('#basicTimeline')) {
+                var basicTimeline = anime.timeline();
+                basicTimeline
+                  .add({
+                    targets: '#basicTimeline .square.el',
+                    translateX: 250,
+                    easing: 'easeOutExpo'
+                  })
+                  .add({
+                    targets: '#basicTimeline .circle.el',
+                    translateX: 250,
+                    easing: 'easeOutExpo'
+                  })
+                  .add({
+                    targets: '#basicTimeline .triangle.el',
+                    translateX: 250,
+                    easing: 'easeOutExpo'
+                  });
+                document.querySelector('#basicTimeline').onclick = basicTimeline.restart;
+              }
+            
+              // relative offset
+              if (document.querySelector('#relativeOffset')) {
+                var relativeOffset = anime.timeline();
+                relativeOffset
+                  .add({
+                    targets: '#relativeOffset .square.el',
+                    translateX: 250,
+                    easing: 'easeOutExpo',
+                  })
+                  .add({
+                    targets: '#relativeOffset .circle.el',
+                    translateX: 250,
+                    easing: 'easeOutExpo',
+                    offset: '-=600' // 前のアニメーションが終了する600ms前に開始します。
+                  })
+                  .add({
+                    targets: '#relativeOffset .triangle.el',
+                    translateX: 250,
+                    easing: 'easeOutExpo',
+                    offset: '-=800' // 前のアニメーションが終了する800ms前に開始します。
+                  });
+                document.querySelector('#relativeOffset').onclick = relativeOffset.restart;
+              }
+            
+              // absolute offset
+              if (document.querySelector('#absoluteOffset')) {
+                var absoluteOffset = anime.timeline();
+                absoluteOffset
+                  .add({
+                    targets: '#absoluteOffset .square.el',
+                    translateX: 250,
+                    easing: 'easeOutExpo',
+                    offset: 1000 // タイムラインの1000ms時点で開始します。
+                  })
+                  .add({
+                    targets: '#absoluteOffset .circle.el',
+                    translateX: 250,
+                    easing: 'easeOutExpo',
+                    offset: 500 // タイムラインの500ms時点で開始します。
+                  })
+                  .add({
+                    targets: '#absoluteOffset .triangle.el',
+                    translateX: 250,
+                    easing: 'easeOutExpo',
+                    offset: 0 // タイムラインの0ms時点で開始します。
+                  });
+                document.querySelector('#absoluteOffset').onclick = absoluteOffset.restart;
+              }
+            
+              // timeline parameter
+              if (document.querySelector('#timelineParameters')) {
+                var timelineParameters = anime.timeline({
+                  direction: 'alternate',
+                  loop: true
+                });
+                timelineParameters
+                  .add({
+                    targets: '#timelineParameters .square.el',
+                    translateX: [ { value: 80 }, { value: 160 }, { value: 250 } ],
+                    translateY: [ { value: 30 }, { value: 60 }, { value: 60 } ],
+                    duration: 3000
+                  })
+                  .add({
+                    targets: '#timelineParameters .circle.el',
+                    translateX: [ { value: 80 }, { value: 160 }, { value: 250 } ],
+                    translateY: [ { value: 30 }, { value: -30 }, { value: -30 } ],
+                    duration: 3000,
+                    offset: 200
+                  })
+                  .add({
+                    targets: '#timelineParameters .triangle.el',
+                    translateX: [ { value: 80 }, { value: 250 } ],
+                    translateY: [ { value: -60 }, { value: -30 }, { value: -30 } ],
+                    duration: 3000,
+                    offset: 400
+                  });
+              }
+            
+              // parameters inheritance
+              if (document.querySelector('#TLParamsInheritance')) {
+                var TLParamsInheritance = anime.timeline({
+                  targets: '#TLParamsInheritance .el',
+                  delay: function(el, i) { return i * 200 },
+                  duration: 500,
+                  easing: 'easeOutExpo',
+                  direction: 'alternate',
+                  loop: true
+                });
+                TLParamsInheritance
+                  .add({
+                    translateX: 250,
+                  })
+                  .add({
+                    opacity: .5,
+                    translateX: 250,
+                    scale: 2,
+                  })
+                  .add({
+                    translateX: 0,
+                    scale: 1
+                  });
+              }
+            };
+          </script>
+          <div class="license">
+            <p><a href="https://github.com/juliangarnier/anime/blob/master/LICENSE.md">MIT license</a>.
+              &copy; 2017 Julian Garnier.
+            </p>
+            <p>このコンテンツはJulian Garnier(juliangarnier)による<a href="http://animejs.com/documentation/">anime.jsドキュメント</a>を翻訳/改変したものです。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer><span>
+       &copy; 
+      <script>document.write((new Date()).getFullYear());</script> tobijibu</span></footer>
+  <script src="./js/main.js"></script>
+  <script src="./js/barba_common.js"></script>
+</body>

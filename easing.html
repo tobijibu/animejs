@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Easing | anime.js - にほんご。</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="http://tr.you84815.space/animejs/favicon.ico">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+    <link rel="stylesheet" href="./css/fx.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-106478577-1', 'auto');
+      //ga('send', 'pageview');
+    </script>
+    <script src="./js/highlight.pack.js"></script>
+    <script src="./js/barba.min.js"></script>
+    <script src="./js/base.js"></script>
+    <script src="./js/anime.min.js"></script>
+  </head>
+</html>
+<body>
+  <header>
+    <div class="icon"><a class="no-barba" href="http://tr.you84815.space/"><img src="./img/icon.png"></a></div>
+    <div class="navi_toggle" onclick="toggleMenu()"><i class="menu-icon material-icons" id="navi_icon"></i></div>
+    <div class="title">anime.js - <a class="no-barba" href="http://tr.you84815.space/">にほんご。</a></div>
+  </header>
+  <script>
+    toggleMenu = function() {
+      let navi = document.getElementsByClassName("navi");
+      navi[0].classList.toggle('show');
+      let navi_icon = document.getElementById("navi_icon");
+      navi_icon.classList.toggle('active');
+    }
+  </script>
+  <div id="barba-wrapper">
+    <div class="barba-container">
+      <div class="wrapper">
+        <div class="navi">
+          <ul>
+            <li><a href="./">Home</a></li>
+            <li><a href="./introduction.html">Introduction</a></li>
+            <li><a href="./usage.html">Usage</a></li>
+            <li><a href="./targets.html">Targets</a>
+              <ul class="hidden" id="navi_targets">
+                <li class="css-selector"><a href="./targets.html#css-selector">CSSセレクタ</a></li>
+                <li class="dom-node"><a href="./targets.html#dom-node">DOM要素</a></li>
+                <li class="node-list"><a href="./targets.html#node-list">ノードリスト</a></li>
+                <li class="object"><a href="./targets.html#object">オブジェクト</a></li>
+                <li class="array"><a href="./targets.html#array">要素配列</a></li>
+              </ul>
+            </li>
+            <li><a href="./properties.html">Properties</a>
+              <ul class="hidden" id="navi_properties">
+                <li class="css"><a href="./properties.html#css">CSS</a></li>
+                <li class="css-transforms"><a href="./properties.html#css-transforms">transform(CSS)</a></li>
+                <li class="object-properties"><a href="./properties.html#object-properties">オブジェクトプロパティ</a></li>
+                <li class="dom-attributes"><a href="./properties.html#dom-attributes">DOM属性</a></li>
+                <li class="svg-attributes"><a href="./properties.html#svg-attributes">SVG属性</a></li>
+              </ul>
+            </li>
+            <li><a href="./property-parameters.html">Property parameters</a>
+              <ul class="hidden" id="navi_property-parameters">
+                <li class="duration"><a href="./property-parameters.html#p-duration">duration(時間)</a></li>
+                <li class="delay"><a href="./property-parameters.html#p-delay">delay(遅延)</a></li>
+                <li class="easing"><a class="active" href="./property-parameters.html#p-easing">easint(イージング)</a></li>
+                <li class="specific-property"><a href="./property-parameters.html#p-specific-property">特定のプロパティ</a></li>
+              </ul>
+            </li>
+            <li><a href="./function-based-parameters.html">Function based parameters</a>
+              <ul class="hidden" id="navi_function-based-parameters">
+                <li class="duration"><a href="./function-based-parameters.html#f-duration">duration(時間)</a></li>
+                <li class="delay"><a href="./function-based-parameters.html#f-delay">delay(遅延)</a></li>
+                <li class="elasticity"><a href="./function-based-parameters.html#f-elasticity">elasticity(弾性)</a></li>
+                <li class="combined"><a href="./function-based-parameters.html#f-combined">組み合わせ</a></li>
+              </ul>
+            </li>
+            <li><a href="./animation-parameters.html">Animation parameters</a>
+              <ul class="hidden" id="navi_animation-parameters">
+                <li class="direction-alternate"><a href="./animation-parameters.html#direction-alternate">再生方向(alternate)</a></li>
+                <li class="direction-reverse"><a href="./animation-parameters.html#direction-reverse">再生方向(逆再生)</a></li>
+                <li class="loopn"><a href="./animation-parameters.html#loopn">ループ(N回)</a></li>
+                <li class="loop-alternate"><a href="./animation-parameters.html#loop-alternate">ループalternate(N回)</a></li>
+                <li class="loop-reverse"><a href="./animation-parameters.html#loop-reverse">ループ逆再生(N回)</a></li>
+                <li class="infinite-loop"><a href="./animation-parameters.html#infinite-loop">無限ループ</a></li>
+                <li class="infinite-loop-alternate"><a href="./animation-parameters.html#infinite-loop-alternate">無限ループalternate</a></li>
+                <li class="infinite-loop-reverse"><a href="./animation-parameters.html#infinite-loop-reverse">無限ループ逆再生</a></li>
+              </ul>
+            </li>
+            <li><a href="./property-values.html">Property values</a>
+              <ul class="hidden" id="navi_property-values">
+                <li class="unitless"><a href="./property-values.html#unitless">単位無指定</a></li>
+                <li class="specific-unit"><a href="./property-values.html#specific-unit">単位指定</a></li>
+                <li class="relative"><a href="./property-values.html#relative">相対値</a></li>
+                <li class="v-colors"><a href="./property-values.html#v-colors">カラー</a></li>
+                <li class="specific-initial-value"><a href="./property-values.html#specific-initial-value">初期値指定</a></li>
+                <li class="function-based-values"><a href="./property-values.html#function-based-values">関数ベース値</a></li>
+                <li class="v-keyframes"><a href="./property-values.html#v-keyframes">キーフレーム</a></li>
+              </ul>
+            </li>
+            <li><a href="./timeline.html">Timeline</a>
+              <ul class="hidden" id="navi_timeline">
+                <li class="basic-timeline"><a href="./timeline.html#basic-timeline">タイムライン</a></li>
+                <li class="relative-offset"><a href="./timeline.html#relative-offset">オフセット(相対値)</a></li>
+                <li class="absolute-offset"><a href="./timeline.html#absolute-offset">オフセット(絶対値)</a></li>
+                <li class="basic-timeline-parameters"><a href="./timeline.html#basic-timeline-parameters">タイムラインパラメータ</a></li>
+                <li class="parameters-inheritance"><a href="./timeline.html#parameters-inheritance">パラメータの継承</a></li>
+              </ul>
+            </li>
+            <li><a href="./playback.html">Playback</a>
+              <ul class="hidden" id="navi_playback">
+                <li class="play-pause"><a href="./playback.html#play-pause">再生 / 停止</a></li>
+                <li class="restart"><a href="./playback.html#restart">リスタート</a></li>
+                <li class="reverse"><a href="./playback.html#reverse">逆再生</a></li>
+                <li class="seek"><a href="./playback.html#seek">シーク</a></li>
+                <li class="timeline-controls"><a href="./playback.html#timeline-controls">タイムラインコントロール</a></li>
+              </ul>
+            </li>
+            <li><a href="./callback.html">Callback</a>
+              <ul class="hidden" id="navi_callback">
+                <li class="all-callbacks"><a href="./callback.html#c-all-callbacks">all</a></li>
+                <li class="update"><a href="./callback.html#c-update">update</a></li>
+                <li class="begin"><a href="./callback.html#c-begin">begin</a></li>
+                <li class="run"><a href="./callback.html#c-run">run</a></li>
+                <li class="complete"><a href="./callback.html#c-complete">complete</a></li>
+              </ul>
+            </li>
+            <li><a href="./promises.html">Promise</a></li>
+            <li><a href="./svg.html">SVG</a>
+              <ul class="hidden" id="navi_svg">
+                <li class="motion-path"><a href="./svg.html#motion-path">モーションパス</a></li>
+                <li class="morphing"><a href="./svg.html#morphing">モーフィング</a></li>
+                <li class="line-drawing"><a href="./svg.html#line-drawing">線画アニメーション</a></li>
+              </ul>
+            </li>
+            <li><a class="active" href="./easing.html">Easing</a>
+              <ul id="navi_easing">
+                <li class="built-in"><a href="./easing.html#built-in">ビルトイン関数</a></li>
+                <li class="e-elasticity"><a href="./easing.html#e-elasticity">弾性</a></li>
+                <li class="custom-bezier"><a href="./easing.html#custom-bezier">カスタムベジェ曲線</a></li>
+                <li class="custom-easing"><a href="./easing.html#custom-easing">カスタムイージング</a></li>
+              </ul>
+            </li>
+            <li><a href="./helper.html">Helpers</a>
+              <ul class="hidden" id="navi_helper">
+                <li class="speed"><a href="./helper.html#speed">.speed</a></li>
+                <li class="running"><a href="./helper.html#running">.running</a></li>
+                <li class="remove"><a href="./helper.html#remove">.remove()</a></li>
+                <li class="getValue"><a href="./helper.html#getValue">.getValue()</a></li>
+                <li class="path"><a href="./helper.html#path">.path()</a></li>
+                <li class="setDashoffset"><a href="./helper.html#setDashoffset">.setDashoffset()</a></li>
+                <li class="easings"><a href="./helper.html#easings">.easings</a></li>
+                <li class="bezier"><a href="./helper.html#bezier">.bezier()</a></li>
+                <li class="timeline"><a href="./helper.html#timeline">.timeline()</a></li>
+                <li class="random"><a href="./helper.html#random">.random()</a></li>
+              </ul>
+            </li>
+            <hr>
+            <li>HTML Source
+              <div id="navi_source"><a href="https://github.com/tobijibu/animejs/archive/master.zip"><i class="menu-icon material-icons">&#xE884;</i></a><a href="https://github.com/tobijibu/animejs/"><i class="menu-icon material-icons">&#xE86F;</i></a></div>
+            </li>
+          </ul>
+        </div>
+        <div class="main">
+          <h1>Easing</h1>
+          <p><code>easing</code>パラメータは文字列または、ベジェ曲線の座標(配列)を指定することができます。</p>
+          <table class="my-table">
+            <tr>
+              <th>type</th>
+              <th>例</th>
+              <th>説明</th>
+            </tr>
+            <tr>
+              <td><code>string</code></td>
+              <td><code>'easeOutExpo'</code></td>
+              <td>ビルトインのイージング関数名。</td>
+            </tr>
+            <tr>
+              <td><code>array</code></td>
+              <td><code>[.91,-0.54,.29,1.56]</code></td>
+              <td>独自のベジェ曲線座標。([x1, y1, x2, y2])</td>
+            </tr>
+          </table>
+          <h2 id="built-in">ビルトイン関数</h2>
+          <p>リニアイージングは<code>linear</code>です。
+            Robert Pennerの関数は以下を使うことができます。
+          </p>
+          <table class="my-table">
+            <tr>
+              <th>easeIn</th>
+              <th>easeOut</th>
+              <th>easeInOut</th>
+            </tr>
+            <tr>
+              <td><code>easeInQuad</code></td>
+              <td><code>easeOutQuad</code></td>
+              <td><code>easeInOutQuad</code></td>
+            </tr>
+            <tr>
+              <td><code>easeInCubic</code></td>
+              <td><code>easeOutCubic</code></td>
+              <td><code>easeInOutCubic</code></td>
+            </tr>
+            <tr>
+              <td><code>easeInQuart</code></td>
+              <td><code>easeOutQuart</code></td>
+              <td><code>easeInOutQuart</code></td>
+            </tr>
+            <tr>
+              <td><code>easeInQuint</code></td>
+              <td><code>easeOutQuint</code></td>
+              <td><code>easeInOutQuint</code></td>
+            </tr>
+            <tr>
+              <td><code>easeInSine</code></td>
+              <td><code>easeOutSine</code></td>
+              <td><code>easeInOutSine</code></td>
+            </tr>
+            <tr>
+              <td><code>easeInExpo</code></td>
+              <td><code>easeOutExpo</code></td>
+              <td><code>easeInOutExpo</code></td>
+            </tr>
+            <tr>
+              <td><code>easeInCirc</code></td>
+              <td><code>easeOutCirc</code></td>
+              <td><code>easeInOutCirc</code></td>
+            </tr>
+            <tr>
+              <td><code>easeInBack</code></td>
+              <td><code>easeOutBack</code></td>
+              <td><code>easeInOutBack</code></td>
+            </tr>
+            <tr>
+              <td><code>easeInElastic</code></td>
+              <td><code>easeOutElastic</code></td>
+              <td><code>easeInOutElasti</code></td>
+            </tr>
+          </table>
+          <h3>使用例</h3>
+          <pre><code class="js">anime({
+  targets: 'div',
+  translateX: 100,
+  easing: 'easeOutExpo' // デフォルトは'easeOutElastic'です。
+});</code></pre><br>
+          <h3>デモ</h3>
+          <p>要素をクリックするとアニメーションを開始します。</p>
+          <div class="demo">
+            <div id="penner">
+              <div class="line">
+                <div class="stretched square shadow"></div>
+                <div class="stretched square linear"></div>
+              </div>
+              <div class="line">
+                <div class="stretched square shadow"></div>
+                <div class="stretched square InQuad"></div>
+              </div>
+              <div class="line">
+                <div class="stretched square shadow"></div>
+                <div class="stretched square InCubic"></div>
+              </div>
+              <div class="line">
+                <div class="stretched square shadow"></div>
+                <div class="stretched square InQuart"></div>
+              </div>
+              <div class="line">
+                <div class="stretched square shadow"></div>
+                <div class="stretched square InQuint"></div>
+              </div>
+              <div class="line">
+                <div class="stretched square shadow"></div>
+                <div class="stretched square InSine"></div>
+              </div>
+              <div class="line">
+                <div class="stretched square shadow"></div>
+                <div class="stretched square InExpo"></div>
+              </div>
+              <div class="line">
+                <div class="stretched square shadow"></div>
+                <div class="stretched square InCirc"></div>
+              </div>
+              <div class="line">
+                <div class="stretched square shadow"></div>
+                <div class="stretched square InBack"></div>
+              </div>
+              <div class="line">
+                <div class="stretched square shadow"></div>
+                <div class="stretched square OutQuad"></div>
+              </div>
+              <div class="line">
+                <div class="stretched square shadow"></div>
+                <div class="stretched square OutCubic"></div>
+              </div>
+              <div class="line">
+                <div class="stretched square shadow"></div>
+                <div class="stretched square OutQuart"></div>
+              </div>
+              <div class="line">
+                <div class="stretched square shadow"></div>
+                <div class="stretched square OutQuint"></div>
+              </div>
+              <div class="line">
+                <div class="stretched square shadow"></div>
+                <div class="stretched square OutSine"></div>
+              </div>
+              <div class="line">
+                <div class="stretched square shadow"></div>
+                <div class="stretched square OutExpo"></div>
+              </div>
+              <div class="line">
+                <div class="stretched square shadow"></div>
+                <div class="stretched square OutCirc"></div>
+              </div>
+              <div class="line">
+                <div class="stretched square shadow"></div>
+                <div class="stretched square OutBack"></div>
+              </div>
+              <div class="line">
+                <div class="stretched square shadow"></div>
+                <div class="stretched square InOutQuad"></div>
+              </div>
+              <div class="line">
+                <div class="stretched square shadow"></div>
+                <div class="stretched square InOutCubic"></div>
+              </div>
+              <div class="line">
+                <div class="stretched square shadow"></div>
+                <div class="stretched square InOutQuart"></div>
+              </div>
+              <div class="line">
+                <div class="stretched square shadow"></div>
+                <div class="stretched square InOutQuint"></div>
+              </div>
+              <div class="line">
+                <div class="stretched square shadow"></div>
+                <div class="stretched square InOutSine"></div>
+              </div>
+              <div class="line">
+                <div class="stretched square shadow"></div>
+                <div class="stretched square InOutExpo"></div>
+              </div>
+              <div class="line">
+                <div class="stretched square shadow"></div>
+                <div class="stretched square InOutCirc"></div>
+              </div>
+              <div class="line">
+                <div class="stretched square shadow"></div>
+                <div class="stretched square InOutBack"></div>
+              </div>
+            </div>
+          </div>
+          <h4>JavaScript</h4>
+          <pre><code class="js">var path = anime.path('#motionPath path');
+ 
+var motionPath = anime({
+  targets: '#motionPath .el',
+  translateX: path('x'),
+  translateY: path('y'),
+  rotate: path('angle'),
+  easing: 'linear',
+  duration: 2000,
+  loop: true
+});</code></pre>
+          <h4>HTML</h4>
+          <pre><code class="html">&#x3C;div id=&#x22;penner&#x22;&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;stretched square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;stretched square linear&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;stretched square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;stretched square InQuad&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;stretched square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;stretched square InCubic&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;stretched square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;stretched square InQuart&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;stretched square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;stretched square InQuint&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;stretched square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;stretched square InSine&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;stretched square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;stretched square InExpo&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;stretched square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;stretched square InCirc&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;stretched square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;stretched square InBack&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;stretched square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;stretched square OutQuad&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;stretched square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;stretched square OutCubic&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;stretched square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;stretched square OutQuart&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;stretched square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;stretched square OutQuint&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;stretched square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;stretched square OutSine&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;stretched square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;stretched square OutExpo&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;stretched square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;stretched square OutCirc&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;stretched square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;stretched square OutBack&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;stretched square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;stretched square InOutQuad&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;stretched square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;stretched square InOutCubic&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;stretched square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;stretched square InOutQuart&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;stretched square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;stretched square InOutQuint&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;stretched square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;stretched square InOutSine&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;stretched square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;stretched square InOutExpo&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;stretched square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;stretched square InOutCirc&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;stretched square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;stretched square InOutBack&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+          <h4>CSS</h4>
+          <pre><code class="css">.shadow {
+  position: absolute;
+  opacity: .2;
+}
+ 
+.square {
+  pointer-events: none;
+  width: 28px;
+  height: 28px;
+  margin: 1px;
+  font-size: 12px;
+}
+ 
+.stretched {
+  height: 2px;
+}</code></pre>
+          <h2 id="e-elasticity">弾性</h2>
+          <p>イージングの弾性は、<code>elasticity</code>パラメータで設定することができます。</p>
+          <pre><code class="js">anime({
+  targets: 'div',
+  translateX: 100,
+  easing: 'easeOutElastic',
+  elasticity: 600 // デフォルトは500。0～1000の範囲で指定します。
+});</code></pre>
+          <h3>デモ</h3>
+          <p>要素をクリックするとアニメーションを開始します。</p>
+          <div class="demo">
+            <div id="elasticity">
+              <div class="line">
+                <div class="stretched square shadow"></div>
+                <div class="stretched square elasticity-0"></div>
+                <div class="stretched square shadow"></div>
+                <div class="stretched square elasticity-100"></div>
+                <div class="stretched square shadow"></div>
+                <div class="stretched square elasticity-200"></div>
+                <div class="stretched square shadow"></div>
+                <div class="stretched square elasticity-300"></div>
+                <div class="stretched square shadow"></div>
+                <div class="stretched square elasticity-400"></div>
+                <div class="stretched square shadow"></div>
+                <div class="stretched square elasticity-500"></div>
+                <div class="stretched square shadow"></div>
+                <div class="stretched square elasticity-600"></div>
+                <div class="stretched square shadow"></div>
+                <div class="stretched square elasticity-700"></div>
+                <div class="stretched square shadow"></div>
+                <div class="stretched square elasticity-800"></div>
+                <div class="stretched square shadow"></div>
+                <div class="stretched square elasticity-900"></div>
+                <div class="stretched square shadow"></div>
+                <div class="stretched square elasticity-1000"></div>
+              </div>
+            </div>
+          </div>
+          <h4>JavaScript</h4>
+          <pre><code class="js">var elasticity = anime.timeline();
+elasticity.add({
+  targets: '#elasticity .elasticity-0', translateX: 250, offset: 0,
+  duration: 3000,
+  elasticity: 0,
+})
+.add({
+  targets: '#elasticity .elasticity-100', translateX: 250, offset: 0,
+  duration: 3000,
+  elasticity: 100,
+})
+.add({
+  targets: '#elasticity .elasticity-200', translateX: 250, offset: 0,
+  duration: 3000,
+  elasticity: 200,
+})
+.add({
+  targets: '#elasticity .elasticity-300', translateX: 250, offset: 0,
+  duration: 3000,
+  elasticity: 300,
+})
+.add({
+  targets: '#elasticity .elasticity-400', translateX: 250, offset: 0,
+  duration: 3000,
+  elasticity: 400,
+})
+.add({
+  targets: '#elasticity .elasticity-500', translateX: 250, offset: 0,
+  duration: 3000,
+  elasticity: 500,
+})
+.add({
+  targets: '#elasticity .elasticity-600', translateX: 250, offset: 0,
+  duration: 3000,
+  elasticity: 600,
+})
+.add({
+  targets: '#elasticity .elasticity-700', translateX: 250, offset: 0,
+  duration: 3000,
+  elasticity: 700,
+})
+.add({
+  targets: '#elasticity .elasticity-800', translateX: 250, offset: 0,
+  duration: 3000,
+  elasticity: 800,
+})
+.add({
+  targets: '#elasticity .elasticity-900', translateX: 250, offset: 0,
+  duration: 3000,
+  elasticity: 900,
+})
+.add({
+  targets: '#elasticity .elasticity-1000', translateX: 250, offset: 0,
+  duration: 3000,
+  elasticity: 1000,
+});</code></pre>
+          <h4>HTML</h4>
+          <pre><code class="html">&#x3C;div id=&#x22;elasticity&#x22;&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;stretched square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;stretched square elasticity-0&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;stretched square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;stretched square elasticity-100&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;stretched square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;stretched square elasticity-200&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;stretched square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;stretched square elasticity-300&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;stretched square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;stretched square elasticity-400&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;stretched square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;stretched square elasticity-500&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;stretched square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;stretched square elasticity-600&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;stretched square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;stretched square elasticity-700&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;stretched square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;stretched square elasticity-800&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;stretched square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;stretched square elasticity-900&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;line&#x22;&#x3E;
+    &#x3C;div class=&#x22;stretched square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;stretched square elasticity-1000&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+          <h4>CSS</h4>
+          <pre><code class="css">.shadow {
+  position: absolute;
+  opacity: .2;
+}
+ 
+.square {
+  pointer-events: none;
+  width: 28px;
+  height: 28px;
+  margin: 1px;
+  font-size: 12px;
+}
+ 
+.stretched {
+  height: 2px;
+}</code></pre>
+          <h2 id="custom-bezier">カスタムベジェ曲線</h2>
+          <p>
+            独自のベジェ曲線を定義することができます。
+            ベジェ曲線は、4つの座標を配列で定義します。
+          </p>
+          <pre><code class="js">anime({
+  targets: 'div',
+  translateX: 100,
+  easing: [.91,-0.54,.29,1.56]
+});</code></pre>
+          <p>
+            カスタムベジェ曲線の座標は、
+            <a href="https://matthewlein.com/ceaser/" target="_blank">https://matthewlein.com/ceaser/</a>
+            で生成することができます。
+          </p>
+          <h3>デモ</h3>
+          <p>要素をクリックするとアニメーションを開始します。</p>
+          <div class="demo">
+            <div id="customBezier">
+              <div class="square shadow"></div>
+              <div class="square el"></div>
+            </div>
+          </div>
+          <h4>JavaScript</h4>
+          <pre><code class="js">var customBezier = anime({
+  targets: '#customBezier .el',
+  translateX: 250,
+  easing: [.91,-0.54,.29,1.56]
+});</code></pre>
+          <h4>HTML</h4>
+          <pre><code class="html">&#x3C;div id=&#x22;customBezier&#x22;&#x3E;
+  &#x3C;div class=&#x22;square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;square el&#x22;&#x3E;&#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+          <h4>CSS</h4>
+          <pre><code class="css">.shadow {
+  position: absolute;
+  opacity: .2;
+}
+ 
+.square {
+  pointer-events: none;
+  width: 28px;
+  height: 28px;
+  margin: 1px;
+  font-size: 12px;
+}</code></pre>
+          <h2 id="custom-easing">カスタムイージング</h2>
+          <p>
+            独自のイージング関数を追加することができます。
+            イージング関数の拡張は、<code>anime.easing</code>を使います。
+          </p>
+          <pre><code class="js">// カスタム関数を追加します。
+anime.easings['myCustomEasingName'] = function(t) {
+  return Math.pow(Math.sin(t * 3), 3);
+}
+ 
+// 使い方
+anime({
+  targets: 'div',
+  translateX: 100,
+  easing: 'myCustomEasingName'
+});
+ 
+// カスタムベジェ曲線を追加します。
+anime.easings['myCustomCurve'] = anime.bezier([.91,-0.54,.29,1.56]);
+ 
+// 使い方
+anime({
+  targets: 'div',
+  translateX: 100,
+  easing: 'myCustomCurve'
+});</code></pre>
+          <h3>デモ</h3>
+          <p>要素をクリックするとアニメーションを開始します。</p>
+          <div class="demo">
+            <div id="customEasingFunction">
+              <div class="square shadow"></div>
+              <div class="square el"></div>
+            </div>
+          </div>
+          <h4>JavaScript</h4>
+          <pre><code class="js">anime.easings['myCustomEasingName'] = function(t) {
+  return Math.pow(Math.sin(t * 3), 3);
+}
+ 
+var customEasingFunction = anime({
+  targets: '#customEasingFunction .el',
+  translateX: 250,
+  easing: 'myCustomEasingName'
+});</code></pre>
+          <h4>HTML</h4>
+          <pre><code class="html">&#x3C;div id=&#x22;customEasingFunction&#x22;&#x3E;
+  &#x3C;div class=&#x22;square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;square el&#x22;&#x3E;&#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+          <h4>CSS</h4>
+          <pre><code class="css">.shadow {
+  position: absolute;
+  opacity: .2;
+}
+ 
+.square {
+  pointer-events: none;
+  width: 28px;
+  height: 28px;
+  margin: 1px;
+  font-size: 12px;
+}</code></pre>
+          <script class="load">
+            createObj = function() {
+              // built-in
+              if (document.querySelector('#penner')) {
+                var penner = anime.timeline();
+                penner
+                  .add({
+                    targets: '#penner .linear', translateX: 250, offset: 0,
+                    easing: 'linear'
+                  })
+                  .add({
+                    targets: '#penner .InQuad', translateX: 250, offset: 0,
+                    easing: 'easeInQuad'
+                  })
+                  .add({
+                    targets: '#penner .InCubic', translateX: 250, offset: 0,
+                    easing: 'easeInCubic'
+                  })
+                  .add({
+                    targets: '#penner .InQuart', translateX: 250, offset: 0,
+                    easing: 'easeInQuart'
+                  })
+                  .add({
+                    targets: '#penner .InQuint', translateX: 250, offset: 0,
+                    easing: 'easeInQuint'
+                  })
+                  .add({
+                    targets: '#penner .InSine', translateX: 250, offset: 0,
+                    easing: 'easeInSine'
+                  })
+                  .add({
+                    targets: '#penner .InExpo', translateX: 250, offset: 0,
+                    easing: 'easeInExpo'
+                  })
+                  .add({
+                    targets: '#penner .InCirc', translateX: 250, offset: 0,
+                    easing: 'easeInCirc'
+                  })
+                  .add({
+                    targets: '#penner .InBack', translateX: 250, offset: 0,
+                    easing: 'easeInBack'
+                  })
+                  .add({
+                    targets: '#penner .OutQuad', translateX: 250, offset: 0,
+                    easing: 'easeOutQuad'
+                  })
+                  .add({
+                    targets: '#penner .OutCubic', translateX: 250, offset: 0,
+                    easing: 'easeOutCubic'
+                  })
+                  .add({
+                    targets: '#penner .OutQuart', translateX: 250, offset: 0,
+                    easing: 'easeOutQuart'
+                  })
+                  .add({
+                    targets: '#penner .OutQuint', translateX: 250, offset: 0,
+                    easing: 'easeOutQuint'
+                  })
+                  .add({
+                    targets: '#penner .OutSine', translateX: 250, offset: 0,
+                    easing: 'easeOutSine'
+                  })
+                  .add({
+                    targets: '#penner .OutExpo', translateX: 250, offset: 0,
+                    easing: 'easeOutExpo'
+                  })
+                  .add({
+                    targets: '#penner .OutCirc', translateX: 250, offset: 0,
+                    easing: 'easeOutCirc'
+                  })
+                  .add({
+                    targets: '#penner .OutBack', translateX: 250, offset: 0,
+                    easing: 'easeOutBack'
+                  })
+                  .add({
+                    targets: '#penner .InOutQuad', translateX: 250, offset: 0,
+                    easing: 'easeInOutQuad'
+                  })
+                  .add({
+                    targets: '#penner .InOutCubic', translateX: 250, offset: 0,
+                    easing: 'easeInOutCubic'
+                  })
+                  .add({
+                    targets: '#penner .InOutQuart', translateX: 250, offset: 0,
+                    easing: 'easeInOutQuart'
+                  })
+                  .add({
+                    targets: '#penner .InOutQuint', translateX: 250, offset: 0,
+                    easing: 'easeInOutQuint'
+                  })
+                  .add({
+                    targets: '#penner .InOutSine', translateX: 250, offset: 0,
+                    easing: 'easeInOutSine'
+                  })
+                  .add({
+                    targets: '#penner .InOutExpo', translateX: 250, offset: 0,
+                    easing: 'easeInOutExpo'
+                  })
+                  .add({
+                    targets: '#penner .InOutCirc', translateX: 250, offset: 0,
+                    easing: 'easeInOutCirc'
+                  })
+                  .add({
+                    targets: '#penner .InOutBack', translateX: 250, offset: 0,
+                    easing: 'easeInOutBack'
+                  });
+                document.querySelector('#penner').onclick = penner.restart;
+              }
+            
+              // elasticity
+              if (document.querySelector('#elasticity')) {
+                var elasticity = anime.timeline();
+                elasticity.add({
+                  targets: '#elasticity .elasticity-0', translateX: 250, offset: 0,
+                  duration: 3000,
+                  elasticity: 0,
+                })
+                .add({
+                  targets: '#elasticity .elasticity-100', translateX: 250, offset: 0,
+                  duration: 3000,
+                  elasticity: 100,
+                })
+                .add({
+                  targets: '#elasticity .elasticity-200', translateX: 250, offset: 0,
+                  duration: 3000,
+                  elasticity: 200,
+                })
+                .add({
+                  targets: '#elasticity .elasticity-300', translateX: 250, offset: 0,
+                  duration: 3000,
+                  elasticity: 300,
+                })
+                .add({
+                  targets: '#elasticity .elasticity-400', translateX: 250, offset: 0,
+                  duration: 3000,
+                  elasticity: 400,
+                })
+                .add({
+                  targets: '#elasticity .elasticity-500', translateX: 250, offset: 0,
+                  duration: 3000,
+                  elasticity: 500,
+                })
+                .add({
+                  targets: '#elasticity .elasticity-600', translateX: 250, offset: 0,
+                  duration: 3000,
+                  elasticity: 600,
+                })
+                .add({
+                  targets: '#elasticity .elasticity-700', translateX: 250, offset: 0,
+                  duration: 3000,
+                  elasticity: 700,
+                })
+                .add({
+                  targets: '#elasticity .elasticity-800', translateX: 250, offset: 0,
+                  duration: 3000,
+                  elasticity: 800,
+                })
+                .add({
+                  targets: '#elasticity .elasticity-900', translateX: 250, offset: 0,
+                  duration: 3000,
+                  elasticity: 900,
+                })
+                .add({
+                  targets: '#elasticity .elasticity-1000', translateX: 250, offset: 0,
+                  duration: 3000,
+                  elasticity: 1000,
+                });
+                document.querySelector('#elasticity').onclick = elasticity.restart;
+              }
+            
+              // custom bezier
+              if (document.querySelector('#customBezier')) {
+                var customBezier = anime({
+                  targets: '#customBezier .el',
+                  translateX: 250,
+                  easing: [.91,-0.54,.29,1.56]
+                });
+                document.querySelector('#customBezier').onclick = customBezier.restart;
+              }
+            
+              // custom easing
+              if (document.querySelector('#customEasingFunction')) {
+                anime.easings['myCustomEasingName'] = function(t) {
+                  return Math.pow(Math.sin(t * 3), 3);
+                }
+                var customEasingFunction = anime({
+                  targets: '#customEasingFunction .el',
+                  translateX: 250,
+                  easing: 'myCustomEasingName'
+                });
+                document.querySelector('#customEasingFunction').onclick = customEasingFunction.restart;
+              }
+            };
+          </script>
+          <div class="license">
+            <p><a href="https://github.com/juliangarnier/anime/blob/master/LICENSE.md">MIT license</a>.
+              &copy; 2017 Julian Garnier.
+            </p>
+            <p>このコンテンツはJulian Garnier(juliangarnier)による<a href="http://animejs.com/documentation/">anime.jsドキュメント</a>を翻訳/改変したものです。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer><span>
+       &copy; 
+      <script>document.write((new Date()).getFullYear());</script> tobijibu</span></footer>
+  <script src="./js/main.js"></script>
+  <script src="./js/barba_common.js"></script>
+</body>

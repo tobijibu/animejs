@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>SVG | anime.js - にほんご。</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="http://tr.you84815.space/animejs/favicon.ico">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+    <link rel="stylesheet" href="./css/fx.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-106478577-1', 'auto');
+      //ga('send', 'pageview');
+    </script>
+    <script src="./js/highlight.pack.js"></script>
+    <script src="./js/barba.min.js"></script>
+    <script src="./js/base.js"></script>
+    <script src="./js/anime.min.js"></script>
+  </head>
+</html>
+<body>
+  <header>
+    <div class="icon"><a class="no-barba" href="http://tr.you84815.space/"><img src="./img/icon.png"></a></div>
+    <div class="navi_toggle" onclick="toggleMenu()"><i class="menu-icon material-icons" id="navi_icon"></i></div>
+    <div class="title">anime.js - <a class="no-barba" href="http://tr.you84815.space/">にほんご。</a></div>
+  </header>
+  <script>
+    toggleMenu = function() {
+      let navi = document.getElementsByClassName("navi");
+      navi[0].classList.toggle('show');
+      let navi_icon = document.getElementById("navi_icon");
+      navi_icon.classList.toggle('active');
+    }
+  </script>
+  <div id="barba-wrapper">
+    <div class="barba-container">
+      <div class="wrapper">
+        <div class="navi">
+          <ul>
+            <li><a href="./">Home</a></li>
+            <li><a href="./introduction.html">Introduction</a></li>
+            <li><a href="./usage.html">Usage</a></li>
+            <li><a href="./targets.html">Targets</a>
+              <ul class="hidden" id="navi_targets">
+                <li class="css-selector"><a href="./targets.html#css-selector">CSSセレクタ</a></li>
+                <li class="dom-node"><a href="./targets.html#dom-node">DOM要素</a></li>
+                <li class="node-list"><a href="./targets.html#node-list">ノードリスト</a></li>
+                <li class="object"><a href="./targets.html#object">オブジェクト</a></li>
+                <li class="array"><a href="./targets.html#array">要素配列</a></li>
+              </ul>
+            </li>
+            <li><a href="./properties.html">Properties</a>
+              <ul class="hidden" id="navi_properties">
+                <li class="css"><a href="./properties.html#css">CSS</a></li>
+                <li class="css-transforms"><a href="./properties.html#css-transforms">transform(CSS)</a></li>
+                <li class="object-properties"><a href="./properties.html#object-properties">オブジェクトプロパティ</a></li>
+                <li class="dom-attributes"><a href="./properties.html#dom-attributes">DOM属性</a></li>
+                <li class="svg-attributes"><a href="./properties.html#svg-attributes">SVG属性</a></li>
+              </ul>
+            </li>
+            <li><a href="./property-parameters.html">Property parameters</a>
+              <ul class="hidden" id="navi_property-parameters">
+                <li class="duration"><a href="./property-parameters.html#p-duration">duration(時間)</a></li>
+                <li class="delay"><a href="./property-parameters.html#p-delay">delay(遅延)</a></li>
+                <li class="easing"><a href="./property-parameters.html#p-easing">easint(イージング)</a></li>
+                <li class="specific-property"><a href="./property-parameters.html#p-specific-property">特定のプロパティ</a></li>
+              </ul>
+            </li>
+            <li><a href="./function-based-parameters.html">Function based parameters</a>
+              <ul class="hidden" id="navi_function-based-parameters">
+                <li class="duration"><a href="./function-based-parameters.html#f-duration">duration(時間)</a></li>
+                <li class="delay"><a href="./function-based-parameters.html#f-delay">delay(遅延)</a></li>
+                <li class="elasticity"><a href="./function-based-parameters.html#f-elasticity">elasticity(弾性)</a></li>
+                <li class="combined"><a href="./function-based-parameters.html#f-combined">組み合わせ</a></li>
+              </ul>
+            </li>
+            <li><a href="./animation-parameters.html">Animation parameters</a>
+              <ul class="hidden" id="navi_animation-parameters">
+                <li class="direction-alternate"><a href="./animation-parameters.html#direction-alternate">再生方向(alternate)</a></li>
+                <li class="direction-reverse"><a href="./animation-parameters.html#direction-reverse">再生方向(逆再生)</a></li>
+                <li class="loopn"><a href="./animation-parameters.html#loopn">ループ(N回)</a></li>
+                <li class="loop-alternate"><a href="./animation-parameters.html#loop-alternate">ループalternate(N回)</a></li>
+                <li class="loop-reverse"><a href="./animation-parameters.html#loop-reverse">ループ逆再生(N回)</a></li>
+                <li class="infinite-loop"><a href="./animation-parameters.html#infinite-loop">無限ループ</a></li>
+                <li class="infinite-loop-alternate"><a href="./animation-parameters.html#infinite-loop-alternate">無限ループalternate</a></li>
+                <li class="infinite-loop-reverse"><a href="./animation-parameters.html#infinite-loop-reverse">無限ループ逆再生</a></li>
+              </ul>
+            </li>
+            <li><a href="./property-values.html">Property values</a>
+              <ul class="hidden" id="navi_property-values">
+                <li class="unitless"><a href="./property-values.html#unitless">単位無指定</a></li>
+                <li class="specific-unit"><a href="./property-values.html#specific-unit">単位指定</a></li>
+                <li class="relative"><a href="./property-values.html#relative">相対値</a></li>
+                <li class="v-colors"><a href="./property-values.html#v-colors">カラー</a></li>
+                <li class="specific-initial-value"><a href="./property-values.html#specific-initial-value">初期値指定</a></li>
+                <li class="function-based-values"><a href="./property-values.html#function-based-values">関数ベース値</a></li>
+                <li class="v-keyframes"><a href="./property-values.html#v-keyframes">キーフレーム</a></li>
+              </ul>
+            </li>
+            <li><a href="./timeline.html">Timeline</a>
+              <ul class="hidden" id="navi_timeline">
+                <li class="basic-timeline"><a href="./timeline.html#basic-timeline">タイムライン</a></li>
+                <li class="relative-offset"><a href="./timeline.html#relative-offset">オフセット(相対値)</a></li>
+                <li class="absolute-offset"><a href="./timeline.html#absolute-offset">オフセット(絶対値)</a></li>
+                <li class="basic-timeline-parameters"><a href="./timeline.html#basic-timeline-parameters">タイムラインパラメータ</a></li>
+                <li class="parameters-inheritance"><a href="./timeline.html#parameters-inheritance">パラメータの継承</a></li>
+              </ul>
+            </li>
+            <li><a href="./playback.html">Playback</a>
+              <ul class="hidden" id="navi_playback">
+                <li class="play-pause"><a href="./playback.html#play-pause">再生 / 停止</a></li>
+                <li class="restart"><a href="./playback.html#restart">リスタート</a></li>
+                <li class="reverse"><a href="./playback.html#reverse">逆再生</a></li>
+                <li class="seek"><a href="./playback.html#seek">シーク</a></li>
+                <li class="timeline-controls"><a href="./playback.html#timeline-controls">タイムラインコントロール</a></li>
+              </ul>
+            </li>
+            <li><a href="./callback.html">Callback</a>
+              <ul class="hidden" id="navi_callback">
+                <li class="all-callbacks"><a href="./callback.html#c-all-callbacks">all</a></li>
+                <li class="update"><a href="./callback.html#c-update">update</a></li>
+                <li class="begin"><a href="./callback.html#c-begin">begin</a></li>
+                <li class="run"><a href="./callback.html#c-run">run</a></li>
+                <li class="complete"><a href="./callback.html#c-complete">complete</a></li>
+              </ul>
+            </li>
+            <li><a href="./promises.html">Promise</a></li>
+            <li><a class="active" href="./svg.html">SVG</a>
+              <ul id="navi_svg">
+                <li class="motion-path"><a href="./svg.html#motion-path">モーションパス</a></li>
+                <li class="morphing"><a href="./svg.html#morphing">モーフィング</a></li>
+                <li class="line-drawing"><a href="./svg.html#line-drawing">線画アニメーション</a></li>
+              </ul>
+            </li>
+            <li><a href="./easing.html">Easing</a>
+              <ul class="hidden" id="navi_easing">
+                <li class="built-in"><a href="./easing.html#built-in">ビルトイン関数</a></li>
+                <li class="e-elasticity"><a href="./easing.html#e-elasticity">弾性</a></li>
+                <li class="custom-bezier"><a href="./easing.html#custom-bezier">カスタムベジェ曲線</a></li>
+                <li class="custom-easing"><a href="./easing.html#custom-easing">カスタムイージング</a></li>
+              </ul>
+            </li>
+            <li><a href="./helper.html">Helpers</a>
+              <ul class="hidden" id="navi_helper">
+                <li class="speed"><a href="./helper.html#speed">.speed</a></li>
+                <li class="running"><a href="./helper.html#running">.running</a></li>
+                <li class="remove"><a href="./helper.html#remove">.remove()</a></li>
+                <li class="getValue"><a href="./helper.html#getValue">.getValue()</a></li>
+                <li class="path"><a href="./helper.html#path">.path()</a></li>
+                <li class="setDashoffset"><a href="./helper.html#setDashoffset">.setDashoffset()</a></li>
+                <li class="easings"><a href="./helper.html#easings">.easings</a></li>
+                <li class="bezier"><a href="./helper.html#bezier">.bezier()</a></li>
+                <li class="timeline"><a href="./helper.html#timeline">.timeline()</a></li>
+                <li class="random"><a href="./helper.html#random">.random()</a></li>
+              </ul>
+            </li>
+            <hr>
+            <li>HTML Source
+              <div id="navi_source"><a href="https://github.com/tobijibu/animejs/archive/master.zip"><i class="menu-icon material-icons">&#xE884;</i></a><a href="https://github.com/tobijibu/animejs/"><i class="menu-icon material-icons">&#xE86F;</i></a></div>
+            </li>
+          </ul>
+        </div>
+        <div class="main">
+          <h1>SVG</h1>
+          <h2 id="motion-path">モーションパス</h2>
+          <p>モーションパスは、SVGパスに沿ってDOM要素を移動したり回転させます。</p>
+          <pre><code class="js">// パス'Object'を生成します。
+var path = anime.path('#motionPath path');
+ 
+var motionPath = anime({
+  targets: '#motionPath .el',
+  translateX: path('x'), // 'Object'のX値に従って移動します。
+  translateY: path('y'), // 'Object'のY値に従って移動します。
+  rotate: path('angle')  // 'Object'の'angle'に従って回転します。
+});</code></pre>
+          <h3>デモ</h3>
+          <div class="demo">
+            <div id="motionPath">
+              <div class="motion-path">
+                <div class="square small el follow-path"></div>
+                <svg width="256" height="112" viewBox="0 0 256 112">
+                  <path fill="none" stroke="currentColor" stroke-width="1" d="M8,56 C8,33.90861 25.90861,16 48,16 C70.09139,16 88,33.90861 88,56 C88,78.09139 105.90861,92 128,92 C150.09139,92 160,72 160,56 C160,40 148,24 128,24 C108,24 96,40 96,56 C96,72 105.90861,92 128,92 C154,93 168,78 168,56 C168,33.90861 185.90861,16 208,16 C230.09139,16 248,33.90861 248,56 C248,78.09139 230.09139,96 208,96 L48,96 C25.90861,96 8,78.09139 8,56 Z"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <h4>JavaScript</h4>
+          <pre><code class="js">var path = anime.path('#motionPath path');
+ 
+var motionPath = anime({
+  targets: '#motionPath .el',
+  translateX: path('x'),
+  translateY: path('y'),
+  rotate: path('angle'),
+  easing: 'linear',
+  duration: 2000,
+  loop: true
+});</code></pre>
+          <h4>HTML</h4>
+          <pre><code class="html">&#x3C;div id=&#x22;motionPath&#x22;&#x3E;
+  &#x3C;div class=&#x22;motion-path&#x22;&#x3E;
+    &#x3C;div class=&#x22;square el follow-path&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;svg width=&#x22;256&#x22; height=&#x22;112&#x22; viewBox=&#x22;0 0 256 112&#x22;&#x3E;
+      &#x3C;path fill=&#x22;none&#x22; stroke=&#x22;currentColor&#x22; stroke-width=&#x22;1&#x22; d=&#x22;M8,56 C8,33.90861 25.90861,16 48,16 C70.09139,16 88,33.90861 88,56 C88,78.09139 105.90861,92 128,92 C150.09139,92 160,72 160,56 C160,40 148,24 128,24 C108,24 96,40 96,56 C96,72 105.90861,92 128,92 C154,93 168,78 168,56 C168,33.90861 185.90861,16 208,16 C230.09139,16 248,33.90861 248,56 C248,78.09139 230.09139,96 208,96 L48,96 C25.90861,96 8,78.09139 8,56 Z&#x22;&#x3E;&#x3C;/path&#x3E;
+    &#x3C;/svg&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+          <h4>CSS</h4>
+          <pre><code class="css">.square {
+  pointer-events: none;
+  width: 28px;
+  height: 28px;
+  margin: 1px;
+  font-size: 12px;
+}
+ 
+.small {
+  width: 18px;
+  height: 18px;
+}
+ 
+.follow-path {
+  position: absolute;
+  top: -9px;
+  left: -9px;
+}</code></pre>
+          <h2 id="morphing">モーフィング</h2>
+          <p>2つ以上のSVG図形の変形遷移をアニメーションさせます。</p>
+          <h4>HTML</h4>
+          <pre><code class="html">&#x3C;svg class=&#x22;shape&#x22; width=&#x22;128&#x22; height=&#x22;128&#x22; viewBox=&#x22;0 0 128 128&#x22;&#x3E;
+  &#x3C;polygon points=&#x22;64 68.64 8.574 100 63.446 67.68 64 4 64.554 67.68 119.426 100&#x22;&#x3E;&#x3C;/polygon&#x3E;
+&#x3C;/svg&#x3E;</code></pre>
+          <h4>JavaScript</h4>
+          <pre><code class="js">var svgAttributes = anime({
+  targets: '.shape polygon',
+  points: '64 128 8.574 96 8.574 32 64 0 119.426 32 119.426 96'
+});</code></pre>
+          <p>図形の"点"の数は、同じ数でなければなりません。</p>
+          <h3>デモ</h3>
+          <div class="demo">
+            <div id="morphing">
+              <svg width="140" height="140" viewBox="0 0 140 140">
+                <g fill="none" fill-rule="evenodd">
+                  <g fill="currentColor" fill-opacity=".15" transform="translate(0 6)">
+                    <polygon points="70 0 136.574 48.369 111.145 126.631 28.855 126.631 3.426 48.369"></polygon>
+                    <polygon points="70 18 119.455 53.931 100.565 112.069 39.435 112.069 20.545 53.931"></polygon>
+                    <polygon points="70 34.86 101.727 57.911 89.609 95.209 50.391 95.209 38.273 57.911"></polygon>
+                    <polygon points="70 50.898 84.864 61.697 79.186 79.171 60.814 79.171 55.136 61.697"></polygon>
+                  </g>
+                  <polygon class="polymorph" stroke-width="1" stroke="currentColor" points="70 24 119.574 60.369 100.145 117.631 50.855 101.631 3.426 54.369 "></polygon>
+                </g>
+              </svg>
+            </div>
+          </div>
+          <h4>JavaScript</h4>
+          <pre><code class="js">var morphing = anime({
+  targets: '#morphing .polymorph',
+  points: [
+    { value: '70 41 118.574 59.369 111.145 132.631 60.855 84.631 20.426 60.369' },
+    { value: '70 6 119.574 60.369 100.145 117.631 39.855 117.631 55.426 68.369' },
+    { value: '70 57 136.574 54.369 89.145 100.631 28.855 132.631 38.426 64.369' },
+    { value: '70 24 119.574 60.369 100.145 117.631 50.855 101.631 3.426 54.369' }
+  ],
+  easing: 'easeOutQuad',
+  duration: 2000,
+  loop: true
+});</code></pre>
+          <h4>HTML</h4>
+          <pre><code class="html">&#x3C;div id=&#x22;morphing&#x22;&#x3E;
+  &#x3C;svg width=&#x22;140&#x22; height=&#x22;140&#x22; viewBox=&#x22;0 0 140 140&#x22;&#x3E;
+    &#x3C;g fill=&#x22;none&#x22; fill-rule=&#x22;evenodd&#x22;&#x3E;
+      &#x3C;g fill=&#x22;currentColor&#x22; fill-opacity=&#x22;.15&#x22; transform=&#x22;translate(0 6)&#x22;&#x3E;
+        &#x3C;polygon points=&#x22;70 0 136.574 48.369 111.145 126.631 28.855 126.631 3.426 48.369&#x22;&#x3E;&#x3C;/polygon&#x3E;
+        &#x3C;polygon points=&#x22;70 18 119.455 53.931 100.565 112.069 39.435 112.069 20.545 53.931&#x22;&#x3E;&#x3C;/polygon&#x3E;
+        &#x3C;polygon points=&#x22;70 34.86 101.727 57.911 89.609 95.209 50.391 95.209 38.273 57.911&#x22;&#x3E;&#x3C;/polygon&#x3E;
+        &#x3C;polygon points=&#x22;70 50.898 84.864 61.697 79.186 79.171 60.814 79.171 55.136 61.697&#x22;&#x3E;&#x3C;/polygon&#x3E;
+      &#x3C;/g&#x3E;
+      &#x3C;polygon class=&#x22;polymorph&#x22; stroke-width=&#x22;1&#x22; stroke=&#x22;currentColor&#x22; points=&#x22;70 24 119.574 60.369 100.145 117.631 50.855 101.631 3.426 54.369 &#x22;&#x3E;&#x3C;/polygon&#x3E;
+    &#x3C;/g&#x3E;
+  &#x3C;/svg&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+          <h2 id="line-drawing">線画アニメーション</h2>
+          <p>線画アニメーションは、SVGシェイプの線画をアニメーションで描画します。</p>
+          <h3>デモ</h3>
+          <div class="demo">
+            <div id="lineDrawing">
+              <svg viewBox="0 0 280 100">
+                <g class="lines" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="1">
+                  <path d="M58 80V50.12C57.7 41.6 51.14 35 43 35a15 15 0 0 0 0 30h7.5v15H43a30 30 0 1 1 0-60c16.42 0 29.5 13.23 30 29.89V80H58z" stroke-dasharray="316.85528564453125" style="stroke-dashoffset: 313.362px;"></path>
+                  <path d="M73 80V20H58v60h15z" stroke-dasharray="150" style="stroke-dashoffset: 150px;"></path>
+                  <path d="M58 80V49.77C58.5 33.23 71.58 20 88 20a30 30 0 0 1 30 30v30h-15V50a15 15 0 0 0-15-15c-8.14 0-14.7 6.6-15 15.12V80H58zm75 0V20h-15v60h15z" stroke-dasharray="441.1739501953125" style="stroke-dashoffset: 441.174px;"></path>
+                  <path d="M118 80V49.77C118.5 33.23 131.58 20 148 20a30 30 0 0 1 30 30v30h-15V50a15 15 0 0 0-15-15c-8.14 0-14.7 6.6-15 15.12V80h-15zm-7.5-60a7.5 7.5 0 1 1-7.48 8v-1c.25-3.9 3.5-7 7.48-7z" stroke-dasharray="338.3053894042969" style="stroke-dashoffset: 338.305px;"></path>
+                  <path d="M133 65a15 15 0 0 1-15-15v-7.5h-15V50a30 30 0 0 0 30 30V65zm30 15V49.77C163.5 33.23 176.58 20 193 20a30 30 0 0 1 30 30v30h-15V50a15 15 0 0 0-15-15c-8.14 0-14.7 6.6-15 15.12V80h-15z" stroke-dasharray="406.8699035644531" style="stroke-dashoffset: 406.87px;"></path>
+                  <path d="M238 65a15 15 0 0 1 0-30c8.1 0 14.63 6.53 15 15h-15v15h30V49.89C267.5 33.23 254.42 20 238 20a30 30 0 0 0 0 60V65z" stroke-dasharray="301.8561706542969" style="stroke-dashoffset: 301.856px;"></path>
+                  <path d="M260.48 65a7.5 7.5 0 1 1-7.48 8v-1c.26-3.9 3.5-7 7.48-7z" stroke-dasharray="47.128875732421875" style="stroke-dashoffset: 47.1289px;"></path>
+                </g>
+              </svg>
+            </div>
+          </div>
+          <h4>JavaScript</h4>
+          <pre><code class="js">var lineDrawing = anime({
+  targets: '#lineDrawing .lines path',
+  strokeDashoffset: [anime.setDashoffset, 0],
+  easing: 'easeInOutSine',
+  duration: 1500,
+  delay: function(el, i) { return i * 250 },
+  direction: 'alternate',
+  loop: true
+});</code></pre>
+          <h4>HTML</h4>
+          <pre><code class="html">&#x3C;div id=&#x22;lineDrawing&#x22;&#x3E;
+  &#x3C;svg viewBox=&#x22;0 0 280 100&#x22;&#x3E;
+    &#x3C;g fill=&#x22;none&#x22; fill-rule=&#x22;evenodd&#x22; stroke=&#x22;currentColor&#x22; stroke-width=&#x22;1&#x22; class=&#x22;lines&#x22;&#x3E;
+      &#x3C;path d=&#x22;M58 80V50.12C57.7 41.6 51.14 35 43 35a15 15 0 0 0 0 30h7.5v15H43a30 30 0 1 1 0-60c16.42 0 29.5 13.23 30 29.89V80H58z&#x22; stroke-dasharray=&#x22;316.85528564453125&#x22; style=&#x22;stroke-dashoffset: 313.362px;&#x22;&#x3E;&#x3C;/path&#x3E;
+      &#x3C;path d=&#x22;M73 80V20H58v60h15z&#x22; stroke-dasharray=&#x22;150&#x22; style=&#x22;stroke-dashoffset: 150px;&#x22;&#x3E;&#x3C;/path&#x3E;
+      &#x3C;path d=&#x22;M58 80V49.77C58.5 33.23 71.58 20 88 20a30 30 0 0 1 30 30v30h-15V50a15 15 0 0 0-15-15c-8.14 0-14.7 6.6-15 15.12V80H58zm75 0V20h-15v60h15z&#x22; stroke-dasharray=&#x22;441.1739501953125&#x22; style=&#x22;stroke-dashoffset: 441.174px;&#x22;&#x3E;&#x3C;/path&#x3E;
+      &#x3C;path d=&#x22;M118 80V49.77C118.5 33.23 131.58 20 148 20a30 30 0 0 1 30 30v30h-15V50a15 15 0 0 0-15-15c-8.14 0-14.7 6.6-15 15.12V80h-15zm-7.5-60a7.5 7.5 0 1 1-7.48 8v-1c.25-3.9 3.5-7 7.48-7z&#x22; stroke-dasharray=&#x22;338.3053894042969&#x22; style=&#x22;stroke-dashoffset: 338.305px;&#x22;&#x3E;&#x3C;/path&#x3E;
+      &#x3C;path d=&#x22;M133 65a15 15 0 0 1-15-15v-7.5h-15V50a30 30 0 0 0 30 30V65zm30 15V49.77C163.5 33.23 176.58 20 193 20a30 30 0 0 1 30 30v30h-15V50a15 15 0 0 0-15-15c-8.14 0-14.7 6.6-15 15.12V80h-15z&#x22; stroke-dasharray=&#x22;406.8699035644531&#x22; style=&#x22;stroke-dashoffset: 406.87px;&#x22;&#x3E;&#x3C;/path&#x3E;
+      &#x3C;path d=&#x22;M238 65a15 15 0 0 1 0-30c8.1 0 14.63 6.53 15 15h-15v15h30V49.89C267.5 33.23 254.42 20 238 20a30 30 0 0 0 0 60V65z&#x22; stroke-dasharray=&#x22;301.8561706542969&#x22; style=&#x22;stroke-dashoffset: 301.856px;&#x22;&#x3E;&#x3C;/path&#x3E;
+      &#x3C;path d=&#x22;M260.48 65a7.5 7.5 0 1 1-7.48 8v-1c.26-3.9 3.5-7 7.48-7z&#x22; stroke-dasharray=&#x22;47.128875732421875&#x22; style=&#x22;stroke-dashoffset: 47.1289px;&#x22;&#x3E;&#x3C;/path&#x3E;
+    &#x3C;/g&#x3E;
+  &#x3C;/svg&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+          <script class="load">
+            createObj = function() {
+              // motion path
+              if (document.querySelector('#motionPath')) {
+                var path = anime.path('#motionPath path');
+                var motionPath = anime({
+                  targets: '#motionPath .el',
+                  translateX: path('x'),
+                  translateY: path('y'),
+                  rotate: path('angle'),
+                  easing: 'linear',
+                  duration: 2000,
+                  loop: true
+                });
+              }
+            
+              // morphing
+              if (document.querySelector('#morphing')) {
+                var morphing = anime({
+                  targets: '#morphing .polymorph',
+                  points: [
+                    { value: '70 41 118.574 59.369 111.145 132.631 60.855 84.631 20.426 60.369' },
+                    { value: '70 6 119.574 60.369 100.145 117.631 39.855 117.631 55.426 68.369' },
+                    { value: '70 57 136.574 54.369 89.145 100.631 28.855 132.631 38.426 64.369' },
+                    { value: '70 24 119.574 60.369 100.145 117.631 50.855 101.631 3.426 54.369' }
+                  ],
+                  easing: 'easeOutQuad',
+                  duration: 2000,
+                  loop: true
+                });
+              }
+            
+              // line drawing
+              if (document.querySelector('#lineDrawing')) {
+                var lineDrawing = anime({
+                  targets: '#lineDrawing .lines path',
+                  strokeDashoffset: [anime.setDashoffset, 0],
+                  easing: 'easeInOutSine',
+                  duration: 1500,
+                  delay: function(el, i) { return i * 250 },
+                  direction: 'alternate',
+                  loop: true
+                });
+              }
+            };
+          </script>
+          <div class="license">
+            <p><a href="https://github.com/juliangarnier/anime/blob/master/LICENSE.md">MIT license</a>.
+              &copy; 2017 Julian Garnier.
+            </p>
+            <p>このコンテンツはJulian Garnier(juliangarnier)による<a href="http://animejs.com/documentation/">anime.jsドキュメント</a>を翻訳/改変したものです。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer><span>
+       &copy; 
+      <script>document.write((new Date()).getFullYear());</script> tobijibu</span></footer>
+  <script src="./js/main.js"></script>
+  <script src="./js/barba_common.js"></script>
+</body>
