@@ -40,134 +40,218 @@
       navi_icon.classList.toggle('active');
     }
   </script>
-  <div id="barba-wrapper">
-    <div class="barba-container">
-      <div class="wrapper">
-        <div class="navi">
-          <ul>
-            <li><a href="./">Home</a></li>
-            <li><a href="./introduction.html">Introduction</a></li>
-            <li><a href="./usage.html">Usage</a></li>
-            <li><a href="./targets.html">Targets</a>
-              <ul class="hidden" id="navi_targets">
-                <li class="css-selector"><a href="./targets.html#css-selector">CSSセレクタ</a></li>
-                <li class="dom-node"><a href="./targets.html#dom-node">DOM要素</a></li>
-                <li class="node-list"><a href="./targets.html#node-list">ノードリスト</a></li>
-                <li class="object"><a href="./targets.html#object">オブジェクト</a></li>
-                <li class="array"><a href="./targets.html#array">要素配列</a></li>
-              </ul>
-            </li>
-            <li><a href="./properties.html">Properties</a>
-              <ul class="hidden" id="navi_properties">
-                <li class="css"><a href="./properties.html#css">CSS</a></li>
-                <li class="css-transforms"><a href="./properties.html#css-transforms">transform(CSS)</a></li>
-                <li class="object-properties"><a href="./properties.html#object-properties">オブジェクトプロパティ</a></li>
-                <li class="dom-attributes"><a href="./properties.html#dom-attributes">DOM属性</a></li>
-                <li class="svg-attributes"><a href="./properties.html#svg-attributes">SVG属性</a></li>
-              </ul>
-            </li>
-            <li><a href="./property-parameters.html">Property parameters</a>
-              <ul class="hidden" id="navi_property-parameters">
-                <li class="duration"><a href="./property-parameters.html#p-duration">duration(時間)</a></li>
-                <li class="delay"><a href="./property-parameters.html#p-delay">delay(遅延)</a></li>
-                <li class="easing"><a href="./property-parameters.html#p-easing">easint(イージング)</a></li>
-                <li class="specific-property"><a href="./property-parameters.html#p-specific-property">特定のプロパティ</a></li>
-              </ul>
-            </li>
-            <li><a href="./function-based-parameters.html">Function based parameters</a>
-              <ul class="hidden" id="navi_function-based-parameters">
-                <li class="duration"><a href="./function-based-parameters.html#f-duration">duration(時間)</a></li>
-                <li class="delay"><a href="./function-based-parameters.html#f-delay">delay(遅延)</a></li>
-                <li class="elasticity"><a href="./function-based-parameters.html#f-elasticity">elasticity(弾性)</a></li>
-                <li class="combined"><a href="./function-based-parameters.html#f-combined">組み合わせ</a></li>
-              </ul>
-            </li>
-            <li><a href="./animation-parameters.html">Animation parameters</a>
-              <ul class="hidden" id="navi_animation-parameters">
-                <li class="direction-alternate"><a href="./animation-parameters.html#direction-alternate">再生方向(alternate)</a></li>
-                <li class="direction-reverse"><a href="./animation-parameters.html#direction-reverse">再生方向(逆再生)</a></li>
-                <li class="loopn"><a href="./animation-parameters.html#loopn">ループ(N回)</a></li>
-                <li class="loop-alternate"><a href="./animation-parameters.html#loop-alternate">ループalternate(N回)</a></li>
-                <li class="loop-reverse"><a href="./animation-parameters.html#loop-reverse">ループ逆再生(N回)</a></li>
-                <li class="infinite-loop"><a href="./animation-parameters.html#infinite-loop">無限ループ</a></li>
-                <li class="infinite-loop-alternate"><a href="./animation-parameters.html#infinite-loop-alternate">無限ループalternate</a></li>
-                <li class="infinite-loop-reverse"><a href="./animation-parameters.html#infinite-loop-reverse">無限ループ逆再生</a></li>
-              </ul>
-            </li>
-            <li><a href="./property-values.html">Property values</a>
-              <ul class="hidden" id="navi_property-values">
-                <li class="unitless"><a href="./property-values.html#unitless">単位無指定</a></li>
-                <li class="specific-unit"><a href="./property-values.html#specific-unit">単位指定</a></li>
-                <li class="relative"><a href="./property-values.html#relative">相対値</a></li>
-                <li class="v-colors"><a href="./property-values.html#v-colors">カラー</a></li>
-                <li class="specific-initial-value"><a href="./property-values.html#specific-initial-value">初期値指定</a></li>
-                <li class="function-based-values"><a href="./property-values.html#function-based-values">関数ベース値</a></li>
-                <li class="v-keyframes"><a href="./property-values.html#v-keyframes">キーフレーム</a></li>
-              </ul>
-            </li>
-            <li><a href="./timeline.html">Timeline</a>
-              <ul class="hidden" id="navi_timeline">
-                <li class="basic-timeline"><a href="./timeline.html#basic-timeline">タイムライン</a></li>
-                <li class="relative-offset"><a href="./timeline.html#relative-offset">オフセット(相対値)</a></li>
-                <li class="absolute-offset"><a href="./timeline.html#absolute-offset">オフセット(絶対値)</a></li>
-                <li class="basic-timeline-parameters"><a href="./timeline.html#basic-timeline-parameters">タイムラインパラメータ</a></li>
-                <li class="parameters-inheritance"><a href="./timeline.html#parameters-inheritance">パラメータの継承</a></li>
-              </ul>
-            </li>
-            <li><a href="./playback.html">Playback</a>
-              <ul class="hidden" id="navi_playback">
-                <li class="play-pause"><a href="./playback.html#play-pause">再生 / 停止</a></li>
-                <li class="restart"><a href="./playback.html#restart">リスタート</a></li>
-                <li class="reverse"><a href="./playback.html#reverse">逆再生</a></li>
-                <li class="seek"><a href="./playback.html#seek">シーク</a></li>
-                <li class="timeline-controls"><a href="./playback.html#timeline-controls">タイムラインコントロール</a></li>
-              </ul>
-            </li>
-            <li><a class="active" href="./callback.html">Callback</a>
-              <ul id="navi_callback">
-                <li class="all-callbacks"><a href="./callback.html#c-all-callbacks">all</a></li>
-                <li class="update"><a href="./callback.html#c-update">update</a></li>
-                <li class="begin"><a href="./callback.html#c-begin">begin</a></li>
-                <li class="run"><a href="./callback.html#c-run">run</a></li>
-                <li class="complete"><a href="./callback.html#c-complete">complete</a></li>
-              </ul>
-            </li>
-            <li><a href="./promises.html">Promise</a></li>
-            <li><a href="./svg.html">SVG</a>
-              <ul class="hidden" id="navi_svg">
-                <li class="motion-path"><a href="./svg.html#motion-path">モーションパス</a></li>
-                <li class="morphing"><a href="./svg.html#morphing">モーフィング</a></li>
-                <li class="line-drawing"><a href="./svg.html#line-drawing">線画アニメーション</a></li>
-              </ul>
-            </li>
-            <li><a href="./easing.html">Easing</a>
-              <ul class="hidden" id="navi_easing">
-                <li class="built-in"><a href="./easing.html#built-in">ビルトイン関数</a></li>
-                <li class="e-elasticity"><a href="./easing.html#e-elasticity">弾性</a></li>
-                <li class="custom-bezier"><a href="./easing.html#custom-bezier">カスタムベジェ曲線</a></li>
-                <li class="custom-easing"><a href="./easing.html#custom-easing">カスタムイージング</a></li>
-              </ul>
-            </li>
-            <li><a href="./helper.html">Helpers</a>
-              <ul class="hidden" id="navi_helper">
-                <li class="speed"><a href="./helper.html#speed">.speed</a></li>
-                <li class="running"><a href="./helper.html#running">.running</a></li>
-                <li class="remove"><a href="./helper.html#remove">.remove()</a></li>
-                <li class="getValue"><a href="./helper.html#getValue">.getValue()</a></li>
-                <li class="path"><a href="./helper.html#path">.path()</a></li>
-                <li class="setDashoffset"><a href="./helper.html#setDashoffset">.setDashoffset()</a></li>
-                <li class="easings"><a href="./helper.html#easings">.easings</a></li>
-                <li class="bezier"><a href="./helper.html#bezier">.bezier()</a></li>
-                <li class="timeline"><a href="./helper.html#timeline">.timeline()</a></li>
-                <li class="random"><a href="./helper.html#random">.random()</a></li>
-              </ul>
-            </li>
-            <hr>
-            <li>HTML Source
-              <div id="navi_source"><a href="https://github.com/tobijibu/animejs/archive/master.zip"><i class="menu-icon material-icons">&#xE884;</i></a><a href="https://github.com/tobijibu/animejs/"><i class="menu-icon material-icons">&#xE86F;</i></a></div>
-            </li>
+  <div class="wrapper">
+    <div class="navi">
+      <ul class="menu">
+        <li><a class="index" href="./index.html">Home</a></li>
+        <li><a class="introduction" href="./introduction.html">Introduction</a></li>
+        <li><a class="usage" href="./usage.html">Usage</a></li>
+        <li><a class="targets" href="./targets.html">Targets</a>
+          <ul class="hidden" id="navi_targets">
+            <li><a href="./targets.html#css-selector">CSSセレクタ</a></li>
+            <li><a href="./targets.html#dom-node">DOM要素</a></li>
+            <li><a href="./targets.html#node-list">ノードリスト</a></li>
+            <li><a href="./targets.html#object">オブジェクト</a></li>
+            <li><a href="./targets.html#array">要素配列</a></li>
           </ul>
-        </div>
+        </li>
+        <li><a class="properties" href="./properties.html">Properties</a>
+          <ul class="hidden" id="navi_properties">
+            <li><a href="./properties.html#css">CSS</a></li>
+            <li><a href="./properties.html#css-transforms">transform(CSS)</a></li>
+            <li><a href="./properties.html#object-properties">オブジェクトプロパティ</a></li>
+            <li><a href="./properties.html#dom-attributes">DOM属性</a></li>
+            <li><a href="./properties.html#svg-attributes">SVG属性</a></li>
+          </ul>
+        </li>
+        <li><a class="property-parameters" href="./property-parameters.html">Property parameters</a>
+          <ul class="hidden" id="navi_property-parameters">
+            <li><a href="./property-parameters.html#p-duration">duration(時間)</a></li>
+            <li><a href="./property-parameters.html#p-delay">delay(遅延)</a></li>
+            <li><a href="./property-parameters.html#p-easing">easint(イージング)</a></li>
+            <li><a href="./property-parameters.html#p-specific-property">特定のプロパティ</a></li>
+          </ul>
+        </li>
+        <li><a class="function-based-parameters" href="./function-based-parameters.html">Function based parameters</a>
+          <ul class="hidden" id="navi_function-based-parameters">
+            <li><a href="./function-based-parameters.html#f-duration">duration(時間)</a></li>
+            <li><a href="./function-based-parameters.html#f-delay">delay(遅延)</a></li>
+            <li><a href="./function-based-parameters.html#f-elasticity">elasticity(弾性)</a></li>
+            <li><a href="./function-based-parameters.html#f-combined">組み合わせ</a></li>
+          </ul>
+        </li>
+        <li><a class="animation-parameters" href="./animation-parameters.html">Animation parameters</a>
+          <ul class="hidden" id="navi_animation-parameters">
+            <li><a href="./animation-parameters.html#direction-alternate">再生方向(alternate)</a></li>
+            <li><a href="./animation-parameters.html#direction-reverse">再生方向(逆再生)</a></li>
+            <li><a href="./animation-parameters.html#loopn">ループ(N回)</a></li>
+            <li><a href="./animation-parameters.html#loop-alternate">ループalternate(N回)</a></li>
+            <li><a href="./animation-parameters.html#loop-reverse">ループ逆再生(N回)</a></li>
+            <li><a href="./animation-parameters.html#infinite-loop">無限ループ</a></li>
+            <li><a href="./animation-parameters.html#infinite-loop-alternate">無限ループalternate</a></li>
+            <li><a href="./animation-parameters.html#infinite-loop-reverse">無限ループ逆再生</a></li>
+          </ul>
+        </li>
+        <li><a class="property-values" href="./property-values.html">Property values</a>
+          <ul class="hidden" id="navi_property-values">
+            <li><a href="./property-values.html#unitless">単位無指定</a></li>
+            <li><a href="./property-values.html#specific-unit">単位指定</a></li>
+            <li><a href="./property-values.html#relative">相対値</a></li>
+            <li><a href="./property-values.html#v-colors">カラー</a></li>
+            <li><a href="./property-values.html#specific-initial-value">初期値指定</a></li>
+            <li><a href="./property-values.html#function-based-values">関数ベース値</a></li>
+            <li><a href="./property-values.html#v-keyframes">キーフレーム</a></li>
+          </ul>
+        </li>
+        <li><a class="timeline" href="./timeline.html">Timeline</a>
+          <ul class="hidden" id="navi_timeline">
+            <li><a href="./timeline.html#basic-timeline">タイムライン</a></li>
+            <li><a href="./timeline.html#relative-offset">オフセット(相対値)</a></li>
+            <li><a href="./timeline.html#absolute-offset">オフセット(絶対値)</a></li>
+            <li><a href="./timeline.html#basic-timeline-parameters">タイムラインパラメータ</a></li>
+            <li><a href="./timeline.html#parameters-inheritance">パラメータの継承</a></li>
+          </ul>
+        </li>
+        <li><a class="playback" href="./playback.html">Playback</a>
+          <ul class="hidden" id="navi_playback">
+            <li><a href="./playback.html#play-pause">再生 / 停止</a></li>
+            <li><a href="./playback.html#restart">リスタート</a></li>
+            <li><a href="./playback.html#reverse">逆再生</a></li>
+            <li><a href="./playback.html#seek">シーク</a></li>
+            <li><a href="./playback.html#timeline-controls">タイムラインコントロール</a></li>
+          </ul>
+        </li>
+        <li><a class="callback active" href="./callback.html">Callback</a>
+          <ul id="navi_callback">
+            <li><a href="./callback.html#c-all-callbacks">all</a></li>
+            <li><a href="./callback.html#c-update">update</a></li>
+            <li><a href="./callback.html#c-begin">begin</a></li>
+            <li><a href="./callback.html#c-run">run</a></li>
+            <li><a href="./callback.html#c-complete">complete</a></li>
+          </ul>
+        </li>
+        <li><a class="promises" href="./promises.html">Promise</a></li>
+        <li><a class="svg" href="./svg.html">SVG</a>
+          <ul class="hidden" id="navi_svg">
+            <li><a href="./svg.html#motion-path">モーションパス</a></li>
+            <li><a href="./svg.html#morphing">モーフィング</a></li>
+            <li><a href="./svg.html#line-drawing">線画アニメーション</a></li>
+          </ul>
+        </li>
+        <li><a class="easing" href="./easing.html">Easing</a>
+          <ul class="hidden" id="navi_easing">
+            <li><a href="./easing.html#built-in">ビルトイン関数</a></li>
+            <li><a href="./easing.html#e-elasticity">弾性</a></li>
+            <li><a href="./easing.html#custom-bezier">カスタムベジェ曲線</a></li>
+            <li><a href="./easing.html#custom-easing">カスタムイージング</a></li>
+          </ul>
+        </li>
+        <li><a class="helper" href="./helper.html">Helpers</a>
+          <ul class="hidden" id="navi_helper">
+            <li><a href="./helper.html#speed">.speed</a></li>
+            <li><a href="./helper.html#running">.running</a></li>
+            <li><a href="./helper.html#remove">.remove()</a></li>
+            <li><a href="./helper.html#getValue">.getValue()</a></li>
+            <li><a href="./helper.html#path">.path()</a></li>
+            <li><a href="./helper.html#setDashoffset">.setDashoffset()</a></li>
+            <li><a href="./helper.html#easings">.easings</a></li>
+            <li><a href="./helper.html#bezier">.bezier()</a></li>
+            <li><a href="./helper.html#timeline">.timeline()</a></li>
+            <li><a href="./helper.html#random">.random()</a></li>
+          </ul>
+        </li>
+      </ul>
+      <hr>
+      <div id="gcs" data-id="017083506626304158170:_brcgarpdze">
+        <script>
+          (function() {
+            var cx = document.getElementById('gcs').getAttribute('data-id');
+            var gcse = document.createElement('script');
+            gcse.type = 'text/javascript';
+            gcse.async = true;
+            gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(gcse, s);
+          })();
+        </script>
+        <gcse:search></gcse:search>
+      </div>
+      <style>
+        .cse .gsc-control-cse,
+        .gsc-control-cse {
+          border: 0px solid #fff;
+          padding: 0;
+        }
+        /* 検索ボックス */
+        .gsc-input-box {
+          border: 0px solid #fff;
+          border-bottom: 1px solid #000;
+        }
+        .gsc-search-box-tools .gsc-search-box .gsc-input {
+          padding-right: 0px;
+        }
+        .gsc-search-box .gsc-input>input:hover,
+        .gsc-input-box-hover {
+          border: 1px solid #fff;
+          border-bottom: 1px solid #333;
+          border-top-color: #fff;
+          -moz-box-shadow: none;
+          -webkit-box-shadow: none;
+          box-shadow: none;
+        }
+        .gsc-search-box .gsc-input>input:focus,
+        .gsc-input-box-focus {
+          border: 1px solid #fff;
+          border-bottom: 1px solid #333;
+          -moz-box-shadow: none;
+          -webkit-box-shadow: none;
+          box-shadow: none;
+        }
+        .gsib_a {
+          padding-top: 2px;
+        }
+        .gsst_a .gscb_a {
+          color: #aaa;
+        }
+        /* 検索ボタン */
+        input.gsc-search-button {
+          margin-left: 0;
+        }
+        .cse .gsc-search-button input.gsc-search-button-v2,
+        input.gsc-search-button-v2 {
+          padding: 6px;
+          margin-top: 5px;
+        }
+        .cse input.gsc-search-button,
+        input.gsc-search-button {
+          color: #fff;
+          border: 1px solid #000;
+          border-radius: 0;
+          -moz-border-radius: 0;
+          -webkit-border-radius: 0;
+          background-color: #000;
+          background-image: none;
+          filter: none;
+          transition: .4s;
+        }
+        .cse input.gsc-search-button:hover,
+        input.gsc-search-button:hover {
+          color: #333;
+          border-color: #333;
+          background-color: #333;
+          background-image: none;
+          filter: none;
+          transition: .4s;
+        }
+      </style>
+      <ul>
+        <li>HTML Source
+          <div id="navi_source"><a href="https://github.com/tobijibu/undefinedarchive/master.zip"><i class="menu-icon material-icons">&#xE884;</i></a><a href="https://github.com/tobijibu/undefined"><i class="menu-icon material-icons">&#xE86F;</i></a></div>
+        </li>
+      </ul>
+    </div>
+    <div id="barba-wrapper">
+      <div class="barba-container">
         <div class="main">
           <h1>Callback</h1>
           <p>アニメーションやタイムラインの開始時、実行中、終了時に関数を実行します。</p>
