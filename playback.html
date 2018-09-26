@@ -1,831 +1,494 @@
-<!DOCTYPE html>
-<html lang="ja">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Playback | anime.js - にほんご。</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta property="og:title" content="Playback | anime.js - にほんご。">
-    <meta property="og:url">
-    <meta property="og:type" content="article">
-    <link rel="icon" href="https://tr.you84815.space/animejs/favicon.ico">
-    <style>html{overflow-y:scroll}#navi ul,body{margin:0;padding:0}body{font-family:"游ゴシック Medium","Yu Gothic Medium",YuGothic,'Yu Gothic','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','メイリオ',Meiryo,sans-serif;font-feature-settings:"palt";letter-spacing:.8pt;word-wrap:break-word;line-height:1.76;color:#000;text-shadow:0 0 0 #000}#container{display:grid;grid-template-columns:240px auto;grid-template-rows:54px auto auto;grid-template-areas:' header header  ' ' navi   content ' ' footer footer  '}footer,header{grid-area:header;grid-column:1/3;grid-row:1/2}#content,#navi{grid-area:navi;grid-column:1/2;grid-row:2/3}#content{grid-area:content;grid-column:2/3;margin-left:-240px}footer{grid-area:footer;grid-row:3/4;height:2em;line-height:1.6;font-size:.72rem;text-align:right}@media screen and (max-width:1200px){#container{grid-template-columns:100%;grid-template-rows:70px auto auto}#content,#navi,header{grid-column:1}#content{margin-left:0}}code{margin:0 2px;padding:2px 4px;font-family:Consolas,Monaco,"游ゴシック Medium","Yu Gothic Medium",YuGothic,'Yu Gothic','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','メイリオ',Meiryo,monospace;background-color:#e0e0e0;font-size:.88em}pre{margin:.8em 0 0;color:#333;line-height:1.4;letter-spacing:normal}pre>code{background-color:transparent;font-size:.88rem}blockquote{margin-left:0;padding-left:1em;color:#666;font-size:.8rem;border-left:2px solid #e0e0e0}dd{margin-left:1em}ul{padding-left:1.6em}.table-box,pre{overflow-x:auto}.my-table,.my-table td,pre{border:1px solid #e0e0e0}.my-table{border-collapse:collapse;width:100%}.my-table th{border:1px solid #333;vertical-align:top;background-color:#333;color:#fff}.my-table th.detail{min-width:16em}.my-table td{vertical-align:top;padding:16px 8px;word-wrap:break-word}.nowrap{white-space:nowrap}header{display:flex;align-items:center;height:3.4em;padding:16px;position:fixed;z-index:99;box-sizing:border-box;background-color:rgba(255,255,255,.8)}.navi_toggle{font-size:.8rem;width:1.6em;padding-top:.4em;display:none;position:relative}.icon svg,.navi_toggle svg{position:absolute;top:0;right:0;bottom:0;left:0;margin:auto;width:2em}#menu_close,#navi .hidden{display:none}.icon{width:32px;height:32px;display:block;position:relative}.icon svg{width:16px;height:16px}.title{font-size:.8rem;padding:1.1em 1em .9em}#navi a,.title a{color:#000;text-decoration:none}#navi{padding-left:1.5em;height:calc(100% - 54px);overflow-y:auto;margin-top:54px;position:fixed;width:240px;box-sizing:border-box}.navi{display:block}#navi .s-title{font-size:.72rem;color:#666}#navi ul{list-style-type:none}#navi li{font-size:1rem;text-shadow:none;margin:.64em 0}#navi li li,#navi li li li{font-size:.8rem;text-shadow:none;margin:.48em .48em .48em .56em}#navi li li li{text-shadow:0 0 0 #000;margin:.48em .48em .48em .96em;font-weight:400}#navi a{transition:.4s;border-bottom:1px #fff solid}#navi a.active,#navi li,#navi li li{font-weight:700}#navi a.active::before{content:'\bb \20 ';font-size:.96em;margin-left:-.97em}#navi hr{border-top:1px solid #e0e0e0;width:200px;margin:2.4em 0}#navi::-webkit-scrollbar{width:4px}#navi::-webkit-scrollbar-thumb{background-color:rgba(238,238,238,.3)}#navi:hover::-webkit-scrollbar-thumb{background-color:#e0e0e0}#navi_source{margin-top:1em}#navi_source a{margin-left:2.4em;font-weight:400}#main .share_link svg,#navi_source svg{width:1.72em}#main{width:640px;margin:0 auto;height:100%;box-sizing:border-box}#main a{transition:.3s;color:#333;text-decoration:none;border-bottom:1px solid #e0e0e0}.license{margin-bottom:2.4em;line-height:1.6;font-size:.72rem}footer>span{background-color:rgba(255,255,255,.8);padding:4px;position:fixed;bottom:4px;right:8px}#main .share_link,.license{text-align:right}#main .share_link a{width:40px;text-shadow:none;margin-left:16px;color:#aaa;border-bottom:0}a.i-hatena{position:relative}a.i-hatena>span{position:absolute;left:.25em;font-family:Verdana;font-weight:700;color:#fff;font-style:normal;line-height:1.84}@media screen and (max-width:1200px){html{font-size:16px}#navi,header{width:100%}.navi_toggle{width:32px;height:32px;display:block}.icon{display:none}#navi{font-size:16px;margin-top:16px;position:fixed;top:1.6em;background-color:rgba(255,255,255,.8);z-index:99;height:100%}#navi li{font-size:1.2em;margin:.8em 0}#navi li li,#navi li li li{font-size:.8em;margin:1em 0 0 1em}.navi{margin-left:-1600px}.show{margin-left:0}#main{width:100%;padding:1.6em}#main>div{margin:0}}html{font-size:16px}#main{line-height:1.6}#main h1,#main h2,#main h5,#main h6{font-weight:400}#main h1{margin-bottom:.5em;text-shadow:none}#main h3,#main h4,#main h5,#main h6{margin:2em 0 1em}#main h2{text-shadow:none;margin:0 0 .4em;padding-top:2em}#main h5,#main h6{text-decoration:underline}#update_date,p.note{color:#666;font-size:.72rem}#main span.args,#main span.type,sup{color:#666}ul.none{list-style-type:none}ul.disc{list-style-type:disc}ul.num{list-style-type:decimal}#main li{margin:.64em 0}hr{border-top:1px solid #e0e0e0}img{max-width:100%}#update_date{text-align:right}.search-box{margin:2.4em 0;width:200px}.cse .gsc-control-cse,div.gsc-control-cse{border:0;padding:0}div.gsc-input-box{border:0;border-bottom:1px solid #000}form.gsc-search-box-tools .gsc-search-box td.gsc-input{padding-right:0}div.gsc-input-box-focus,div.gsc-search-box td.gsc-input>input:focus{border:0;border-bottom:1px solid #333;-moz-box-shadow:none;-webkit-box-shadow:none;box-shadow:none}td.gsib_a{padding-top:5px}a.gsst_a span.gscb_a{color:#aaa}button.gsc-search-button{margin-left:0}.cse .gsc-search-button button.gsc-search-button-v2,button.gsc-search-button-v2{padding:6px}.cse button.gsc-search-button,button.gsc-search-button{color:#fff;border:0;border-bottom:1px solid #000;border-radius:0;-moz-border-radius:0;-webkit-border-radius:0;background-color:#000;background-image:none;filter:none}@media screen and (max-width:1120px){.search-box{width:90%}}::selection{background:rgba(198,255,0,.4)}::-moz-selection{background:rgba(198,255,0,.4)}#main a:hover,#main a:visited:hover,#navi a:hover{color:#c6ff00}.icon svg rect{fill:#c6ff00}.circle,.demo,.square{width:290px;position:relative}.circle,.square{pointer-events:none;width:28px;height:28px;margin:1px;background-color:currentColor;font-size:12px}.circle{border-radius:50%}.triangle{pointer-events:none;position:relative;width:0;height:0;border-style:solid;border-width:0 14px 24px;border-color:transparent transparent currentColor}.shadow{position:absolute;opacity:.2}.small{width:18px;height:18px}.large{width:48px;height:48px}.stretched{height:2px}pre.count{border:0;font-family:Consolas,monospace}.text-output{padding-top:10px;padding-bottom:10px;font-size:16px;color:currentColor;text-align:center;background-color:transparent;border:1px solid currentColor}.logs,.player{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.player{opacity:.4;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;padding-top:20px;padding-bottom:10px}.player button{position:relative;display:block;margin:0 0 0 -1px;padding:5px 10px;font-size:12px;text-transform:uppercase;border:1px solid #000;background-color:transparent;color:#000}.logs{pointer-events:none;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;position:absolute;width:100%;height:100%}.log{width:100%;height:22px;background:0 0;color:currentColor;border:0;font-size:16px;text-align:center}.follow-path{position:absolute;top:-9px;left:-9px}</style>
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-      
-      ga('create', 'UA-106478577-1', 'auto');
-    </script>
-  </head>
-  <body>
-    <div id="container">
-      <header>
-        <div class="icon"><a class="no-barba" href="https://tr.you84815.space/">
-            <svg>
-              <rect width="16" height="16" fill="#e0e0e0"></rect>
-            </svg></a></div>
-        <div class="navi_toggle" onclick="toggleMenu()">
-          <svg id="menu_close" viewBox="0 0 24 24">
-            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
-            <path d="M0 0h24v24H0z" fill="none"></path>
-          </svg>
-          <svg id="menu_open" viewBox="0 0 24 24">
-            <path d="M0 0h24v24H0z" fill="none"></path>
-            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
-          </svg>
-        </div>
-        <div class="title">anime.js - <a class="no-barba" href="https://tr.you84815.space/">にほんご。</a></div>
-      </header>
-      <div class="navi" id="navi">
-        <ul class="menu">
-          <li><a class="index" href="./index.html">Home</a></li>
-          <li><a class="introduction" href="./introduction.html">Introduction</a></li>
-          <li><a class="usage" href="./usage.html">Usage</a></li>
-          <li><a class="targets" href="./targets.html">Targets</a>
-            <ul class="hidden" id="navi_targets">
-              <li><a href="./targets.html#css-selector">CSSセレクタ</a></li>
-              <li><a href="./targets.html#dom-node">DOM要素</a></li>
-              <li><a href="./targets.html#node-list">ノードリスト</a></li>
-              <li><a href="./targets.html#object">オブジェクト</a></li>
-              <li><a href="./targets.html#array">要素配列</a></li>
-            </ul>
-          </li>
-          <li><a class="properties" href="./properties.html">Properties</a>
-            <ul class="hidden" id="navi_properties">
-              <li><a href="./properties.html#css">CSS</a></li>
-              <li><a href="./properties.html#css-transforms">transform(CSS)</a></li>
-              <li><a href="./properties.html#object-properties">オブジェクトプロパティ</a></li>
-              <li><a href="./properties.html#dom-attributes">DOM属性</a></li>
-              <li><a href="./properties.html#svg-attributes">SVG属性</a></li>
-            </ul>
-          </li>
-          <li><a class="property-parameters" href="./property-parameters.html">Property parameters</a>
-            <ul class="hidden" id="navi_property-parameters">
-              <li><a href="./property-parameters.html#p-duration">duration(時間)</a></li>
-              <li><a href="./property-parameters.html#p-delay">delay(遅延)</a></li>
-              <li><a href="./property-parameters.html#p-easing">easint(イージング)</a></li>
-              <li><a href="./property-parameters.html#p-specific-property">特定のプロパティ</a></li>
-            </ul>
-          </li>
-          <li><a class="function-based-parameters" href="./function-based-parameters.html">Function based parameters</a>
-            <ul class="hidden" id="navi_function-based-parameters">
-              <li><a href="./function-based-parameters.html#f-duration">duration(時間)</a></li>
-              <li><a href="./function-based-parameters.html#f-delay">delay(遅延)</a></li>
-              <li><a href="./function-based-parameters.html#f-elasticity">elasticity(弾性)</a></li>
-              <li><a href="./function-based-parameters.html#f-combined">組み合わせ</a></li>
-            </ul>
-          </li>
-          <li><a class="animation-parameters" href="./animation-parameters.html">Animation parameters</a>
-            <ul class="hidden" id="navi_animation-parameters">
-              <li><a href="./animation-parameters.html#direction-alternate">再生方向(alternate)</a></li>
-              <li><a href="./animation-parameters.html#direction-reverse">再生方向(逆再生)</a></li>
-              <li><a href="./animation-parameters.html#loopn">ループ(N回)</a></li>
-              <li><a href="./animation-parameters.html#loop-alternate">ループalternate(N回)</a></li>
-              <li><a href="./animation-parameters.html#loop-reverse">ループ逆再生(N回)</a></li>
-              <li><a href="./animation-parameters.html#infinite-loop">無限ループ</a></li>
-              <li><a href="./animation-parameters.html#infinite-loop-alternate">無限ループalternate</a></li>
-              <li><a href="./animation-parameters.html#infinite-loop-reverse">無限ループ逆再生</a></li>
-            </ul>
-          </li>
-          <li><a class="property-values" href="./property-values.html">Property values</a>
-            <ul class="hidden" id="navi_property-values">
-              <li><a href="./property-values.html#unitless">単位無指定</a></li>
-              <li><a href="./property-values.html#specific-unit">単位指定</a></li>
-              <li><a href="./property-values.html#relative">相対値</a></li>
-              <li><a href="./property-values.html#v-colors">カラー</a></li>
-              <li><a href="./property-values.html#specific-initial-value">初期値指定</a></li>
-              <li><a href="./property-values.html#function-based-values">関数ベース値</a></li>
-              <li><a href="./property-values.html#v-keyframes">キーフレーム</a></li>
-            </ul>
-          </li>
-          <li><a class="timeline" href="./timeline.html">Timeline</a>
-            <ul class="hidden" id="navi_timeline">
-              <li><a href="./timeline.html#basic-timeline">タイムライン</a></li>
-              <li><a href="./timeline.html#relative-offset">オフセット(相対値)</a></li>
-              <li><a href="./timeline.html#absolute-offset">オフセット(絶対値)</a></li>
-              <li><a href="./timeline.html#basic-timeline-parameters">タイムラインパラメータ</a></li>
-              <li><a href="./timeline.html#parameters-inheritance">パラメータの継承</a></li>
-            </ul>
-          </li>
-          <li><a class="playback active" href="./playback.html">Playback</a>
-            <ul id="navi_playback">
-              <li><a href="./playback.html#play-pause">再生 / 停止</a></li>
-              <li><a href="./playback.html#restart">リスタート</a></li>
-              <li><a href="./playback.html#reverse">逆再生</a></li>
-              <li><a href="./playback.html#seek">シーク</a></li>
-              <li><a href="./playback.html#timeline-controls">タイムラインコントロール</a></li>
-            </ul>
-          </li>
-          <li><a class="callback" href="./callback.html">Callback</a>
-            <ul class="hidden" id="navi_callback">
-              <li><a href="./callback.html#c-all-callbacks">all</a></li>
-              <li><a href="./callback.html#c-update">update</a></li>
-              <li><a href="./callback.html#c-begin">begin</a></li>
-              <li><a href="./callback.html#c-run">run</a></li>
-              <li><a href="./callback.html#c-complete">complete</a></li>
-            </ul>
-          </li>
-          <li><a class="promises" href="./promises.html">Promise</a></li>
-          <li><a class="svg" href="./svg.html">SVG</a>
-            <ul class="hidden" id="navi_svg">
-              <li><a href="./svg.html#motion-path">モーションパス</a></li>
-              <li><a href="./svg.html#morphing">モーフィング</a></li>
-              <li><a href="./svg.html#line-drawing">線画アニメーション</a></li>
-            </ul>
-          </li>
-          <li><a class="easing" href="./easing.html">Easing</a>
-            <ul class="hidden" id="navi_easing">
-              <li><a href="./easing.html#built-in">ビルトイン関数</a></li>
-              <li><a href="./easing.html#e-elasticity">弾性</a></li>
-              <li><a href="./easing.html#custom-bezier">カスタムベジェ曲線</a></li>
-              <li><a href="./easing.html#custom-easing">カスタムイージング</a></li>
-            </ul>
-          </li>
-          <li><a class="helper" href="./helper.html">Helpers</a>
-            <ul class="hidden" id="navi_helper">
-              <li><a href="./helper.html#speed">.speed</a></li>
-              <li><a href="./helper.html#running">.running</a></li>
-              <li><a href="./helper.html#remove">.remove()</a></li>
-              <li><a href="./helper.html#getValue">.getValue()</a></li>
-              <li><a href="./helper.html#path">.path()</a></li>
-              <li><a href="./helper.html#setDashoffset">.setDashoffset()</a></li>
-              <li><a href="./helper.html#easings">.easings</a></li>
-              <li><a href="./helper.html#bezier">.bezier()</a></li>
-              <li><a href="./helper.html#timeline">.timeline()</a></li>
-              <li><a href="./helper.html#random">.random()</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <div id="content">
-        <div id="main">
-          <div id="barba-wrapper">
-            <div class="barba-container">
-              <h1>Playback</h1>
-              <div id="update_date"><span>更新日: 2018.02.09
-</span>
-              </div>
-              <p>再生、一時停止、リスタート、アニメーションまたは、タイムラインのシーク(検索)ができます。</p>
-              <h2 id="play-pause">再生 / 停止</h2>
-              <pre><code class="js">var playPauseAnim = anime({
-  targets: 'div',
-  translateX: 250,
-  direction: 'alternate',
-  loop: true,
-  autoplay: false // 自動再生を禁止します。
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><title>Playback | anime.js - にほんご。</title><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta property="og:title" content="Playback | anime.js - にほんご。"><meta property="og:url"><meta property="og:type" content="article"><link rel="icon" href="https://tr.you84815.space/animejs/favicon.ico"><link rel="stylesheet" href="./css/main.css"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-106478577-1', 'auto');</script></head><body><div id="container"><header><div class="icon"><a class="no-barba" href="https://tr.you84815.space/"><svg width="16" height="16"><rect width="16" height="16" fill="#e0e0e0"></rect></svg></a></div><div class="navi_toggle" onclick="toggleMenu()"><svg id="menu_close" width="24" height="24" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg><svg id="menu_open" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></div><div class="title">anime.js - <a class="no-barba" href="https://tr.you84815.space/">にほんご。</a></div></header><div class="navi" id="navi"><ul class="menu"><li><a class="index" href="./index.html">Home</a></li><li><a class="introduction" href="./introduction.html">Introduction</a></li><li><a class="usage" href="./usage.html">Usage</a></li><li><a class="targets" href="./targets.html">Targets</a><ul class="hidden" id="navi_targets"><li><a href="./targets.html#css-selector">CSSセレクタ</a></li><li><a href="./targets.html#dom-node">DOM要素</a></li><li><a href="./targets.html#node-list">ノードリスト</a></li><li><a href="./targets.html#object">オブジェクト</a></li><li><a href="./targets.html#array">要素配列</a></li></ul></li><li><a class="properties" href="./properties.html">Properties</a><ul class="hidden" id="navi_properties"><li><a href="./properties.html#css">CSS</a></li><li><a href="./properties.html#css-transforms">transform(CSS)</a></li><li><a href="./properties.html#object-properties">オブジェクトプロパティ</a></li><li><a href="./properties.html#dom-attributes">DOM属性</a></li><li><a href="./properties.html#svg-attributes">SVG属性</a></li></ul></li><li><a class="property-parameters" href="./property-parameters.html">Property parameters</a><ul class="hidden" id="navi_property-parameters"><li><a href="./property-parameters.html#p-duration">duration(時間)</a></li><li><a href="./property-parameters.html#p-delay">delay(遅延)</a></li><li><a href="./property-parameters.html#p-easing">easint(イージング)</a></li><li><a href="./property-parameters.html#p-specific-property">特定のプロパティ</a></li></ul></li><li><a class="function-based-parameters" href="./function-based-parameters.html">Function based parameters</a><ul class="hidden" id="navi_function-based-parameters"><li><a href="./function-based-parameters.html#f-duration">duration(時間)</a></li><li><a href="./function-based-parameters.html#f-delay">delay(遅延)</a></li><li><a href="./function-based-parameters.html#f-elasticity">elasticity(弾性)</a></li><li><a href="./function-based-parameters.html#f-combined">組み合わせ</a></li></ul></li><li><a class="animation-parameters" href="./animation-parameters.html">Animation parameters</a><ul class="hidden" id="navi_animation-parameters"><li><a href="./animation-parameters.html#direction-alternate">再生方向(alternate)</a></li><li><a href="./animation-parameters.html#direction-reverse">再生方向(逆再生)</a></li><li><a href="./animation-parameters.html#loopn">ループ(N回)</a></li><li><a href="./animation-parameters.html#loop-alternate">ループalternate(N回)</a></li><li><a href="./animation-parameters.html#loop-reverse">ループ逆再生(N回)</a></li><li><a href="./animation-parameters.html#infinite-loop">無限ループ</a></li><li><a href="./animation-parameters.html#infinite-loop-alternate">無限ループalternate</a></li><li><a href="./animation-parameters.html#infinite-loop-reverse">無限ループ逆再生</a></li></ul></li><li><a class="property-values" href="./property-values.html">Property values</a><ul class="hidden" id="navi_property-values"><li><a href="./property-values.html#unitless">単位無指定</a></li><li><a href="./property-values.html#specific-unit">単位指定</a></li><li><a href="./property-values.html#relative">相対値</a></li><li><a href="./property-values.html#v-colors">カラー</a></li><li><a href="./property-values.html#specific-initial-value">初期値指定</a></li><li><a href="./property-values.html#function-based-values">関数ベース値</a></li><li><a href="./property-values.html#v-keyframes">キーフレーム</a></li></ul></li><li><a class="timeline" href="./timeline.html">Timeline</a><ul class="hidden" id="navi_timeline"><li><a href="./timeline.html#basic-timeline">タイムライン</a></li><li><a href="./timeline.html#relative-offset">オフセット(相対値)</a></li><li><a href="./timeline.html#absolute-offset">オフセット(絶対値)</a></li><li><a href="./timeline.html#basic-timeline-parameters">タイムラインパラメータ</a></li><li><a href="./timeline.html#parameters-inheritance">パラメータの継承</a></li></ul></li><li><a class="playback active" href="./playback.html">Playback</a><ul id="navi_playback"><li><a href="./playback.html#play-pause">再生 / 停止</a></li><li><a href="./playback.html#restart">リスタート</a></li><li><a href="./playback.html#reverse">逆再生</a></li><li><a href="./playback.html#seek">シーク</a></li><li><a href="./playback.html#timeline-controls">タイムラインコントロール</a></li></ul></li><li><a class="callback" href="./callback.html">Callback</a><ul class="hidden" id="navi_callback"><li><a href="./callback.html#c-all-callbacks">all</a></li><li><a href="./callback.html#c-update">update</a></li><li><a href="./callback.html#c-begin">begin</a></li><li><a href="./callback.html#c-run">run</a></li><li><a href="./callback.html#c-complete">complete</a></li></ul></li><li><a class="promises" href="./promises.html">Promise</a></li><li><a class="svg" href="./svg.html">SVG</a><ul class="hidden" id="navi_svg"><li><a href="./svg.html#motion-path">モーションパス</a></li><li><a href="./svg.html#morphing">モーフィング</a></li><li><a href="./svg.html#line-drawing">線画アニメーション</a></li></ul></li><li><a class="easing" href="./easing.html">Easing</a><ul class="hidden" id="navi_easing"><li><a href="./easing.html#built-in">ビルトイン関数</a></li><li><a href="./easing.html#e-elasticity">弾性</a></li><li><a href="./easing.html#custom-bezier">カスタムベジェ曲線</a></li><li><a href="./easing.html#custom-easing">カスタムイージング</a></li></ul></li><li><a class="helper" href="./helper.html">Helpers</a><ul class="hidden" id="navi_helper"><li><a href="./helper.html#speed">.speed</a></li><li><a href="./helper.html#running">.running</a></li><li><a href="./helper.html#remove">.remove()</a></li><li><a href="./helper.html#getValue">.getValue()</a></li><li><a href="./helper.html#path">.path()</a></li><li><a href="./helper.html#setDashoffset">.setDashoffset()</a></li><li><a href="./helper.html#easings">.easings</a></li><li><a href="./helper.html#bezier">.bezier()</a></li><li><a href="./helper.html#timeline">.timeline()</a></li><li><a href="./helper.html#random">.random()</a></li></ul></li></ul></div><div id="content"><div id="main"><div id="barba-wrapper"><div class="barba-container"><h1>Playback</h1><div id="update_date"><span>更新日: 2018.09.03
+</span></div><p>再生、一時停止、リスタート、アニメーションまたは、タイムラインのシーク(検索)ができます。</p><h2 id="play-pause">再生 / 停止</h2><pre><code><span class="hljs-keyword">var</span> playPauseAnim = anime({
+  <span class="hljs-attr">targets</span>: <span class="hljs-string">'div'</span>,
+  <span class="hljs-attr">translateX</span>: <span class="hljs-number">250</span>,
+  <span class="hljs-attr">direction</span>: <span class="hljs-string">'alternate'</span>,
+  <span class="hljs-attr">loop</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">autoplay</span>: <span class="hljs-literal">false</span> <span class="hljs-comment">// 自動再生を禁止します。</span>
 });
- 
-playPauseAnim.play(); // 手動で再生
-playPauseAnim.pause(); // 手動で停止</code></pre>
-              <h3>デモ</h3>
-              <p>
-                "PLAY"をクリックするとアニメーションが開始され、
-                "PAUSE"をクリックすると、アニメーションが停止します。
-              </p>
-              <div id="playPause">
-                <div class="line">
-                  <div class="square shadow"></div>
-                  <div class="square el"></div>
-                </div>
-                <div class="line">
-                  <div class="square shadow"></div>
-                  <div class="square el"></div>
-                </div>
-                <div class="line">
-                  <div class="square shadow"></div>
-                  <div class="square el"></div>
-                </div>
-                <div class="line player">
-                  <button class="play">Play</button>
-                  <button class="pause">Pause</button>
-                </div>
-              </div>
-              <h4>JavaScript</h4>
-              <pre><code class="js">var playPause = anime({
-  targets: '#playPause .el',
-  translateX: 250,
-  delay: function(el, i, l) { return i * 100; },
-  direction: 'alternate',
-  loop: true,
-  autoplay: false
+
+playPauseAnim.play(); <span class="hljs-comment">// 手動で再生</span>
+playPauseAnim.pause(); <span class="hljs-comment">// 手動で停止</span></code></pre><h3>デモ</h3><p>"PLAY"をクリックするとアニメーションが開始され、
+"PAUSE"をクリックすると、アニメーションが停止します。</p><div id="playPause"><div class="line"><div class="square shadow"></div><div class="square el"></div></div><div class="line"><div class="square shadow"></div><div class="square el"></div></div><div class="line"><div class="square shadow"></div><div class="square el"></div></div><div class="line player"><button class="play">Play</button><button class="pause">Pause</button></div></div><h5>JavaScript</h5><pre><code><span class="hljs-keyword">var</span> playPause = anime({
+  <span class="hljs-attr">targets</span>: <span class="hljs-string">'#playPause .el'</span>,
+  <span class="hljs-attr">translateX</span>: <span class="hljs-number">250</span>,
+  <span class="hljs-attr">delay</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">el, i, l</span>) </span>{ <span class="hljs-keyword">return</span> i * <span class="hljs-number">100</span>; },
+  <span class="hljs-attr">direction</span>: <span class="hljs-string">'alternate'</span>,
+  <span class="hljs-attr">loop</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">autoplay</span>: <span class="hljs-literal">false</span>
 });
- 
-document.querySelector('#playPause .play').onclick = playPause.play;
-document.querySelector('#playPause .pause').onclick = playPause.pause;</code></pre>
-              <h4>HTML</h4>
-              <pre><code class="html">&#x3C;div id=&#x22;playPause&#x22;&#x3E;
-  &#x3C;div class=&#x22;line&#x22;&#x3E;
-    &#x3C;div class=&#x22;square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
-    &#x3C;div class=&#x22;square el&#x22;&#x3E;&#x3C;/div&#x3E;
-  &#x3C;/div&#x3E;
-  &#x3C;div class=&#x22;line&#x22;&#x3E;
-    &#x3C;div class=&#x22;square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
-    &#x3C;div class=&#x22;square el&#x22;&#x3E;&#x3C;/div&#x3E;
-  &#x3C;/div&#x3E;
-  &#x3C;div class=&#x22;line&#x22;&#x3E;
-    &#x3C;div class=&#x22;square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
-    &#x3C;div class=&#x22;square el&#x22;&#x3E;&#x3C;/div&#x3E;
-  &#x3C;/div&#x3E;
-  &#x3C;div class=&#x22;line player&#x22;&#x3E;
-    &#x3C;button class=&#x22;play&#x22;&#x3E;Play&#x3C;/button&#x3E;
-    &#x3C;button class=&#x22;pause&#x22;&#x3E;Pause&#x3C;/button&#x3E;
-  &#x3C;/div&#x3E;
-&#x3C;/div&#x3E;</code></pre>
-              <h4>CSS</h4>
-              <pre><code class="css">.shadow {
-  position: absolute;
-  opacity: .2;
+
+<span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#playPause .play'</span>).onclick = playPause.play;
+<span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#playPause .pause'</span>).onclick = playPause.pause;</code></pre><h5>HTML</h5><pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"playPause"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"line"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"line"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"line"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"line player"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"play"</span>&gt;</span>Play<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"pause"</span>&gt;</span>Pause<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><h5>CSS</h5><pre><code><span class="hljs-selector-class">.shadow</span> {
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">opacity</span>: .<span class="hljs-number">2</span>;
 }
- 
-.square {
-  pointer-events: none;
-  width: 28px;
-  height: 28px;
-  margin: 1px;
-  font-size: 12px;
+
+<span class="hljs-selector-class">.square</span> {
+  <span class="hljs-attribute">pointer-events</span>: none;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">28px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">28px</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">1px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">12px</span>;
 }
- 
-.player {
-  opacity: .4;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 20px;
-  padding-bottom: 10px;
+
+<span class="hljs-selector-class">.player</span> {
+  <span class="hljs-attribute">opacity</span>: .<span class="hljs-number">4</span>;
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">align-items</span>: center;
+  <span class="hljs-attribute">justify-content</span>: center;
+  <span class="hljs-attribute">padding-top</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">padding-bottom</span>: <span class="hljs-number">10px</span>;
 }
- 
-.player button {
-  position: relative;
-  display: block;
-  margin: 0 0 0 -1px;
-  padding: 5px 10px;
-  font-size: 12px;
-  text-transform: uppercase;
-  border: 1px solid #000;
-  background-color: transparent;
-  color: #000;
-}</code></pre>
-              <h2 id="restart">リスタート</h2>
-              <pre><code class="js">var restartAnim = anime({
-  targets: 'div',
-  translateX: 250,
-  direction: 'alternate',
-  loop: true,
-  autoplay: false
+
+<span class="hljs-selector-class">.player</span> <span class="hljs-selector-tag">button</span> {
+  <span class="hljs-attribute">position</span>: relative;
+  <span class="hljs-attribute">display</span>: block;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> -<span class="hljs-number">1px</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">5px</span> <span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">12px</span>;
+  <span class="hljs-attribute">text-transform</span>: uppercase;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#000</span>;
+  <span class="hljs-attribute">background-color</span>: transparent;
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#000</span>;
+}
+</code></pre><h2 id="restart">リスタート</h2><pre><code><span class="hljs-keyword">var</span> restartAnim = anime({
+  <span class="hljs-attr">targets</span>: <span class="hljs-string">'div'</span>,
+  <span class="hljs-attr">translateX</span>: <span class="hljs-number">250</span>,
+  <span class="hljs-attr">direction</span>: <span class="hljs-string">'alternate'</span>,
+  <span class="hljs-attr">loop</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">autoplay</span>: <span class="hljs-literal">false</span>
 });
- 
-restartAnim.restart(); // アニメーションをリスタートし、ループ回数、再生方向をリセットします。</code></pre>
-              <h3>デモ</h3>
-              <p>"RESTART"をクリックするとアニメーションが最初から開始されます。</p>
-              <div id="restartAnim">
-                <div class="line">
-                  <div class="square shadow"></div>
-                  <div class="square el"></div>
-                </div>
-                <div class="line">
-                  <div class="square shadow"></div>
-                  <div class="square el"></div>
-                </div>
-                <div class="line">
-                  <div class="square shadow"></div>
-                  <div class="square el"></div>
-                </div>
-                <div class="line player">
-                  <button class="restart">Restart</button>
-                </div>
-              </div>
-              <h4>JavaScript</h4>
-              <pre><code class="js">var restartAnim = anime({
-  targets: '#restartAnim .el',
-  translateX: 250,
-  delay: function(el, i, l) { return i * 100; },
-  direction: 'alternate',
-  loop: true
+
+restartAnim.restart(); <span class="hljs-comment">// アニメーションをリスタートし、ループ回数、再生方向をリセットします。</span></code></pre><h3>デモ</h3><p>"RESTART"をクリックするとアニメーションが最初から開始されます。</p><div id="restartAnim"><div class="line"><div class="square shadow"></div><div class="square el"></div></div><div class="line"><div class="square shadow"></div><div class="square el"></div></div><div class="line"><div class="square shadow"></div><div class="square el"></div></div><div class="line player"><button class="restart">Restart</button></div></div><h5>JavaScript</h5><pre><code><span class="hljs-keyword">var</span> restartAnim = anime({
+  <span class="hljs-attr">targets</span>: <span class="hljs-string">'#restartAnim .el'</span>,
+  <span class="hljs-attr">translateX</span>: <span class="hljs-number">250</span>,
+  <span class="hljs-attr">delay</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">el, i, l</span>) </span>{ <span class="hljs-keyword">return</span> i * <span class="hljs-number">100</span>; },
+  <span class="hljs-attr">direction</span>: <span class="hljs-string">'alternate'</span>,
+  <span class="hljs-attr">loop</span>: <span class="hljs-literal">true</span>
 });
- 
-document.querySelector('#restartAnim .restart').onclick = restartAnim.restart;</code></pre>
-              <h4>HTML</h4>
-              <pre><code class="html">&#x3C;div id=&#x22;restartAnim&#x22;&#x3E;
-  &#x3C;div class=&#x22;line&#x22;&#x3E;
-    &#x3C;div class=&#x22;square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
-    &#x3C;div class=&#x22;square el&#x22;&#x3E;&#x3C;/div&#x3E;
-  &#x3C;/div&#x3E;
-  &#x3C;div class=&#x22;line&#x22;&#x3E;
-    &#x3C;div class=&#x22;square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
-    &#x3C;div class=&#x22;square el&#x22;&#x3E;&#x3C;/div&#x3E;
-  &#x3C;/div&#x3E;
-  &#x3C;div class=&#x22;line&#x22;&#x3E;
-    &#x3C;div class=&#x22;square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
-    &#x3C;div class=&#x22;square el&#x22;&#x3E;&#x3C;/div&#x3E;
-  &#x3C;/div&#x3E;
-  &#x3C;div class=&#x22;line player&#x22;&#x3E;
-    &#x3C;button class=&#x22;restart&#x22;&#x3E;Restart&#x3C;/button&#x3E;
-  &#x3C;/div&#x3E;
-&#x3C;/div&#x3E;</code></pre>
-              <h4>CSS</h4>
-              <pre><code class="css">.shadow {
-  position: absolute;
-  opacity: .2;
+
+<span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#restartAnim .restart'</span>).onclick = restartAnim.restart;</code></pre><h5>HTML</h5><pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"restartAnim"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"line"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"line"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"line"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"line player"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"restart"</span>&gt;</span>Restart<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><h5>CSS</h5><pre><code><span class="hljs-selector-class">.shadow</span> {
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">opacity</span>: .<span class="hljs-number">2</span>;
 }
- 
-.square {
-  pointer-events: none;
-  width: 28px;
-  height: 28px;
-  margin: 1px;
-  font-size: 12px;
+
+<span class="hljs-selector-class">.square</span> {
+  <span class="hljs-attribute">pointer-events</span>: none;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">28px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">28px</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">1px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">12px</span>;
 }
- 
-.player {
-  opacity: .4;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 20px;
-  padding-bottom: 10px;
+
+<span class="hljs-selector-class">.player</span> {
+  <span class="hljs-attribute">opacity</span>: .<span class="hljs-number">4</span>;
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">align-items</span>: center;
+  <span class="hljs-attribute">justify-content</span>: center;
+  <span class="hljs-attribute">padding-top</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">padding-bottom</span>: <span class="hljs-number">10px</span>;
 }
- 
-.player button {
-  position: relative;
-  display: block;
-  margin: 0 0 0 -1px;
-  padding: 5px 10px;
-  font-size: 12px;
-  text-transform: uppercase;
-  border: 1px solid #000;
-  background-color: transparent;
-  color: #000;
-}</code></pre>
-              <h2 id="reverse">逆再生</h2>
-              <pre><code class="js">var reverseAnim = anime({
-  targets: 'div',
-  translateX: 250,
-  direction: 'alternate',
-  loop: true
+
+<span class="hljs-selector-class">.player</span> <span class="hljs-selector-tag">button</span> {
+  <span class="hljs-attribute">position</span>: relative;
+  <span class="hljs-attribute">display</span>: block;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> -<span class="hljs-number">1px</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">5px</span> <span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">12px</span>;
+  <span class="hljs-attribute">text-transform</span>: uppercase;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#000</span>;
+  <span class="hljs-attribute">background-color</span>: transparent;
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#000</span>;
+}
+</code></pre><h2 id="reverse">逆再生</h2><pre><code><span class="hljs-keyword">var</span> reverseAnim = anime({
+  <span class="hljs-attr">targets</span>: <span class="hljs-string">'div'</span>,
+  <span class="hljs-attr">translateX</span>: <span class="hljs-number">250</span>,
+  <span class="hljs-attr">direction</span>: <span class="hljs-string">'alternate'</span>,
+  <span class="hljs-attr">loop</span>: <span class="hljs-literal">true</span>
 });
- 
-reverseAnim.reverse(); // アニメーションの再生方向を変更します。</code></pre>
-              <h3>デモ</h3>
-              <p>"REVERSE"をクリックするとアニメーションを逆再生します。</p>
-              <div id="reverseAnim">
-                <div class="line">
-                  <div class="square shadow"></div>
-                  <div class="square el"></div>
-                </div>
-                <div class="line">
-                  <div class="square shadow"></div>
-                  <div class="square el"></div>
-                </div>
-                <div class="line">
-                  <div class="square shadow"></div>
-                  <div class="square el"></div>
-                </div>
-                <div class="line player">
-                  <button class="reverse">Reverse</button>
-                </div>
-              </div>
-              <h4>JavaScript</h4>
-              <pre><code class="js">var reverseAnim = anime({
-  targets: '#reverseAnim .el',
-  translateX: 250,
-  duration: 2000,
-  delay: function(el, i, l) { return i * 200; }
+
+reverseAnim.reverse(); <span class="hljs-comment">// アニメーションの再生方向を変更します。</span></code></pre><h3>デモ</h3><p>"REVERSE"をクリックするとアニメーションを逆再生します。</p><div id="reverseAnim"><div class="line"><div class="square shadow"></div><div class="square el"></div></div><div class="line"><div class="square shadow"></div><div class="square el"></div></div><div class="line"><div class="square shadow"></div><div class="square el"></div></div><div class="line player"><button class="reverse">Reverse</button></div></div><h5>JavaScript</h5><pre><code><span class="hljs-keyword">var</span> reverseAnim = anime({
+  <span class="hljs-attr">targets</span>: <span class="hljs-string">'#reverseAnim .el'</span>,
+  <span class="hljs-attr">translateX</span>: <span class="hljs-number">250</span>,
+  <span class="hljs-attr">duration</span>: <span class="hljs-number">2000</span>,
+  <span class="hljs-attr">delay</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">el, i, l</span>) </span>{ <span class="hljs-keyword">return</span> i * <span class="hljs-number">200</span>; }
 });
- 
-document.querySelector('#reverseAnim .reverse').onclick = function() {
+
+<span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#reverseAnim .reverse'</span>).onclick = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
   reverseAnim.play();
   reverseAnim.reverse();
-}</code></pre>
-              <h4>HTML</h4>
-              <pre><code class="html">&#x3C;div id=&#x22;reverseAnim&#x22;&#x3E;
-  &#x3C;div class=&#x22;line&#x22;&#x3E;
-    &#x3C;div class=&#x22;square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
-    &#x3C;div class=&#x22;square el&#x22;&#x3E;&#x3C;/div&#x3E;
-  &#x3C;/div&#x3E;
-  &#x3C;div class=&#x22;line&#x22;&#x3E;
-    &#x3C;div class=&#x22;square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
-    &#x3C;div class=&#x22;square el&#x22;&#x3E;&#x3C;/div&#x3E;
-  &#x3C;/div&#x3E;
-  &#x3C;div class=&#x22;line&#x22;&#x3E;
-    &#x3C;div class=&#x22;square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
-    &#x3C;div class=&#x22;square el&#x22;&#x3E;&#x3C;/div&#x3E;
-  &#x3C;/div&#x3E;
-  &#x3C;div class=&#x22;line player&#x22;&#x3E;
-    &#x3C;button class=&#x22;reverse&#x22;&#x3E;Reverse&#x3C;/button&#x3E;
-  &#x3C;/div&#x3E;
-&#x3C;/div&#x3E;</code></pre>
-              <h4>CSS</h4>
-              <pre><code class="css">.shadow {
-  position: absolute;
-  opacity: .2;
+}</code></pre><h5>HTML</h5><pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"reverseAnim"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"line"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"line"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"line"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"line player"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"reverse"</span>&gt;</span>Reverse<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><h5>CSS</h5><pre><code><span class="hljs-selector-class">.shadow</span> {
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">opacity</span>: .<span class="hljs-number">2</span>;
 }
- 
-.square {
-  pointer-events: none;
-  width: 28px;
-  height: 28px;
-  margin: 1px;
-  font-size: 12px;
+
+<span class="hljs-selector-class">.square</span> {
+  <span class="hljs-attribute">pointer-events</span>: none;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">28px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">28px</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">1px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">12px</span>;
 }
- 
-.player {
-  opacity: .4;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 20px;
-  padding-bottom: 10px;
+
+<span class="hljs-selector-class">.player</span> {
+  <span class="hljs-attribute">opacity</span>: .<span class="hljs-number">4</span>;
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">align-items</span>: center;
+  <span class="hljs-attribute">justify-content</span>: center;
+  <span class="hljs-attribute">padding-top</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">padding-bottom</span>: <span class="hljs-number">10px</span>;
 }
- 
-.player button {
-  position: relative;
-  display: block;
-  margin: 0 0 0 -1px;
-  padding: 5px 10px;
-  font-size: 12px;
-  text-transform: uppercase;
-  border: 1px solid #000;
-  background-color: transparent;
-  color: #000;
-}</code></pre>
-              <h2 id="seek">シーク</h2>
-              <p>アニメーションや、タイムラインを指定した時間の状態に変更します。</p>
-              <pre><code class="js">var seekAnim = anime({
-  targets: 'div',
-  translateX: 250,
-  delay: function(el, i, l) { return i * 100; },
-  elasticity: 200,
-  autoplay: false
+
+<span class="hljs-selector-class">.player</span> <span class="hljs-selector-tag">button</span> {
+  <span class="hljs-attribute">position</span>: relative;
+  <span class="hljs-attribute">display</span>: block;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> -<span class="hljs-number">1px</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">5px</span> <span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">12px</span>;
+  <span class="hljs-attribute">text-transform</span>: uppercase;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#000</span>;
+  <span class="hljs-attribute">background-color</span>: transparent;
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#000</span>;
+}
+</code></pre><h2 id="seek">シーク</h2><p>アニメーションや、タイムラインを指定した時間の状態に変更します。</p><pre><code><span class="hljs-keyword">var</span> seekAnim = anime({
+  <span class="hljs-attr">targets</span>: <span class="hljs-string">'div'</span>,
+  <span class="hljs-attr">translateX</span>: <span class="hljs-number">250</span>,
+  <span class="hljs-attr">delay</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">el, i, l</span>) </span>{ <span class="hljs-keyword">return</span> i * <span class="hljs-number">100</span>; },
+  <span class="hljs-attr">elasticity</span>: <span class="hljs-number">200</span>,
+  <span class="hljs-attr">autoplay</span>: <span class="hljs-literal">false</span>
 });
- 
-seekAnim.seek(500); // アニメーションを500ms時点の状態に変更します。</code></pre>
-              <h3>デモ</h3>
-              <p>スライダを左右に動かすと、その時点でのアニメーションの状態が表示されます。</p>
-              <div id="seekAnim">
-                <div class="line">
-                  <div class="square shadow"></div>
-                  <div class="square el"></div>
-                </div>
-                <div class="line">
-                  <div class="square shadow"></div>
-                  <div class="square el"></div>
-                </div>
-                <div class="line">
-                  <div class="square shadow"></div>
-                  <div class="square el"></div>
-                </div>
-                <div class="line player">
-                  <input class="progress" step=".001" type="range" min="0" max="100" value="0">
-                </div>
-              </div>
-              <h4>JavaScript</h4>
-              <pre><code class="js">var seekAnim = anime({
-  targets: '#seekAnim .el',
-  translateX: 250,
-  delay: function(el, i, l) { return i * 100; },
-  elasticity: 200,
-  autoplay: false
+
+seekAnim.seek(<span class="hljs-number">500</span>); <span class="hljs-comment">// アニメーションを500ms時点の状態に変更します。</span></code></pre><h3>デモ</h3><p>スライダを左右に動かすと、その時点でのアニメーションの状態が表示されます。</p><div id="seekAnim"><div class="line"><div class="square shadow"></div><div class="square el"></div></div><div class="line"><div class="square shadow"></div><div class="square el"></div></div><div class="line"><div class="square shadow"></div><div class="square el"></div></div><div class="line player"><input class="progress" step=".001" type="range" min="0" max="100" value="0"></div></div><h5>JavaScript</h5><pre><code><span class="hljs-keyword">var</span> seekAnim = anime({
+  <span class="hljs-attr">targets</span>: <span class="hljs-string">'#seekAnim .el'</span>,
+  <span class="hljs-attr">translateX</span>: <span class="hljs-number">250</span>,
+  <span class="hljs-attr">delay</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">el, i, l</span>) </span>{ <span class="hljs-keyword">return</span> i * <span class="hljs-number">100</span>; },
+  <span class="hljs-attr">elasticity</span>: <span class="hljs-number">200</span>,
+  <span class="hljs-attr">autoplay</span>: <span class="hljs-literal">false</span>
 });
- 
-var seekProgressEl = document.querySelector('#seekAnim .progress');
- 
-seekProgressEl.addEventListener('input', function() { 
-  seekAnim.seek(seekAnim.duration * (seekProgressEl.value / 100));
+
+<span class="hljs-keyword">var</span> seekProgressEl = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#seekAnim .progress'</span>);
+
+seekProgressEl.addEventListener(<span class="hljs-string">'input'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ 
+  seekAnim.seek(seekAnim.duration * (seekProgressEl.value / <span class="hljs-number">100</span>));
 });
- 
-['input','change'].forEach(function(evt) {
-  seekProgressEl.addEventListener(evt, function() { 
-    seekAnim.seek(seekAnim.duration * (seekProgressEl.value / 100));
+
+[<span class="hljs-string">'input'</span>,<span class="hljs-string">'change'</span>].forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">evt</span>) </span>{
+  seekProgressEl.addEventListener(evt, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ 
+    seekAnim.seek(seekAnim.duration * (seekProgressEl.value / <span class="hljs-number">100</span>));
   });
-});</code></pre>
-              <h4>HTML</h4>
-              <pre><code class="html">&#x3C;div id=&#x22;reverseAnim&#x22;&#x3E;
-  &#x3C;div class=&#x22;line&#x22;&#x3E;
-    &#x3C;div class=&#x22;square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
-    &#x3C;div class=&#x22;square el&#x22;&#x3E;&#x3C;/div&#x3E;
-  &#x3C;/div&#x3E;
-  &#x3C;div class=&#x22;line&#x22;&#x3E;
-    &#x3C;div class=&#x22;square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
-    &#x3C;div class=&#x22;square el&#x22;&#x3E;&#x3C;/div&#x3E;
-  &#x3C;/div&#x3E;
-  &#x3C;div class=&#x22;line&#x22;&#x3E;
-    &#x3C;div class=&#x22;square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
-    &#x3C;div class=&#x22;square el&#x22;&#x3E;&#x3C;/div&#x3E;
-  &#x3C;/div&#x3E;
-  &#x3C;div class=&#x22;line player&#x22;&#x3E;
-    &#x3C;input class=&#x22;progress&#x22; step=&#x22;.001&#x22; type=&#x22;range&#x22; min=&#x22;0&#x22; max=&#x22;100&#x22; value=&#x22;0&#x22;&#x3E;
-  &#x3C;/div&#x3E;
-&#x3C;/div&#x3E;</code></pre>
-              <h4>CSS</h4>
-              <pre><code class="css">.shadow {
-  position: absolute;
-  opacity: .2;
+});</code></pre><h5>HTML</h5><pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"seekAnim"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"line"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"line"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"line"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"line player"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"progress"</span> <span class="hljs-attr">step</span>=<span class="hljs-string">".001"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"range"</span> <span class="hljs-attr">min</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">max</span>=<span class="hljs-string">"100"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"0"</span>&gt;</span></code></pre><h5>CSS</h5><pre><code><span class="hljs-selector-class">.shadow</span> {
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">opacity</span>: .<span class="hljs-number">2</span>;
 }
- 
-.square {
-  pointer-events: none;
-  width: 28px;
-  height: 28px;
-  margin: 1px;
-  font-size: 12px;
+
+<span class="hljs-selector-class">.square</span> {
+  <span class="hljs-attribute">pointer-events</span>: none;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">28px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">28px</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">1px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">12px</span>;
 }
- 
-.player {
-  opacity: .4;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 20px;
-  padding-bottom: 10px;
-}</code></pre>
-              <h2 id="timeline-controls">タイムラインコントロール</h2>
-              <h3>デモ</h3>
-              <p>各種コントローラを使って、アニメーションを操作することができます。</p>
-              <div id="TLcontrols">
-                <div class="line">
-                  <div class="square shadow"></div>
-                  <div class="square el"></div>
-                </div>
-                <div class="line">
-                  <div class="circle shadow"></div>
-                  <div class="circle el"></div>
-                </div>
-                <div class="line">
-                  <div class="triangle shadow"></div>
-                  <div class="triangle el"></div>
-                </div>
-                <div class="line player">
-                  <button class="play">Play</button>
-                  <button class="pause">Pause</button>
-                  <button class="restart">Restart</button>
-                  <input class="progress" step="2" type="range" min="0" max="100" value="0">
-                </div>
-              </div>
-              <h4>JavaScript</h4>
-              <pre><code class="js">var controlsProgressEl = document.querySelector('#TLcontrols .progress');
- 
-var TLcontrols = anime.timeline({
-  direction: 'alternate',
-  loop: true,
-  easing: 'linear',
-  update: function(anim) {
+
+<span class="hljs-selector-class">.player</span> {
+  <span class="hljs-attribute">opacity</span>: .<span class="hljs-number">4</span>;
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">align-items</span>: center;
+  <span class="hljs-attribute">justify-content</span>: center;
+  <span class="hljs-attribute">padding-top</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">padding-bottom</span>: <span class="hljs-number">10px</span>;
+}
+</code></pre><h2 id="timeline-controls">タイムラインコントロール</h2><h3>デモ</h3><p>各種コントローラを使って、アニメーションを操作することができます。</p><div id="TLcontrols"><div class="line"><div class="square shadow"></div><div class="square el"></div></div><div class="line"><div class="circle shadow"></div><div class="circle el"></div></div><div class="line"><div class="triangle shadow"></div><div class="triangle el"></div></div><div class="line player"><button class="play">Play</button><button class="pause">Pause</button><button class="restart">Restart</button><input class="progress" step="2" type="range" min="0" max="100" value="0"></div></div><h5>JavaScript</h5><pre><code><span class="hljs-keyword">var</span> controlsProgressEl = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#TLcontrols .progress'</span>);
+
+<span class="hljs-keyword">var</span> TLcontrols = anime.timeline({
+  <span class="hljs-attr">direction</span>: <span class="hljs-string">'alternate'</span>,
+  <span class="hljs-attr">loop</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">easing</span>: <span class="hljs-string">'linear'</span>,
+  <span class="hljs-attr">update</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">anim</span>) </span>{
     controlsProgressEl.value = anim.progress;
   }
 });
- 
+
 TLcontrols
   .add({
-    targets: '#TLcontrols .square.el',
-    translateX: [ { value: 80 }, { value: 160 }, { value: 250 } ],
-    translateY: [ { value: 30 }, { value: 60 }, { value: 60 } ],
-    duration: 3000,
-    offset: 0
+    <span class="hljs-attr">targets</span>: <span class="hljs-string">'#TLcontrols .square.el'</span>,
+    <span class="hljs-attr">translateX</span>: [ { <span class="hljs-attr">value</span>: <span class="hljs-number">80</span> }, { <span class="hljs-attr">value</span>: <span class="hljs-number">160</span> }, { <span class="hljs-attr">value</span>: <span class="hljs-number">250</span> } ],
+    <span class="hljs-attr">translateY</span>: [ { <span class="hljs-attr">value</span>: <span class="hljs-number">30</span> }, { <span class="hljs-attr">value</span>: <span class="hljs-number">60</span> }, { <span class="hljs-attr">value</span>: <span class="hljs-number">60</span> } ],
+    <span class="hljs-attr">duration</span>: <span class="hljs-number">3000</span>,
+    <span class="hljs-attr">offset</span>: <span class="hljs-number">0</span>
   })
   .add({
-    targets: '#TLcontrols .circle.el',
-    translateX: [ { value: 80 }, { value: 160 }, { value: 250 } ],
-    translateY: [ { value: 30 }, { value: -30 }, { value: -30 } ],
-    duration: 3000,
-    offset: 0
+    <span class="hljs-attr">targets</span>: <span class="hljs-string">'#TLcontrols .circle.el'</span>,
+    <span class="hljs-attr">translateX</span>: [ { <span class="hljs-attr">value</span>: <span class="hljs-number">80</span> }, { <span class="hljs-attr">value</span>: <span class="hljs-number">160</span> }, { <span class="hljs-attr">value</span>: <span class="hljs-number">250</span> } ],
+    <span class="hljs-attr">translateY</span>: [ { <span class="hljs-attr">value</span>: <span class="hljs-number">30</span> }, { <span class="hljs-attr">value</span>: <span class="hljs-number">-30</span> }, { <span class="hljs-attr">value</span>: <span class="hljs-number">-30</span> } ],
+    <span class="hljs-attr">duration</span>: <span class="hljs-number">3000</span>,
+    <span class="hljs-attr">offset</span>: <span class="hljs-number">0</span>
   })
   .add({
-    targets: '#TLcontrols .triangle.el',
-    translateX: [ { value: 80 }, { value: 250 } ],
-    translateY: [ { value: -60 }, { value: -30 }, { value: -30 } ],
-    duration: 3000,
-    offset: 0
+    <span class="hljs-attr">targets</span>: <span class="hljs-string">'#TLcontrols .triangle.el'</span>,
+    <span class="hljs-attr">translateX</span>: [ { <span class="hljs-attr">value</span>: <span class="hljs-number">80</span> }, { <span class="hljs-attr">value</span>: <span class="hljs-number">250</span> } ],
+    <span class="hljs-attr">translateY</span>: [ { <span class="hljs-attr">value</span>: <span class="hljs-number">-60</span> }, { <span class="hljs-attr">value</span>: <span class="hljs-number">-30</span> }, { <span class="hljs-attr">value</span>: <span class="hljs-number">-30</span> } ],
+    <span class="hljs-attr">duration</span>: <span class="hljs-number">3000</span>,
+    <span class="hljs-attr">offset</span>: <span class="hljs-number">0</span>
   });
- 
-document.querySelector('#TLcontrols .play').onclick = TLcontrols.play;
-document.querySelector('#TLcontrols .pause').onclick = TLcontrols.pause;
-document.querySelector('#TLcontrols .restart').onclick = TLcontrols.restart;
- 
-controlsProgressEl.addEventListener('input', function() {
-  TLcontrols.seek(TLcontrols.duration * (controlsProgressEl.value / 100));
+
+<span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#TLcontrols .play'</span>).onclick = TLcontrols.play;
+<span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#TLcontrols .pause'</span>).onclick = TLcontrols.pause;
+<span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#TLcontrols .restart'</span>).onclick = TLcontrols.restart;
+
+controlsProgressEl.addEventListener(<span class="hljs-string">'input'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  TLcontrols.seek(TLcontrols.duration * (controlsProgressEl.value / <span class="hljs-number">100</span>));
 });
- 
-['input','change'].forEach(function(evt) {
-  controlsProgressEl.addEventListener(evt, function() {
-    TLcontrols.seek(TLcontrols.duration * (controlsProgressEl.value / 100));
+
+[<span class="hljs-string">'input'</span>,<span class="hljs-string">'change'</span>].forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">evt</span>) </span>{
+  controlsProgressEl.addEventListener(evt, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    TLcontrols.seek(TLcontrols.duration * (controlsProgressEl.value / <span class="hljs-number">100</span>));
   });
-});</code></pre>
-              <h4>HTML</h4>
-              <pre><code class="html">&#x3C;div id=&#x22;#TLcontrols&#x22;&#x3E;
-  &#x3C;div class=&#x22;line&#x22;&#x3E;
-    &#x3C;div class=&#x22;square shadow&#x22;&#x3E;&#x3C;/div&#x3E;
-    &#x3C;div class=&#x22;square el&#x22;&#x3E;&#x3C;/div&#x3E;
-  &#x3C;/div&#x3E;
-  &#x3C;div class=&#x22;line&#x22;&#x3E;
-    &#x3C;div class=&#x22;circle shadow&#x22;&#x3E;&#x3C;/div&#x3E;
-    &#x3C;div class=&#x22;circle el&#x22;&#x3E;&#x3C;/div&#x3E;
-  &#x3C;/div&#x3E;
-  &#x3C;div class=&#x22;line&#x22;&#x3E;
-    &#x3C;div class=&#x22;triangle shadow&#x22;&#x3E;&#x3C;/div&#x3E;
-    &#x3C;div class=&#x22;triangle el&#x22;&#x3E;&#x3C;/div&#x3E;
-  &#x3C;/div&#x3E;
-  &#x3C;div class=&#x22;line player&#x22;&#x3E;
-    &#x3C;button class=&#x22;play&#x22;&#x3E;Play&#x3C;/button&#x3E;
-    &#x3C;button class=&#x22;pause&#x22;&#x3E;Pause&#x3C;/button&#x3E;
-    &#x3C;button class=&#x22;restart&#x22;&#x3E;Restart&#x3C;/button&#x3E;
-    &#x3C;input class=&#x22;progress&#x22; step=&#x22;2&#x22; type=&#x22;range&#x22; min=&#x22;0&#x22; max=&#x22;100&#x22; value=&#x22;0&#x22;&#x3E;
-  &#x3C;/div&#x3E;
-&#x3C;/div&#x3E;</code></pre>
-              <h4>CSS</h4>
-              <pre><code class="css">.shadow {
-  position: absolute;
-  opacity: .2;
+});</code></pre><h5>HTML</h5><pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"TLcontrols"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"line"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"line"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"circle shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"circle el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"line"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"triangle shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"triangle el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"line player"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"play"</span>&gt;</span>Play<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"pause"</span>&gt;</span>Pause<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"restart"</span>&gt;</span>Restart<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"progress"</span> <span class="hljs-attr">step</span>=<span class="hljs-string">"2"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"range"</span> <span class="hljs-attr">min</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">max</span>=<span class="hljs-string">"100"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"0"</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><h5>CSS</h5><pre><code><span class="hljs-selector-class">.shadow</span> {
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">opacity</span>: .<span class="hljs-number">2</span>;
 }
- 
-.square {
-  pointer-events: none;
-  width: 28px;
-  height: 28px;
-  margin: 1px;
-  font-size: 12px;
+
+<span class="hljs-selector-class">.square</span> {
+  <span class="hljs-attribute">pointer-events</span>: none;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">28px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">28px</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">1px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">12px</span>;
 }
- 
-.circle {
-  border-radius: 50%;
-  pointer-events: none;
-  width: 28px;
-  height: 28px;
-  margin: 1px;
-  font-size: 12px;
+
+<span class="hljs-selector-class">.circle</span> {
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">50%</span>;
+  <span class="hljs-attribute">pointer-events</span>: none;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">28px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">28px</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">1px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">12px</span>;
 }
- 
-.triangle {
-  pointer-events: none;
-  position: relative;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 0 14px 24px 14px;
-  border-color: transparent transparent currentColor transparent;
+
+<span class="hljs-selector-class">.triangle</span> {
+  <span class="hljs-attribute">pointer-events</span>: none;
+  <span class="hljs-attribute">position</span>: relative;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">border-style</span>: solid;
+  <span class="hljs-attribute">border-width</span>: <span class="hljs-number">0</span> <span class="hljs-number">14px</span> <span class="hljs-number">24px</span> <span class="hljs-number">14px</span>;
+  <span class="hljs-attribute">border-color</span>: transparent transparent currentColor transparent;
 }
- 
-.player {
-  opacity: .4;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 20px;
-  padding-bottom: 10px;
+
+<span class="hljs-selector-class">.player</span> {
+  <span class="hljs-attribute">opacity</span>: .<span class="hljs-number">4</span>;
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">align-items</span>: center;
+  <span class="hljs-attribute">justify-content</span>: center;
+  <span class="hljs-attribute">padding-top</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">padding-bottom</span>: <span class="hljs-number">10px</span>;
 }
- 
-.player button {
-  position: relative;
-  display: block;
-  margin: 0 0 0 -1px;
-  padding: 5px 10px;
-  font-size: 12px;
-  text-transform: uppercase;
-  border: 1px solid #000;
-  background-color: transparent;
-  color: #000;
-}</code></pre>
-              <script class="load">
-                createObj = function() {
-                  // play pause
-                  if (document.querySelector('#playPause')) {
-                    var playPause = anime({
-                      targets: '#playPause .el',
-                      translateX: 250,
-                      delay: function(el, i, l) { return i * 100; },
-                      direction: 'alternate',
-                      loop: true,
-                      autoplay: false
-                    });
-                    document.querySelector('#playPause .play').onclick = playPause.play;
-                    document.querySelector('#playPause .pause').onclick = playPause.pause;
-                  }
-                
-                  // restart
-                  if (document.querySelector('#restartAnim')) {
-                    var restartAnim = anime({
-                      targets: '#restartAnim .el',
-                      translateX: 250,
-                      delay: function(el, i, l) { return i * 100; },
-                      direction: 'alternate',
-                      loop: true
-                    });
-                    document.querySelector('#restartAnim .restart').onclick = restartAnim.restart;
-                  }
-                
-                  // reverse
-                  if (document.querySelector('#reverseAnim')) {
-                    var reverseAnim = anime({
-                      targets: '#reverseAnim .el',
-                      translateX: 250,
-                      duration: 2000,
-                      delay: function(el, i, l) { return i * 200; }
-                    });
-                    document.querySelector('#reverseAnim .reverse').onclick = function() {
-                      reverseAnim.play();
-                      reverseAnim.reverse();
-                    }
-                  }
-                
-                  // seek
-                  if (document.querySelector('#seekAnim')) {
-                    var seekAnim = anime({
-                      targets: '#seekAnim .el',
-                      translateX: 250,
-                      delay: function(el, i, l) { return i * 100; },
-                      elasticity: 200,
-                      autoplay: false
-                    });
-                    var seekProgressEl = document.querySelector('#seekAnim .progress');
-                    seekProgressEl.addEventListener('input', function() { 
-                      seekAnim.seek(seekAnim.duration * (seekProgressEl.value / 100));
-                    });
-                    ['input','change'].forEach(function(evt) {
-                      seekProgressEl.addEventListener(evt, function() { 
-                        seekAnim.seek(seekAnim.duration * (seekProgressEl.value / 100));
-                      });
-                    });
-                  }
-                
-                  // timeline control
-                  if (document.querySelector('#TLcontrols')) {
-                    var controlsProgressEl = document.querySelector('#TLcontrols .progress');
-                    var TLcontrols = anime.timeline({
-                      direction: 'alternate',
-                      loop: true,
-                      easing: 'linear',
-                      update: function(anim) {
-                        controlsProgressEl.value = anim.progress;
-                      }
-                    });
-                    TLcontrols
-                      .add({
-                        targets: '#TLcontrols .square.el',
-                        translateX: [ { value: 80 }, { value: 160 }, { value: 250 } ],
-                        translateY: [ { value: 30 }, { value: 60 }, { value: 60 } ],
-                        duration: 3000,
-                        offset: 0
-                      })
-                      .add({
-                        targets: '#TLcontrols .circle.el',
-                        translateX: [ { value: 80 }, { value: 160 }, { value: 250 } ],
-                        translateY: [ { value: 30 }, { value: -30 }, { value: -30 } ],
-                        duration: 3000,
-                        offset: 0
-                      })
-                      .add({
-                        targets: '#TLcontrols .triangle.el',
-                        translateX: [ { value: 80 }, { value: 250 } ],
-                        translateY: [ { value: -60 }, { value: -30 }, { value: -30 } ],
-                        duration: 3000,
-                        offset: 0
-                      });
-                    document.querySelector('#TLcontrols .play').onclick = TLcontrols.play;
-                    document.querySelector('#TLcontrols .pause').onclick = TLcontrols.pause;
-                    document.querySelector('#TLcontrols .restart').onclick = TLcontrols.restart;
-                    controlsProgressEl.addEventListener('input', function() {
-                      TLcontrols.seek(TLcontrols.duration * (controlsProgressEl.value / 100));
-                    });
-                    ['input','change'].forEach(function(evt) {
-                      controlsProgressEl.addEventListener(evt, function() {
-                        TLcontrols.seek(TLcontrols.duration * (controlsProgressEl.value / 100));
-                      });
-                    });
-                  }
-                };
-              </script><br>
-              <div class="license">
-                <p><a href="https://github.com/juliangarnier/anime/blob/master/LICENSE.md">MIT license</a>.
-                  &copy; 2017 Julian Garnier.
-                </p>
-                <p>このコンテンツはJulian Garnier(juliangarnier)による<a href="http://animejs.com/documentation/">anime.jsドキュメント</a>を翻訳/改変したものです。</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <footer><span>
-           &copy; <span id="copy_year">2017</span> tobijibu</span></footer>
-    </div>
-    <noscript id="deferred-styles">
-      <link href="./css/lazy.css" rel="stylesheet">
-    </noscript>
-    <script>
-      var loadDeferredStyles = function() {
-        var addStylesNode = document.getElementById("deferred-styles");
-        var replacement = document.createElement("div");
-        replacement.innerHTML = addStylesNode.textContent;
-        document.body.appendChild(replacement)
-        addStylesNode.parentElement.removeChild(addStylesNode);
-      };
-      var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
-          window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
-      if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
-      else window.addEventListener('load', loadDeferredStyles);
-      
-    </script>
-    <script src="./js/main.js"></script>
-    <script src="./js/anime.min.js"></script>
-    <div id="src" hidden></div>
-  </body>
-</html>
+
+<span class="hljs-selector-class">.player</span> <span class="hljs-selector-tag">button</span> {
+  <span class="hljs-attribute">position</span>: relative;
+  <span class="hljs-attribute">display</span>: block;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> -<span class="hljs-number">1px</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">5px</span> <span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">12px</span>;
+  <span class="hljs-attribute">text-transform</span>: uppercase;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#000</span>;
+  <span class="hljs-attribute">background-color</span>: transparent;
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#000</span>;
+}
+</code></pre><script class="load">createObj = function() {
+  // play pause
+  if (document.querySelector('#playPause')) {
+    var playPause = anime({
+      targets: '#playPause .el',
+      translateX: 250,
+      delay: function(el, i, l) { return i * 100; },
+      direction: 'alternate',
+      loop: true,
+      autoplay: false
+    });
+    document.querySelector('#playPause .play').onclick = playPause.play;
+    document.querySelector('#playPause .pause').onclick = playPause.pause;
+  }
+
+  // restart
+  if (document.querySelector('#restartAnim')) {
+    var restartAnim = anime({
+      targets: '#restartAnim .el',
+      translateX: 250,
+      delay: function(el, i, l) { return i * 100; },
+      direction: 'alternate',
+      loop: true
+    });
+    document.querySelector('#restartAnim .restart').onclick = restartAnim.restart;
+  }
+
+  // reverse
+  if (document.querySelector('#reverseAnim')) {
+    var reverseAnim = anime({
+      targets: '#reverseAnim .el',
+      translateX: 250,
+      duration: 2000,
+      delay: function(el, i, l) { return i * 200; }
+    });
+    document.querySelector('#reverseAnim .reverse').onclick = function() {
+      reverseAnim.play();
+      reverseAnim.reverse();
+    }
+  }
+
+  // seek
+  if (document.querySelector('#seekAnim')) {
+    var seekAnim = anime({
+      targets: '#seekAnim .el',
+      translateX: 250,
+      delay: function(el, i, l) { return i * 100; },
+      elasticity: 200,
+      autoplay: false
+    });
+    var seekProgressEl = document.querySelector('#seekAnim .progress');
+    seekProgressEl.addEventListener('input', function() { 
+      seekAnim.seek(seekAnim.duration * (seekProgressEl.value / 100));
+    });
+    ['input','change'].forEach(function(evt) {
+      seekProgressEl.addEventListener(evt, function() { 
+        seekAnim.seek(seekAnim.duration * (seekProgressEl.value / 100));
+      });
+    });
+  }
+
+  // timeline control
+  if (document.querySelector('#TLcontrols')) {
+    var controlsProgressEl = document.querySelector('#TLcontrols .progress');
+    var TLcontrols = anime.timeline({
+      direction: 'alternate',
+      loop: true,
+      easing: 'linear',
+      update: function(anim) {
+        controlsProgressEl.value = anim.progress;
+      }
+    });
+    TLcontrols
+      .add({
+        targets: '#TLcontrols .square.el',
+        translateX: [ { value: 80 }, { value: 160 }, { value: 250 } ],
+        translateY: [ { value: 30 }, { value: 60 }, { value: 60 } ],
+        duration: 3000,
+        offset: 0
+      })
+      .add({
+        targets: '#TLcontrols .circle.el',
+        translateX: [ { value: 80 }, { value: 160 }, { value: 250 } ],
+        translateY: [ { value: 30 }, { value: -30 }, { value: -30 } ],
+        duration: 3000,
+        offset: 0
+      })
+      .add({
+        targets: '#TLcontrols .triangle.el',
+        translateX: [ { value: 80 }, { value: 250 } ],
+        translateY: [ { value: -60 }, { value: -30 }, { value: -30 } ],
+        duration: 3000,
+        offset: 0
+      });
+    document.querySelector('#TLcontrols .play').onclick = TLcontrols.play;
+    document.querySelector('#TLcontrols .pause').onclick = TLcontrols.pause;
+    document.querySelector('#TLcontrols .restart').onclick = TLcontrols.restart;
+    controlsProgressEl.addEventListener('input', function() {
+      TLcontrols.seek(TLcontrols.duration * (controlsProgressEl.value / 100));
+    });
+    ['input','change'].forEach(function(evt) {
+      controlsProgressEl.addEventListener(evt, function() {
+        TLcontrols.seek(TLcontrols.duration * (controlsProgressEl.value / 100));
+      });
+    });
+  }
+};</script><br><div class="license"><p><a href="https://github.com/juliangarnier/anime/blob/master/LICENSE.md">MIT license</a>.
+&copy; 2017 Julian Garnier.</p><p>このコンテンツはJulian Garnier(juliangarnier)による<a href="http://animejs.com/documentation/">anime.jsドキュメント</a>を翻訳/改変したものです。</p></div></div></div></div></div><footer><span> &copy; <span id="copy_year">2017</span> tobijibu</span></footer></div><noscript id="deferred-styles"><link href="./css/lazy.css" rel="stylesheet"></noscript><script src="./js/main.js" defer></script><script src="./js/anime.min.js"></script><div id="src" hidden></div></body></html>
