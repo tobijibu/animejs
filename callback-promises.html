@@ -1,0 +1,723 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><title>Callback &amp; Promises | anime.js - にほんご。</title><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta property="og:title" content="Callback &amp; Promises | anime.js - にほんご。"><meta property="og:url"><meta property="og:type" content="article"><link rel="icon" href="https://tr.you84815.space/animejs/favicon.ico"><link rel="stylesheet" href="./css/main.css"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-106478577-1', 'auto');</script></head><body><div id="container"><header><div class="icon"><a class="no-barba" href="https://tr.you84815.space/"><svg width="16" height="16"><rect width="16" height="16" fill="#e0e0e0"></rect></svg></a></div><div class="navi_toggle" onclick="toggleMenu()"><svg id="menu_close" width="24" height="24" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg><svg id="menu_open" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></div><div class="title">anime.js - <a class="no-barba" href="https://tr.you84815.space/">にほんご。</a></div></header><div class="navi" id="navi"><ul class="menu"><li><a class="index" href="./index.html">Home</a></li><li><a class="introduction" href="./introduction.html">Introduction</a></li><li><a class="getting-started" href="./getting-started.html">Getting Started</a></li><li><a class="targets" href="./targets.html">Targets</a><ul class="hidden" id="navi_targets"><li><a href="./targets.html#css-selector">CSSセレクタ</a></li><li><a href="./targets.html#dom-node">DOM Node / NodeList</a></li><li><a href="./targets.html#object">JavaScriptオブジェクト</a></li><li><a href="./targets.html#array">配列</a></li></ul></li><li><a class="properties" href="./properties.html">Properties</a><ul class="hidden" id="navi_properties"><li><a href="./properties.html#css">CSSプロパティ</a></li><li><a href="./properties.html#css-transforms">CSS transform</a></li><li><a href="./properties.html#object-properties">オブジェクトプロパティ</a></li><li><a href="./properties.html#dom-attributes">DOM属性</a></li><li><a href="./properties.html#svg-attributes">SVG属性</a></li></ul></li><li><a class="property-parameters" href="./property-parameters.html">Property Parameters</a><ul class="hidden" id="navi_property-parameters"><li><a href="./property-parameters.html#p-duration">duration(時間)</a></li><li><a href="./property-parameters.html#p-delay">delay(開始遅延)</a></li><li><a href="./property-parameters.html#p-end-delay">endDelay(終了遅延)</a></li><li><a href="./property-parameters.html#p-easing">easing(イージング)</a></li><li><a href="./property-parameters.html#p-round">round(数値の丸め)</a></li><li><a href="./property-parameters.html#p-specific-property">特定のプロパティ</a></li><li><a href="./property-parameters.html#p-function-based-parameters">関数指定パラメータ</a></li></ul></li><li><a class="animation-parameters" href="./animation-parameters.html">Animation Parameters</a><ul class="hidden" id="navi_animation-parameters"><li><a href="./animation-parameters.html#ap-direction">再生方向</a></li><li><a href="./animation-parameters.html#ap-loop">ループ</a></li><li><a href="./animation-parameters.html#ap-autoplay">自動再生</a></li></ul></li><li><a class="values" href="./values.html">Values</a><ul class="hidden" id="navi_values"><li><a href="./values.html#unitless">単位無指定</a></li><li><a href="./values.html#specific-unit">単位指定</a></li><li><a href="./values.html#relative">相対値</a></li><li><a href="./values.html#v-colors">カラー</a></li><li><a href="./values.html#specific-initial-value">初期値指定</a></li><li><a href="./values.html#function-based-values">関数ベース値</a></li></ul></li><li><a class="keyframes" href="./keyframes.html">Keyframes</a><ul class="hidden" id="navi_keyframes"><li><a href="./keyframes.html#animation-keyframes">アニメーションキーフレーム</a></li><li><a href="./keyframes.html#property-keyframes">プロパティキーフレーム</a></li></ul></li><li><a class="staggering" href="./staggering.html">Staggering</a><ul class="hidden" id="navi_staggering"><li><a href="./staggering.html#s-staggering-basics">staggerの基本</a></li><li><a href="./staggering.html#s-start-value">開始タイミング</a></li><li><a href="./staggering.html#s-range-value">範囲指定</a></li><li><a href="./staggering.html#s-from-value">開始位置指定</a></li><li><a href="./staggering.html#s-direction">direction(アニメーションの順序)</a></li><li><a href="./staggering.html#s-easing">easing(イージング)</a></li><li><a href="./staggering.html#s-grid">grid</a></li><li><a href="./staggering.html#s-axis">axis</a></li></ul></li><li><a class="timeline" href="./timeline.html">Timeline</a><ul class="hidden" id="navi_timeline"><li><a href="./timeline.html#basic-timeline">タイムラインの基本</a></li><li><a href="./timeline.html#time-offset">タイムオフセット</a></li><li><a href="./timeline.html#parameters-inheritance">パラメータの継承</a></li></ul></li><li><a class="controls" href="./controls.html">Controls</a><ul class="hidden" id="navi_controls"><li><a href="./controls.html#play-pause">再生 / 停止</a></li><li><a href="./controls.html#restart">リスタート</a></li><li><a href="./controls.html#reverse">逆再生</a></li><li><a href="./controls.html#seek">シーク</a></li><li><a href="./controls.html#timeline-controls">タイムラインコントロール</a></li></ul></li><li><a class="callback active" href="./callback-promises.html">Callback & Promises</a><ul id="navi_callback"><li><a href="./callback-promises.html#c-update">update</a></li><li><a href="./callback-promises.html#c-begin">begin &amp; complete</a></li><li><a href="./callback-promises.html#c-loop-begin">loopBegin &amp; loopComplete</a></li><li><a href="./callback-promises.html#c-change">change</a></li><li><a href="./callback-promises.html#c-change-begin">changeBegin &amp; changeComplete</a></li><li><a href="./callback-promises.html#c-finished">終了Promise</a></li></ul></li><li><a class="svg" href="./svg.html">SVG</a><ul class="hidden" id="navi_svg"><li><a href="./svg.html#motion-path">モーションパス</a></li><li><a href="./svg.html#morphing">モーフィング</a></li><li><a href="./svg.html#line-drawing">線画アニメーション</a></li></ul></li><li><a class="easing" href="./easing.html">Easing</a><ul class="hidden" id="navi_easing"><li><a href="./easing.html#e-linear">linear</a></li><li><a href="./easing.html#e-penners-functions">Robert Pennerのeasing関数</a></li><li><a href="./easing.html#e-cubic-bezier-curve">3次ベジェ曲線</a></li><li><a href="./easing.html#e-spring">spring</a></li><li><a href="./easing.html#e-elastic">elastic</a></li><li><a href="./easing.html#e-steps">steps</a></li><li><a href="./easing.html#e-custom-easing">カスタムイージング</a></li></ul></li><li><a class="helper" href="./helper.html">Helpers</a><ul class="hidden" id="navi_helper"><li><a href="./helper.html#h-remove">remove</a></li><li><a href="./helper.html#h-get">get</a></li><li><a href="./helper.html#h-set">set</a></li><li><a href="./helper.html#h-random">random</a></li><li><a href="./helper.html#h-tick">tick</a></li><li><a href="./helper.html#h-running">running</a></li></ul></li></ul></div><div id="content"><div id="main"><div id="barba-wrapper"><div class="barba-container"><h1>Callback &amp; Promises</h1><div id="update_date"><span>更新日: 2019.01.25
+</span></div><h2 id="c-update">update</h2><p>アニメーションを開始すると同時に、全てのフレームでコールバックがトリガーされます。</p><div class="table-box"><table class="my-table"><tr><th>type</th><th>パラメータ</th><th class="detail">内容</th></tr><tr><td><code>function</code></td><td><code>animation</code></td><td>現在のアニメーションオブジェクトを返します。</td></tr></table></div><pre><code><span class="hljs-keyword">var</span> updates = <span class="hljs-number">0</span>;
+
+anime({
+  <span class="hljs-attr">targets</span>: <span class="hljs-string">'.update-demo .el'</span>,
+  <span class="hljs-attr">translateX</span>: <span class="hljs-number">270</span>,
+  <span class="hljs-attr">delay</span>: <span class="hljs-number">1000</span>,
+  <span class="hljs-attr">direction</span>: <span class="hljs-string">'alternate'</span>,
+  <span class="hljs-attr">loop</span>: <span class="hljs-number">3</span>,
+  <span class="hljs-attr">easing</span>: <span class="hljs-string">'easeInOutCirc'</span>,
+  <span class="hljs-attr">update</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">anim</span>) </span>{
+    updates++;
+    progressLogEl.value = <span class="hljs-string">'progress : '</span>+<span class="hljs-built_in">Math</span>.round(anim.progress)+<span class="hljs-string">'%'</span>;
+    updateLogEl.value = <span class="hljs-string">'updates : '</span>+updates;
+  }
+});</code></pre><h3>デモ</h3><p>要素をクリックするとアニメーションを開始します。</p><div class="demo"><div id="update"><div class="logs"><input class="log progress-log"><input class="log current-time-log"></div><div class="circle large shadow"></div><div class="circle large el"></div></div></div><h5>JavaScript</h5><pre><code><span class="hljs-keyword">var</span> progressLogEl = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#update .progress-log'</span>);
+<span class="hljs-keyword">var</span> updateLogEl = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#update .current-time-log'</span>);
+
+<span class="hljs-keyword">var</span> updates = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">var</span> update = anime({
+  <span class="hljs-attr">targets</span>: <span class="hljs-string">'#update .el'</span>,
+  <span class="hljs-attr">translateX</span>: <span class="hljs-number">270</span>,
+  <span class="hljs-attr">delay</span>: <span class="hljs-number">1000</span>,
+  <span class="hljs-attr">direction</span>: <span class="hljs-string">'alternate'</span>,
+  <span class="hljs-attr">loop</span>: <span class="hljs-number">3</span>,
+  <span class="hljs-attr">easing</span>: <span class="hljs-string">'easeInOutCirc'</span>,
+  <span class="hljs-attr">update</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">anim</span>) </span>{
+    updates++;
+    progressLogEl.value = <span class="hljs-string">'progress : '</span>+<span class="hljs-built_in">Math</span>.round(anim.progress)+<span class="hljs-string">'%'</span>;
+    updateLogEl.value = <span class="hljs-string">'updates : '</span>+updates;
+  }
+});</code></pre><h5>HTML</h5><pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"update"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"logs"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"log progress-log"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"log current-time-log"</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"circle large shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"circle large el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><h5>CSS</h5><pre><code><span class="hljs-selector-class">.shadow</span> {
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">opacity</span>: .<span class="hljs-number">2</span>;
+}
+
+<span class="hljs-selector-class">.circle</span> {
+  <span class="hljs-attribute">pointer-events</span>: none;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">28px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">28px</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">1px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">12px</span>;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">50%</span>;
+}
+
+<span class="hljs-selector-class">.large</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">48px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">48px</span>;
+}
+
+<span class="hljs-selector-class">.logs</span> {
+  <span class="hljs-attribute">pointer-events</span>: none;
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-direction</span>: column;
+  <span class="hljs-attribute">align-items</span>: center;
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;
+}
+
+<span class="hljs-selector-class">.log</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">22px</span>;
+  <span class="hljs-attribute">background</span>: transparent;
+  <span class="hljs-attribute">color</span>: currentColor;
+  <span class="hljs-attribute">border</span>: none;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">16px</span>;
+  <span class="hljs-attribute">text-align</span>: center;
+}</code></pre><br><h2 id="c-begin">begin & complete</h2><p><code>begin()</code>は、アニメーション開始時に一度だけ呼び出されます。</p><p><code>complete()</code>は、アニメーション終了時に一度だけ呼び出されます。</p><blockquote>アニメーションの<code>duration</code>が<code>0</code>の場合、
+<code>begin()</code>と<code>complete()</code>が両方とも呼び出されます。</blockquote><div class="table-box"><table class="my-table"><tr><th>type</th><th>パラメータ</th><th class="detail">内容</th></tr><tr><td><code>function</code></td><td><code>animation</code></td><td>現在のアニメーションオブジェクトを返します。</td></tr></table></div><pre><code>anime({
+  <span class="hljs-attr">targets</span>: <span class="hljs-string">'.begin-complete-demo .el'</span>,
+  <span class="hljs-attr">translateX</span>: <span class="hljs-number">240</span>,
+  <span class="hljs-attr">delay</span>: <span class="hljs-number">1000</span>,
+  <span class="hljs-attr">easing</span>: <span class="hljs-string">'easeInOutCirc'</span>,
+  <span class="hljs-attr">update</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">anim</span>) </span>{
+    progressLogEl.value = <span class="hljs-string">'progress : '</span> + <span class="hljs-built_in">Math</span>.round(anim.progress) + <span class="hljs-string">'%'</span>;
+    beginLogEl.value = <span class="hljs-string">'began : '</span> + anim.began;
+    completeLogEl.value = <span class="hljs-string">'completed : '</span> + anim.completed;
+  },
+  <span class="hljs-attr">begin</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">anim</span>) </span>{
+    beginLogEl.value = <span class="hljs-string">'began : '</span> + anim.began;
+  },
+  <span class="hljs-attr">complete</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">anim</span>) </span>{
+    completeLogEl.value = <span class="hljs-string">'completed : '</span> + anim.completed;
+  }
+});</code></pre><h3>デモ</h3><p>要素をクリックするとアニメーションを開始します。</p><div class="demo"><div id="begin"><div class="logs"><input class="log progress-log"><input class="log begin-log"><input class="log completed-log"></div><div class="circle large shadow"></div><div class="circle large el"></div></div></div><h5>JavaScript</h5><pre><code><span class="hljs-keyword">var</span> progressLogEl = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#begin .progress-log'</span>);
+<span class="hljs-keyword">var</span> beginLogEl = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#begin .begin-log'</span>);
+<span class="hljs-keyword">var</span> completeLogEl = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#begin .completed-log'</span>);
+<span class="hljs-keyword">var</span> begin = anime({
+  <span class="hljs-attr">targets</span>: <span class="hljs-string">'#begin .el'</span>,
+  <span class="hljs-attr">translateX</span>: <span class="hljs-number">240</span>,
+  <span class="hljs-attr">delay</span>: <span class="hljs-number">1000</span>,
+  <span class="hljs-attr">easing</span>: <span class="hljs-string">'easeInOutCirc'</span>,
+  <span class="hljs-attr">update</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">anim</span>) </span>{
+    progressLogEl.value = <span class="hljs-string">'progress : '</span> + <span class="hljs-built_in">Math</span>.round(anim.progress) + <span class="hljs-string">'%'</span>;
+    beginLogEl.value = <span class="hljs-string">'began : '</span> + anim.began;
+    completeLogEl.value = <span class="hljs-string">'completed : '</span> + anim.completed;
+  },
+  <span class="hljs-attr">begin</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">anim</span>) </span>{
+    beginLogEl.value = <span class="hljs-string">'began : '</span> + anim.began;
+  },
+  <span class="hljs-attr">complete</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">anim</span>) </span>{
+    completeLogEl.value = <span class="hljs-string">'completed : '</span> + anim.completed;
+  }
+});</code></pre><h5>HTML</h5><pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"begin"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"logs"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"log progress-log"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"log begin-log"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"log completed-log"</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"circle large shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"circle large el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><h5>CSS</h5><pre><code><span class="hljs-selector-class">.shadow</span> {
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">opacity</span>: .<span class="hljs-number">2</span>;
+}
+
+<span class="hljs-selector-class">.circle</span> {
+  <span class="hljs-attribute">pointer-events</span>: none;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">28px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">28px</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">1px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">12px</span>;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">50%</span>;
+}
+
+<span class="hljs-selector-class">.large</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">48px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">48px</span>;
+}
+
+<span class="hljs-selector-class">.logs</span> {
+  <span class="hljs-attribute">pointer-events</span>: none;
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-direction</span>: column;
+  <span class="hljs-attribute">align-items</span>: center;
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;
+}
+
+<span class="hljs-selector-class">.log</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">22px</span>;
+  <span class="hljs-attribute">background</span>: transparent;
+  <span class="hljs-attribute">color</span>: currentColor;
+  <span class="hljs-attribute">border</span>: none;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">16px</span>;
+  <span class="hljs-attribute">text-align</span>: center;
+}</code></pre><br><h2 id="c-loopbegin">loopBegin & loopComplete</h2><p><code>loopBegin()</code>は、ループが始まるたびに一度呼び出されます。</p><p><code>loopComplete()</code>は、ループが終わるたびに一度呼び出されます。</p><div class="table-box"><table class="my-table"><tr><th>type</th><th>パラメータ</th><th class="detail">内容</th></tr><tr><td><code>function</code></td><td><code>animation</code></td><td>現在のアニメーションオブジェクトを返します。</td></tr></table></div><pre><code><span class="hljs-keyword">var</span> loopBegan = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">var</span> loopCompleted = <span class="hljs-number">0</span>;
+
+anime({
+  <span class="hljs-attr">targets</span>: <span class="hljs-string">'.loopBegin-loopComplete-demo .el'</span>,
+  <span class="hljs-attr">translateX</span>: <span class="hljs-number">240</span>,
+  <span class="hljs-attr">loop</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">direction</span>: <span class="hljs-string">'alternate'</span>,
+  <span class="hljs-attr">easing</span>: <span class="hljs-string">'easeInOutCirc'</span>,
+  <span class="hljs-attr">loopBegin</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">anim</span>) </span>{
+    loopBegan++;
+    beginLogEl.value = <span class="hljs-string">'loop began : '</span> + loopBegan;
+  },
+  <span class="hljs-attr">loopComplete</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">anim</span>) </span>{
+    loopCompleted++;
+    completeLogEl.value = <span class="hljs-string">'loop completed : '</span> + loopCompleted;
+  }
+});</code></pre><h3>デモ</h3><div class="demo"><div id="loopBegin"><div class="logs"><input class="log begin-log"><input class="log completed-log"></div><div class="circle large shadow"></div><div class="circle large el"></div></div></div><h5>JavaScript</h5><pre><code><span class="hljs-keyword">var</span> beginLogEl = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#loopBegin .begin-log'</span>);
+<span class="hljs-keyword">var</span> completeLogEl = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#loopBegin .completed-log'</span>);
+<span class="hljs-keyword">var</span> loopBegan = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">var</span> loopCompleted = <span class="hljs-number">0</span>;
+
+<span class="hljs-keyword">var</span> loopBegin = anime({
+  <span class="hljs-attr">targets</span>: <span class="hljs-string">'#loopBegin .el'</span>,
+  <span class="hljs-attr">translateX</span>: <span class="hljs-number">240</span>,
+  <span class="hljs-attr">loop</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">direction</span>: <span class="hljs-string">'alternate'</span>,
+  <span class="hljs-attr">easing</span>: <span class="hljs-string">'easeInOutCirc'</span>,
+  <span class="hljs-attr">loopBegin</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">anim</span>) </span>{
+    loopBegan++;
+    beginLogEl.value = <span class="hljs-string">'loop began : '</span> + loopBegan;
+  },
+  <span class="hljs-attr">loopComplete</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">anim</span>) </span>{
+    loopCompleted++;
+    completeLogEl.value = <span class="hljs-string">'loop completed : '</span> + loopCompleted;
+  }
+});</code></pre><h5>HTML</h5><pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"loopBegin"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"logs"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"log begin-log"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"log completed-log"</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"circle large shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"circle large el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><h5>CSS</h5><pre><code><span class="hljs-selector-class">.shadow</span> {
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">opacity</span>: .<span class="hljs-number">2</span>;
+}
+
+<span class="hljs-selector-class">.circle</span> {
+  <span class="hljs-attribute">pointer-events</span>: none;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">28px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">28px</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">1px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">12px</span>;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">50%</span>;
+}
+
+<span class="hljs-selector-class">.large</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">48px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">48px</span>;
+}
+
+<span class="hljs-selector-class">.logs</span> {
+  <span class="hljs-attribute">pointer-events</span>: none;
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-direction</span>: column;
+  <span class="hljs-attribute">align-items</span>: center;
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;
+}
+
+<span class="hljs-selector-class">.log</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">22px</span>;
+  <span class="hljs-attribute">background</span>: transparent;
+  <span class="hljs-attribute">color</span>: currentColor;
+  <span class="hljs-attribute">border</span>: none;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">16px</span>;
+  <span class="hljs-attribute">text-align</span>: center;
+}</code></pre><br><h2 id="c-change">change</h2><p><code>change()</code>は、アニメーションの<a href="./property-parameters.html#p-delay">delay</a>と<a href="./property-parameters.html#p-end-delay">endDelay</a>間の全てのフレームで呼び出されます。</p><div class="table-box"><table class="my-table"><tr><th>type</th><th>パラメータ</th><th class="detail">内容</th></tr><tr><td><code>function</code></td><td><code>animation</code></td><td>現在のアニメーションオブジェクトを返します。</td></tr></table></div><pre><code><span class="hljs-keyword">var</span> changes = <span class="hljs-number">0</span>;
+
+anime({
+  <span class="hljs-attr">targets</span>: <span class="hljs-string">'.change-demo .el'</span>,
+  <span class="hljs-attr">translateX</span>: <span class="hljs-number">270</span>,
+  <span class="hljs-attr">delay</span>: <span class="hljs-number">1000</span>,
+  <span class="hljs-attr">endDelay</span>: <span class="hljs-number">1000</span>,
+  <span class="hljs-attr">direction</span>: <span class="hljs-string">'alternate'</span>,
+  <span class="hljs-attr">loop</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">easing</span>: <span class="hljs-string">'easeInOutCirc'</span>,
+  <span class="hljs-attr">update</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">anim</span>) </span>{
+    progressLogEl.value = <span class="hljs-string">'progress : '</span>+<span class="hljs-built_in">Math</span>.round(anim.progress)+<span class="hljs-string">'%'</span>;
+  },
+  <span class="hljs-attr">change</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    changes++;
+    changeLogEl.value = <span class="hljs-string">'changes : '</span> + changes;
+  }
+});</code></pre><h3>デモ</h3><div class="demo"><div id="change"><div class="logs"><input class="log progress-log"><input class="log changes-log"></div><div class="circle large shadow"></div><div class="circle large el"></div></div></div><h5>JavaScript</h5><pre><code><span class="hljs-keyword">var</span> progressLogEl = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#change .progress-log'</span>);
+<span class="hljs-keyword">var</span> changeLogEl = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#change .changes-log'</span>);
+<span class="hljs-keyword">var</span> changes = <span class="hljs-number">0</span>;
+
+<span class="hljs-keyword">var</span> change = anime({
+  <span class="hljs-attr">targets</span>: <span class="hljs-string">'#change .el'</span>,
+  <span class="hljs-attr">translateX</span>: <span class="hljs-number">270</span>,
+  <span class="hljs-attr">delay</span>: <span class="hljs-number">1000</span>,
+  <span class="hljs-attr">endDelay</span>: <span class="hljs-number">1000</span>,
+  <span class="hljs-attr">direction</span>: <span class="hljs-string">'alternate'</span>,
+  <span class="hljs-attr">loop</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">easing</span>: <span class="hljs-string">'easeInOutCirc'</span>,
+  <span class="hljs-attr">update</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">anim</span>) </span>{
+    progressLogEl.value = <span class="hljs-string">'progress : '</span>+<span class="hljs-built_in">Math</span>.round(anim.progress)+<span class="hljs-string">'%'</span>;
+  },
+  <span class="hljs-attr">change</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    changes++;
+    changeLogEl.value = <span class="hljs-string">'changes : '</span> + changes;
+  }
+});</code></pre><h5>HTML</h5><pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"change"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"logs"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"log progress-log"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"log changes-log"</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"circle large shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"circle large el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><h5>CSS</h5><pre><code><span class="hljs-selector-class">.shadow</span> {
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">opacity</span>: .<span class="hljs-number">2</span>;
+}
+
+<span class="hljs-selector-class">.circle</span> {
+  <span class="hljs-attribute">pointer-events</span>: none;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">28px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">28px</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">1px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">12px</span>;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">50%</span>;
+}
+
+<span class="hljs-selector-class">.large</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">48px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">48px</span>;
+}
+
+<span class="hljs-selector-class">.logs</span> {
+  <span class="hljs-attribute">pointer-events</span>: none;
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-direction</span>: column;
+  <span class="hljs-attribute">align-items</span>: center;
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;
+}
+
+<span class="hljs-selector-class">.log</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">22px</span>;
+  <span class="hljs-attribute">background</span>: transparent;
+  <span class="hljs-attribute">color</span>: currentColor;
+  <span class="hljs-attribute">border</span>: none;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">16px</span>;
+  <span class="hljs-attribute">text-align</span>: center;
+}</code></pre><br><h2 id="c-change-begin">changeBegin & changeComplete</h2><p><code>changeBegin()</code>は、アニメーションが動き出すたびに呼び出されます。</p><p><code>changeComplete()</code>は、アニメーションが止まるたびに呼び出されます。</p><blockquote>アニメーションの方向は<code>changeBegin()</code>と<code>changeComplete</code>が呼び出される順序に影響します。</blockquote><div class="table-box"><table class="my-table"><tr><th>type</th><th>パラメータ</th><th class="detail">内容</th></tr><tr><td><code>function</code></td><td><code>animation</code></td><td>現在のアニメーションオブジェクトを返します。</td></tr></table></div><pre><code><span class="hljs-keyword">var</span> changeBegan = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">var</span> changeCompleted = <span class="hljs-number">0</span>;
+
+anime({
+  <span class="hljs-attr">targets</span>: <span class="hljs-string">'.changeBegin-chnageComplete-demo .el'</span>,
+  <span class="hljs-attr">translateX</span>: <span class="hljs-number">240</span>,
+  <span class="hljs-attr">delay</span>: <span class="hljs-number">1000</span>,
+  <span class="hljs-attr">endDelay</span>: <span class="hljs-number">1000</span>,
+  <span class="hljs-attr">loop</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">direction</span>: <span class="hljs-string">'alternate'</span>,
+  <span class="hljs-attr">easing</span>: <span class="hljs-string">'easeInOutCirc'</span>,
+  <span class="hljs-attr">update</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">anim</span>) </span>{
+    progressLogEl.value = <span class="hljs-string">'progress : '</span>+<span class="hljs-built_in">Math</span>.round(anim.progress)+<span class="hljs-string">'%'</span>;
+  },
+  <span class="hljs-attr">changeBegin</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">anim</span>) </span>{
+    changeBegan++;
+    beginLogEl.value = <span class="hljs-string">'change began : '</span> + changeBegan;
+  },
+  <span class="hljs-attr">changeComplete</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">anim</span>) </span>{
+    changeCompleted++;
+    completeLogEl.value = <span class="hljs-string">'change completed : '</span> + changeCompleted;
+  }
+});</code></pre><h3>デモ</h3><div class="demo"><div id="changeBegin"><div class="logs"><input class="log progress-log"><input class="log begin-log"><input class="log completed-log"></div><div class="circle large shadow"></div><div class="circle large el"></div></div></div><h5>JavaScript</h5><pre><code><span class="hljs-keyword">var</span> progressLogEl = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#changeBegin .progress-log'</span>);
+<span class="hljs-keyword">var</span> beginLogEl = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#changeBegin .begin-log'</span>);
+<span class="hljs-keyword">var</span> completeLogEl = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#changeBegin .completed-log'</span>);
+<span class="hljs-keyword">var</span> changeBegan = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">var</span> changeCompleted = <span class="hljs-number">0</span>;
+
+<span class="hljs-keyword">var</span> changeBegin = anime({
+  <span class="hljs-attr">targets</span>: <span class="hljs-string">'#changeBegin .el'</span>,
+  <span class="hljs-attr">translateX</span>: <span class="hljs-number">240</span>,
+  <span class="hljs-attr">delay</span>: <span class="hljs-number">1000</span>,
+  <span class="hljs-attr">endDelay</span>: <span class="hljs-number">1000</span>,
+  <span class="hljs-attr">loop</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">direction</span>: <span class="hljs-string">'alternate'</span>,
+  <span class="hljs-attr">easing</span>: <span class="hljs-string">'easeInOutCirc'</span>,
+  <span class="hljs-attr">update</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">anim</span>) </span>{
+    progressLogEl.value = <span class="hljs-string">'progress : '</span>+<span class="hljs-built_in">Math</span>.round(anim.progress)+<span class="hljs-string">'%'</span>;
+  },
+  <span class="hljs-attr">changeBegin</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">anim</span>) </span>{
+    changeBegan++;
+    beginLogEl.value = <span class="hljs-string">'change began : '</span> + changeBegan;
+  },
+  <span class="hljs-attr">changeComplete</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">anim</span>) </span>{
+    changeCompleted++;
+    completeLogEl.value = <span class="hljs-string">'change completed : '</span> + changeCompleted;
+  }
+});</code></pre><h5>HTML</h5><pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"changeBegin"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"logs"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"log progress-log"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"log begin-log"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"log completed-log"</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"circle large shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"circle large el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><h5>CSS</h5><pre><code><span class="hljs-selector-class">.shadow</span> {
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">opacity</span>: .<span class="hljs-number">2</span>;
+}
+
+<span class="hljs-selector-class">.circle</span> {
+  <span class="hljs-attribute">pointer-events</span>: none;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">28px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">28px</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">1px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">12px</span>;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">50%</span>;
+}
+
+<span class="hljs-selector-class">.large</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">48px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">48px</span>;
+}
+
+<span class="hljs-selector-class">.logs</span> {
+  <span class="hljs-attribute">pointer-events</span>: none;
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-direction</span>: column;
+  <span class="hljs-attribute">align-items</span>: center;
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;
+}
+
+<span class="hljs-selector-class">.log</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">22px</span>;
+  <span class="hljs-attribute">background</span>: transparent;
+  <span class="hljs-attribute">color</span>: currentColor;
+  <span class="hljs-attribute">border</span>: none;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">16px</span>;
+  <span class="hljs-attribute">text-align</span>: center;
+}</code></pre><br><h2 id="c-finished">終了Promise</h2><p>アニメーションが終了すると、
+全てのアニメーションインスタンスは<code>finished</code>Promiseを返します。</p><pre><code>animation.finished.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// やりたいこと</span>
+});</code></pre><blockquote>PromiseはIE < 11はサポートしていません。</blockquote><br><pre><code><span class="hljs-keyword">var</span> progressLogEl = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'.promise-demo .progress-log'</span>);
+<span class="hljs-keyword">var</span> promiseEl = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'.promise-demo .el'</span>);
+<span class="hljs-keyword">var</span> finishedLogEl = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'.promise-demo .finished-log'</span>);
+<span class="hljs-keyword">var</span> demoPromiseResetTimeout;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">logFinished</span>(<span class="hljs-params"></span>) </span>{
+  anime.set(finishedLogEl, {<span class="hljs-attr">value</span>: <span class="hljs-string">'Promise resolved'</span>});
+  anime.set(promiseEl, {<span class="hljs-attr">backgroundColor</span>: <span class="hljs-string">'#18FF92'</span>});
+}
+
+<span class="hljs-keyword">var</span> animation = anime.timeline({
+  <span class="hljs-attr">targets</span>: promiseEl,
+  <span class="hljs-attr">delay</span>: <span class="hljs-number">400</span>,
+  <span class="hljs-attr">duration</span>: <span class="hljs-number">500</span>,
+  <span class="hljs-attr">endDelay</span>: <span class="hljs-number">400</span>,
+  <span class="hljs-attr">easing</span>: <span class="hljs-string">'easeInOutSine'</span>,
+  <span class="hljs-attr">update</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">anim</span>) </span>{
+    progressLogEl.value = <span class="hljs-string">'progress : '</span>+<span class="hljs-built_in">Math</span>.round(anim.progress)+<span class="hljs-string">'%'</span>;
+  }
+}).add({
+  <span class="hljs-attr">translateX</span>: <span class="hljs-number">250</span>
+}).add({
+  <span class="hljs-attr">scale</span>: <span class="hljs-number">2</span>
+}).add({
+  <span class="hljs-attr">translateX</span>: <span class="hljs-number">0</span>
+});
+
+animation.finished.then(logFinished);</code></pre><h3>デモ</h3><p>要素をクリックするとアニメーションを開始します。</p><div class="demo" style="height: 4em;"><div id="finished"><div class="logs"><input class="log progress-log"><input class="log finished-log"></div><div class="circle shadow"></div><div class="circle el"></div></div></div><h5>JavaScript</h5><pre><code><span class="hljs-keyword">var</span> progressLogEl = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#finished .progress-log'</span>);
+<span class="hljs-keyword">var</span> promiseEl = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#finished .el'</span>);
+<span class="hljs-keyword">var</span> finishedLogEl = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#finished .finished-log'</span>);
+<span class="hljs-keyword">var</span> demoPromiseResetTimeout;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">logFinished</span>(<span class="hljs-params"></span>) </span>{
+  anime.set(finishedLogEl, {<span class="hljs-attr">value</span>: <span class="hljs-string">'Promise resolved'</span>});
+  anime.set(promiseEl, {<span class="hljs-attr">backgroundColor</span>: <span class="hljs-string">'#18FF92'</span>});
+}
+
+<span class="hljs-keyword">var</span> animation = anime.timeline({
+  <span class="hljs-attr">targets</span>: promiseEl,
+  <span class="hljs-attr">delay</span>: <span class="hljs-number">400</span>,
+  <span class="hljs-attr">duration</span>: <span class="hljs-number">500</span>,
+  <span class="hljs-attr">endDelay</span>: <span class="hljs-number">400</span>,
+  <span class="hljs-attr">easing</span>: <span class="hljs-string">'easeInOutSine'</span>,
+  <span class="hljs-attr">update</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">anim</span>) </span>{
+    progressLogEl.value = <span class="hljs-string">'progress : '</span>+<span class="hljs-built_in">Math</span>.round(anim.progress)+<span class="hljs-string">'%'</span>;
+  }
+}).add({
+  <span class="hljs-attr">translateX</span>: <span class="hljs-number">250</span>
+}).add({
+  <span class="hljs-attr">scale</span>: <span class="hljs-number">2</span>
+}).add({
+  <span class="hljs-attr">translateX</span>: <span class="hljs-number">0</span>
+});
+
+animation.finished.then(logFinished);</code></pre><h5>HTML</h5><pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"finished"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"logs"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"log progress-log"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"log finished-log"</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"circle shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"circle el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><h5>CSS</h5><pre><code><span class="hljs-selector-class">.shadow</span> {
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">opacity</span>: .<span class="hljs-number">2</span>;
+}
+
+<span class="hljs-selector-class">.circle</span> {
+  <span class="hljs-attribute">pointer-events</span>: none;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">28px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">28px</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">1px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">12px</span>;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">50%</span>;
+}
+
+<span class="hljs-selector-class">.large</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">48px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">48px</span>;
+}
+
+<span class="hljs-selector-class">.logs</span> {
+  <span class="hljs-attribute">pointer-events</span>: none;
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-direction</span>: column;
+  <span class="hljs-attribute">align-items</span>: center;
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;
+}
+
+<span class="hljs-selector-class">.log</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">22px</span>;
+  <span class="hljs-attribute">background</span>: transparent;
+  <span class="hljs-attribute">color</span>: currentColor;
+  <span class="hljs-attribute">border</span>: none;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">16px</span>;
+  <span class="hljs-attribute">text-align</span>: center;
+}</code></pre><br><script class="load">createObj = function() {
+  // update
+  if (document.querySelector('#update')) {
+    updateDemo();
+    function updateDemo () {
+      var progressLogEl = document.querySelector('#update .progress-log');
+      var updateLogEl = document.querySelector('#update .current-time-log');
+      var updates = 0;
+      var update = anime({
+        targets: '#update .el',
+        translateX: 270,
+        delay: 1000,
+        direction: 'alternate',
+        loop: 3,
+        easing: 'easeInOutCirc',
+        update: function(anim) {
+          updates++;
+          progressLogEl.value = 'progress : '+ Math.round(anim.progress) +'%';
+          updateLogEl.value = 'updates : '+updates;
+        }
+      });
+      document.querySelector('#update').onclick = update.restart;
+      document.querySelector('#update').addEventListener('click', function(){
+        updates = 0;
+        progressLogEl.value = 'progress : 0%';
+        updateLogEl.value = 'updates : 0';
+      }, false);
+    }
+  }
+
+  // begin & complete
+  if (document.querySelector('#begin')) {
+    beginDemo();
+    function beginDemo() {
+      var progressLogEl = document.querySelector('#begin .progress-log');
+      var beginLogEl = document.querySelector('#begin .begin-log');
+      var completeLogEl = document.querySelector('#begin .completed-log');
+      var begin = anime({
+        targets: '#begin .el',
+        translateX: 240,
+        delay: 1000,
+        easing: 'easeInOutCirc',
+        update: function(anim) {
+          progressLogEl.value = 'progress : ' + Math.round(anim.progress) + '%';
+          beginLogEl.value = 'began : ' + anim.began;
+          completeLogEl.value = 'completed : ' + anim.completed;
+        },
+        begin: function(anim) {
+          beginLogEl.value = 'began : ' + anim.began;
+        },
+        complete: function(anim) {
+          completeLogEl.value = 'completed : ' + anim.completed;
+        }
+      });
+      document.querySelector('#begin').onclick = begin.restart;
+      document.querySelector('#begin').addEventListener('click', function(){
+        progressLogEl.value = 'progress : 0%';
+        beginLogEl.value = 'began : false';
+        completeLogEl.value = 'completed : false';
+      }, false);
+    }
+  }
+
+  // loopBegin & loopComplete
+  if (document.querySelector('#loopBegin')) {
+    loopBeginDemo();
+    function loopBeginDemo() {
+      var beginLogEl = document.querySelector('#loopBegin .begin-log');
+      var completeLogEl = document.querySelector('#loopBegin .completed-log');
+      var loopBegan = 0;
+      var loopCompleted = 0;
+
+      var loopBegin = anime({
+        targets: '#loopBegin .el',
+        translateX: 240,
+        loop: true,
+        direction: 'alternate',
+        easing: 'easeInOutCirc',
+        loopBegin: function(anim) {
+          loopBegan++;
+          beginLogEl.value = 'loop began : ' + loopBegan;
+        },
+        loopComplete: function(anim) {
+          loopCompleted++;
+          completeLogEl.value = 'loop completed : ' + loopCompleted;
+        }
+      });
+      document.querySelector('#loopBegin').onclick = loopBegin.restart;
+      document.querySelector('#loopBegin').addEventListener('click', function(){
+        beginLogEl.value = 'loop began : 0';
+        completeLogEl.value = 'loop completed : 0';
+      }, false);
+    }
+  }
+
+  // change
+  if (document.querySelector('#change')) {
+    changeDemo();
+    function changeDemo() {
+      var progressLogEl = document.querySelector('#change .progress-log');
+      var changeLogEl = document.querySelector('#change .changes-log');
+      var changes = 0;
+
+      var change = anime({
+        targets: '#change .el',
+        translateX: 270,
+        delay: 1000,
+        endDelay: 1000,
+        direction: 'alternate',
+        loop: true,
+        easing: 'easeInOutCirc',
+        update: function(anim) {
+          progressLogEl.value = 'progress : '+Math.round(anim.progress)+'%';
+        },
+        change: function() {
+          changes++;
+          changeLogEl.value = 'changes : ' + changes;
+        }
+      });
+      document.querySelector('#change').onclick = change.restart;
+      document.querySelector('#change').addEventListener('click', function(){
+        progressLogEl.value = 'progress : 0%';
+        changeLogEl.value = 'changes : 0';
+      }, false);
+    }
+  }
+
+  // changeBegin & changeComplete
+  if (document.querySelector('#changeBegin')) {
+    changeBeginDemo();
+    function changeBeginDemo() {
+      var progressLogEl = document.querySelector('#changeBegin .progress-log');
+      var beginLogEl = document.querySelector('#changeBegin .begin-log');
+      var completeLogEl = document.querySelector('#changeBegin .completed-log');
+      var changeBegan = 0;
+      var changeCompleted = 0;
+
+      var changeBegin = anime({
+        targets: '#changeBegin .el',
+        translateX: 240,
+        delay: 1000,
+        endDelay: 1000,
+        loop: true,
+        direction: 'alternate',
+        easing: 'easeInOutCirc',
+        update: function(anim) {
+          progressLogEl.value = 'progress : '+Math.round(anim.progress)+'%';
+        },
+        changeBegin: function(anim) {
+          changeBegan++;
+          beginLogEl.value = 'change began : ' + changeBegan;
+        },
+        changeComplete: function(anim) {
+          changeCompleted++;
+          completeLogEl.value = 'change completed : ' + changeCompleted;
+        }
+      });
+      document.querySelector('#changeBegin').onclick = changeBegin.restart;
+      document.querySelector('#changeBegin').addEventListener('click', function(){
+        progressLogEl.value = 'progress : 0%';
+        beginLogEl.value = 'began : false';
+        completeLogEl.value = 'completed : false';
+      }, false);
+    }
+  }
+
+  // finished promises
+  if (document.querySelector('#finished')) {
+    finishedDemo();
+    function finishedDemo() {
+      var progressLogEl = document.querySelector('#finished .progress-log');
+      var promiseEl = document.querySelector('#finished .el');
+      var finishedLogEl = document.querySelector('#finished .finished-log');
+      var demoPromiseResetTimeout;
+
+      function logFinished() {
+        anime.set(finishedLogEl, {value: 'Promise resolved'});
+        anime.set(promiseEl, {backgroundColor: '#18FF92'});
+      }
+
+      var animation = anime.timeline({
+        targets: promiseEl,
+        delay: 400,
+        duration: 500,
+        endDelay: 400,
+        easing: 'easeInOutSine',
+        update: function(anim) {
+          progressLogEl.value = 'progress : '+Math.round(anim.progress)+'%';
+        }
+      }).add({
+        translateX: 250
+      }).add({
+        scale: 2
+      }).add({
+        translateX: 0
+      });
+
+      animation.finished.then(logFinished);
+
+    }
+    document.querySelector('#finished').addEventListener('click', function(){
+      anime.set('#finished .el', {backgroundColor: '', scale: 1});
+      anime.set('#finished .progress-log', {value: 'progress : 0%'});
+      anime.set('#finished .finished-log', {value: ''});
+      finishedDemo();
+    }, false);
+  }
+};</script><br><div class="license"><p><a href="https://github.com/juliangarnier/anime/blob/master/LICENSE.md">MIT license</a>.
+&copy; 2017 Julian Garnier.</p><p>このコンテンツはJulian Garnier(juliangarnier)による<a href="http://animejs.com/documentation/">anime.jsドキュメント</a>を翻訳/改変したものです。</p></div></div></div></div></div><footer><span> &copy; <span id="copy_year">2017</span> tobijibu</span></footer></div><noscript id="deferred-styles"><link href="./css/lazy.css" rel="stylesheet"></noscript><script src="./js/main.js" defer></script><script src="./js/anime.min.js"></script><div id="src" hidden></div></body></html>

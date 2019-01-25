@@ -1,0 +1,176 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><title>Keyframes | anime.js - にほんご。</title><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta property="og:title" content="Keyframes | anime.js - にほんご。"><meta property="og:url"><meta property="og:type" content="article"><link rel="icon" href="https://tr.you84815.space/animejs/favicon.ico"><link rel="stylesheet" href="./css/main.css"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-106478577-1', 'auto');</script></head><body><div id="container"><header><div class="icon"><a class="no-barba" href="https://tr.you84815.space/"><svg width="16" height="16"><rect width="16" height="16" fill="#e0e0e0"></rect></svg></a></div><div class="navi_toggle" onclick="toggleMenu()"><svg id="menu_close" width="24" height="24" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg><svg id="menu_open" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></div><div class="title">anime.js - <a class="no-barba" href="https://tr.you84815.space/">にほんご。</a></div></header><div class="navi" id="navi"><ul class="menu"><li><a class="index" href="./index.html">Home</a></li><li><a class="introduction" href="./introduction.html">Introduction</a></li><li><a class="getting-started" href="./getting-started.html">Getting Started</a></li><li><a class="targets" href="./targets.html">Targets</a><ul class="hidden" id="navi_targets"><li><a href="./targets.html#css-selector">CSSセレクタ</a></li><li><a href="./targets.html#dom-node">DOM Node / NodeList</a></li><li><a href="./targets.html#object">JavaScriptオブジェクト</a></li><li><a href="./targets.html#array">配列</a></li></ul></li><li><a class="properties" href="./properties.html">Properties</a><ul class="hidden" id="navi_properties"><li><a href="./properties.html#css">CSSプロパティ</a></li><li><a href="./properties.html#css-transforms">CSS transform</a></li><li><a href="./properties.html#object-properties">オブジェクトプロパティ</a></li><li><a href="./properties.html#dom-attributes">DOM属性</a></li><li><a href="./properties.html#svg-attributes">SVG属性</a></li></ul></li><li><a class="property-parameters" href="./property-parameters.html">Property Parameters</a><ul class="hidden" id="navi_property-parameters"><li><a href="./property-parameters.html#p-duration">duration(時間)</a></li><li><a href="./property-parameters.html#p-delay">delay(開始遅延)</a></li><li><a href="./property-parameters.html#p-end-delay">endDelay(終了遅延)</a></li><li><a href="./property-parameters.html#p-easing">easing(イージング)</a></li><li><a href="./property-parameters.html#p-round">round(数値の丸め)</a></li><li><a href="./property-parameters.html#p-specific-property">特定のプロパティ</a></li><li><a href="./property-parameters.html#p-function-based-parameters">関数指定パラメータ</a></li></ul></li><li><a class="animation-parameters" href="./animation-parameters.html">Animation Parameters</a><ul class="hidden" id="navi_animation-parameters"><li><a href="./animation-parameters.html#ap-direction">再生方向</a></li><li><a href="./animation-parameters.html#ap-loop">ループ</a></li><li><a href="./animation-parameters.html#ap-autoplay">自動再生</a></li></ul></li><li><a class="values" href="./values.html">Values</a><ul class="hidden" id="navi_values"><li><a href="./values.html#unitless">単位無指定</a></li><li><a href="./values.html#specific-unit">単位指定</a></li><li><a href="./values.html#relative">相対値</a></li><li><a href="./values.html#v-colors">カラー</a></li><li><a href="./values.html#specific-initial-value">初期値指定</a></li><li><a href="./values.html#function-based-values">関数ベース値</a></li></ul></li><li><a class="keyframes active" href="./keyframes.html">Keyframes</a><ul id="navi_keyframes"><li><a href="./keyframes.html#animation-keyframes">アニメーションキーフレーム</a></li><li><a href="./keyframes.html#property-keyframes">プロパティキーフレーム</a></li></ul></li><li><a class="staggering" href="./staggering.html">Staggering</a><ul class="hidden" id="navi_staggering"><li><a href="./staggering.html#s-staggering-basics">staggerの基本</a></li><li><a href="./staggering.html#s-start-value">開始タイミング</a></li><li><a href="./staggering.html#s-range-value">範囲指定</a></li><li><a href="./staggering.html#s-from-value">開始位置指定</a></li><li><a href="./staggering.html#s-direction">direction(アニメーションの順序)</a></li><li><a href="./staggering.html#s-easing">easing(イージング)</a></li><li><a href="./staggering.html#s-grid">grid</a></li><li><a href="./staggering.html#s-axis">axis</a></li></ul></li><li><a class="timeline" href="./timeline.html">Timeline</a><ul class="hidden" id="navi_timeline"><li><a href="./timeline.html#basic-timeline">タイムラインの基本</a></li><li><a href="./timeline.html#time-offset">タイムオフセット</a></li><li><a href="./timeline.html#parameters-inheritance">パラメータの継承</a></li></ul></li><li><a class="controls" href="./controls.html">Controls</a><ul class="hidden" id="navi_controls"><li><a href="./controls.html#play-pause">再生 / 停止</a></li><li><a href="./controls.html#restart">リスタート</a></li><li><a href="./controls.html#reverse">逆再生</a></li><li><a href="./controls.html#seek">シーク</a></li><li><a href="./controls.html#timeline-controls">タイムラインコントロール</a></li></ul></li><li><a class="callback" href="./callback-promises.html">Callback & Promises</a><ul class="hidden" id="navi_callback"><li><a href="./callback-promises.html#c-update">update</a></li><li><a href="./callback-promises.html#c-begin">begin &amp; complete</a></li><li><a href="./callback-promises.html#c-loop-begin">loopBegin &amp; loopComplete</a></li><li><a href="./callback-promises.html#c-change">change</a></li><li><a href="./callback-promises.html#c-change-begin">changeBegin &amp; changeComplete</a></li><li><a href="./callback-promises.html#c-finished">終了Promise</a></li></ul></li><li><a class="svg" href="./svg.html">SVG</a><ul class="hidden" id="navi_svg"><li><a href="./svg.html#motion-path">モーションパス</a></li><li><a href="./svg.html#morphing">モーフィング</a></li><li><a href="./svg.html#line-drawing">線画アニメーション</a></li></ul></li><li><a class="easing" href="./easing.html">Easing</a><ul class="hidden" id="navi_easing"><li><a href="./easing.html#e-linear">linear</a></li><li><a href="./easing.html#e-penners-functions">Robert Pennerのeasing関数</a></li><li><a href="./easing.html#e-cubic-bezier-curve">3次ベジェ曲線</a></li><li><a href="./easing.html#e-spring">spring</a></li><li><a href="./easing.html#e-elastic">elastic</a></li><li><a href="./easing.html#e-steps">steps</a></li><li><a href="./easing.html#e-custom-easing">カスタムイージング</a></li></ul></li><li><a class="helper" href="./helper.html">Helpers</a><ul class="hidden" id="navi_helper"><li><a href="./helper.html#h-remove">remove</a></li><li><a href="./helper.html#h-get">get</a></li><li><a href="./helper.html#h-set">set</a></li><li><a href="./helper.html#h-random">random</a></li><li><a href="./helper.html#h-tick">tick</a></li><li><a href="./helper.html#h-running">running</a></li></ul></li></ul></div><div id="content"><div id="main"><div id="barba-wrapper"><div class="barba-container"><h1>Keyframes</h1><div id="update_date"><span>作成日: 2019.01.23
+</span></div><h2 id="animation-keyframes">アニメーションキーフレーム</h2><p>アニメーションキーフレームは<code>keyframes</code>プロパティに配列を使って定義します。</p><blockquote>キーフレームに持続時間を指定していない場合、
+各キーフレームの持続時間は
+総アニメーション時間をキーフレームの数で割った時間になります。</blockquote><div class="table-box"><table class="my-table"><tr><th>type</th><th class="detail">例</th></tr><tr><td><code>array</code></td><td><pre class="count" style="margin:0"><code style="padding:0">[
+  {<span class="hljs-attr">value</span>: <span class="hljs-number">100</span>, <span class="hljs-attr">easing</span>: <span class="hljs-string">'easeOutExpo'</span>},
+  {<span class="hljs-attr">value</span>: <span class="hljs-number">200</span>, <span class="hljs-attr">delay</span>: <span class="hljs-number">500</span>},
+  {<span class="hljs-attr">value</span>: <span class="hljs-number">300</span>, <span class="hljs-attr">duration</span>: <span class="hljs-number">1000</span>}
+]</code></pre></td></tr></table></div><pre><code>anime({
+  <span class="hljs-attr">targets</span>: <span class="hljs-string">'.animation-keyframes-demo .el'</span>,
+  <span class="hljs-attr">keyframes</span>: [
+    {<span class="hljs-attr">translateY</span>: <span class="hljs-number">-40</span>},
+    {<span class="hljs-attr">translateX</span>: <span class="hljs-number">250</span>},
+    {<span class="hljs-attr">translateY</span>: <span class="hljs-number">40</span>},
+    {<span class="hljs-attr">translateX</span>: <span class="hljs-number">0</span>},
+    {<span class="hljs-attr">translateY</span>: <span class="hljs-number">0</span>}
+  ],
+  <span class="hljs-attr">duration</span>: <span class="hljs-number">4000</span>,
+  <span class="hljs-attr">easing</span>: <span class="hljs-string">'easeOutElastic(1, .8)'</span>,
+  <span class="hljs-attr">loop</span>: <span class="hljs-literal">true</span>
+});</code></pre><h3>デモ</h3><div id="animation-keyframes" style="margin: 3em 0;"><div class="square shadow"></div><div class="square el"></div></div><h5>JavaScript</h5><pre><code><span class="hljs-keyword">var</span> animationKeyframes = anime({
+  <span class="hljs-attr">targets</span>: <span class="hljs-string">'#animation-keyframes .el'</span>,
+  <span class="hljs-attr">keyframes</span>: [
+    {<span class="hljs-attr">translateY</span>: <span class="hljs-number">-40</span>},
+    {<span class="hljs-attr">translateX</span>: <span class="hljs-number">250</span>},
+    {<span class="hljs-attr">translateY</span>: <span class="hljs-number">40</span>},
+    {<span class="hljs-attr">translateX</span>: <span class="hljs-number">0</span>},
+    {<span class="hljs-attr">translateY</span>: <span class="hljs-number">0</span>}
+  ],
+  <span class="hljs-attr">duration</span>: <span class="hljs-number">4000</span>,
+  <span class="hljs-attr">easing</span>: <span class="hljs-string">'easeOutElastic(1, .8)'</span>,
+  <span class="hljs-attr">loop</span>: <span class="hljs-literal">true</span>
+});</code></pre><h5>HTML</h5><pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"animation-keyframes"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><h5>CSS</h5><pre><code><span class="hljs-selector-class">.shadow</span> {
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">opacity</span>: .<span class="hljs-number">2</span>;
+}
+
+<span class="hljs-selector-class">.square</span> {
+  <span class="hljs-attribute">pointer-events</span>: none;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">28px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">28px</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">1px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">12px</span>;
+}</code></pre><br><h2 id="property-keyframes">プロパティキーフレーム</h2><p><a href="#animation-keyframes">アニメーションキーフレーム</a>と同様に、
+プロパティキーフレームはプロパティオブジェクトの配列を使って定義します。
+各プロパティにはそれぞれ独自のキーフレーム配列を持っており、
+プロパティキーフレームを使用することでアニメーションを重ねることができます。</p><blockquote>キーフレームに持続時間を指定していない場合、
+各キーフレームの持続時間は
+総アニメーション時間をキーフレームの数で割った時間になります。</blockquote><div class="table-box"><table class="my-table"><tr><th>type</th><th class="detail">例</th></tr><tr><td><code>array</code></td><td><pre class="count" style="margin:0"><code style="padding:0">[
+  {<span class="hljs-attr">value</span>: <span class="hljs-number">100</span>, <span class="hljs-attr">easing</span>: <span class="hljs-string">'easeOutExpo'</span>},
+  {<span class="hljs-attr">value</span>: <span class="hljs-number">200</span>, <span class="hljs-attr">delay</span>: <span class="hljs-number">500</span>},
+  {<span class="hljs-attr">value</span>: <span class="hljs-number">300</span>, <span class="hljs-attr">duration</span>: <span class="hljs-number">1000</span>}
+]</code></pre></td></tr></table></div><pre><code>anime({
+  <span class="hljs-attr">targets</span>: <span class="hljs-string">'.property-keyframes-demo .el'</span>,
+  <span class="hljs-attr">translateX</span>: [
+    { <span class="hljs-attr">value</span>: <span class="hljs-number">250</span>, <span class="hljs-attr">duration</span>: <span class="hljs-number">1000</span>, <span class="hljs-attr">delay</span>: <span class="hljs-number">500</span> },
+    { <span class="hljs-attr">value</span>: <span class="hljs-number">0</span>, <span class="hljs-attr">duration</span>: <span class="hljs-number">1000</span>, <span class="hljs-attr">delay</span>: <span class="hljs-number">500</span> }
+  ],
+  <span class="hljs-attr">translateY</span>: [
+    { <span class="hljs-attr">value</span>: <span class="hljs-number">-40</span>, <span class="hljs-attr">duration</span>: <span class="hljs-number">500</span> },
+    { <span class="hljs-attr">value</span>: <span class="hljs-number">40</span>, <span class="hljs-attr">duration</span>: <span class="hljs-number">500</span>, <span class="hljs-attr">delay</span>: <span class="hljs-number">1000</span> },
+    { <span class="hljs-attr">value</span>: <span class="hljs-number">0</span>, <span class="hljs-attr">duration</span>: <span class="hljs-number">500</span>, <span class="hljs-attr">delay</span>: <span class="hljs-number">1000</span> }
+  ],
+  <span class="hljs-attr">scaleX</span>: [
+    { <span class="hljs-attr">value</span>: <span class="hljs-number">4</span>, <span class="hljs-attr">duration</span>: <span class="hljs-number">100</span>, <span class="hljs-attr">delay</span>: <span class="hljs-number">500</span>, <span class="hljs-attr">easing</span>: <span class="hljs-string">'easeOutExpo'</span> },
+    { <span class="hljs-attr">value</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">duration</span>: <span class="hljs-number">900</span> },
+    { <span class="hljs-attr">value</span>: <span class="hljs-number">4</span>, <span class="hljs-attr">duration</span>: <span class="hljs-number">100</span>, <span class="hljs-attr">delay</span>: <span class="hljs-number">500</span>, <span class="hljs-attr">easing</span>: <span class="hljs-string">'easeOutExpo'</span> },
+    { <span class="hljs-attr">value</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">duration</span>: <span class="hljs-number">900</span> }
+  ],
+  <span class="hljs-attr">scaleY</span>: [
+    { <span class="hljs-attr">value</span>: [<span class="hljs-number">1.75</span>, <span class="hljs-number">1</span>], <span class="hljs-attr">duration</span>: <span class="hljs-number">500</span> },
+    { <span class="hljs-attr">value</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">duration</span>: <span class="hljs-number">50</span>, <span class="hljs-attr">delay</span>: <span class="hljs-number">1000</span>, <span class="hljs-attr">easing</span>: <span class="hljs-string">'easeOutExpo'</span> },
+    { <span class="hljs-attr">value</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">duration</span>: <span class="hljs-number">450</span> },
+    { <span class="hljs-attr">value</span>: <span class="hljs-number">1.75</span>, <span class="hljs-attr">duration</span>: <span class="hljs-number">50</span>, <span class="hljs-attr">delay</span>: <span class="hljs-number">1000</span>, <span class="hljs-attr">easing</span>: <span class="hljs-string">'easeOutExpo'</span> },
+    { <span class="hljs-attr">value</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">duration</span>: <span class="hljs-number">450</span> }
+  ],
+  <span class="hljs-attr">easing</span>: <span class="hljs-string">'easeOutElastic(1, .8)'</span>,
+  <span class="hljs-attr">loop</span>: <span class="hljs-literal">true</span>
+});
+</code></pre><h3>デモ</h3><div id="property-keyframes" style="margin: 3em 0;"><div class="square shadow"></div><div class="square el"></div></div><h5>JavaScript</h5><pre><code><span class="hljs-keyword">var</span> propertyKeyframes = anime({
+  <span class="hljs-attr">targets</span>: <span class="hljs-string">'#property-keyframes .el'</span>,
+  <span class="hljs-attr">translateX</span>: [
+    { <span class="hljs-attr">value</span>: <span class="hljs-number">250</span>, <span class="hljs-attr">duration</span>: <span class="hljs-number">1000</span>, <span class="hljs-attr">delay</span>: <span class="hljs-number">500</span> },
+    { <span class="hljs-attr">value</span>: <span class="hljs-number">0</span>, <span class="hljs-attr">duration</span>: <span class="hljs-number">1000</span>, <span class="hljs-attr">delay</span>: <span class="hljs-number">500</span> }
+  ],
+  <span class="hljs-attr">translateY</span>: [
+    { <span class="hljs-attr">value</span>: <span class="hljs-number">-40</span>, <span class="hljs-attr">duration</span>: <span class="hljs-number">500</span> },
+    { <span class="hljs-attr">value</span>: <span class="hljs-number">40</span>, <span class="hljs-attr">duration</span>: <span class="hljs-number">500</span>, <span class="hljs-attr">delay</span>: <span class="hljs-number">1000</span> },
+    { <span class="hljs-attr">value</span>: <span class="hljs-number">0</span>, <span class="hljs-attr">duration</span>: <span class="hljs-number">500</span>, <span class="hljs-attr">delay</span>: <span class="hljs-number">1000</span> }
+  ],
+  <span class="hljs-attr">scaleX</span>: [
+    { <span class="hljs-attr">value</span>: <span class="hljs-number">4</span>, <span class="hljs-attr">duration</span>: <span class="hljs-number">100</span>, <span class="hljs-attr">delay</span>: <span class="hljs-number">500</span>, <span class="hljs-attr">easing</span>: <span class="hljs-string">'easeOutExpo'</span> },
+    { <span class="hljs-attr">value</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">duration</span>: <span class="hljs-number">900</span> },
+    { <span class="hljs-attr">value</span>: <span class="hljs-number">4</span>, <span class="hljs-attr">duration</span>: <span class="hljs-number">100</span>, <span class="hljs-attr">delay</span>: <span class="hljs-number">500</span>, <span class="hljs-attr">easing</span>: <span class="hljs-string">'easeOutExpo'</span> },
+    { <span class="hljs-attr">value</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">duration</span>: <span class="hljs-number">900</span> }
+  ],
+  <span class="hljs-attr">scaleY</span>: [
+    { <span class="hljs-attr">value</span>: [<span class="hljs-number">1.75</span>, <span class="hljs-number">1</span>], <span class="hljs-attr">duration</span>: <span class="hljs-number">500</span> },
+    { <span class="hljs-attr">value</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">duration</span>: <span class="hljs-number">50</span>, <span class="hljs-attr">delay</span>: <span class="hljs-number">1000</span>, <span class="hljs-attr">easing</span>: <span class="hljs-string">'easeOutExpo'</span> },
+    { <span class="hljs-attr">value</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">duration</span>: <span class="hljs-number">450</span> },
+    { <span class="hljs-attr">value</span>: <span class="hljs-number">1.75</span>, <span class="hljs-attr">duration</span>: <span class="hljs-number">50</span>, <span class="hljs-attr">delay</span>: <span class="hljs-number">1000</span>, <span class="hljs-attr">easing</span>: <span class="hljs-string">'easeOutExpo'</span> },
+    { <span class="hljs-attr">value</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">duration</span>: <span class="hljs-number">450</span> }
+  ],
+  <span class="hljs-attr">easing</span>: <span class="hljs-string">'easeOutElastic(1, .8)'</span>,
+  <span class="hljs-attr">loop</span>: <span class="hljs-literal">true</span>
+});</code></pre><h5>HTML</h5><pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"animation-keyframes"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><h5>CSS</h5><pre><code><span class="hljs-selector-class">.shadow</span> {
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">opacity</span>: .<span class="hljs-number">2</span>;
+}
+
+<span class="hljs-selector-class">.square</span> {
+  <span class="hljs-attribute">pointer-events</span>: none;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">28px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">28px</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">1px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">12px</span>;
+}</code></pre><br><script class="load">createObj = function() {
+  // animation keyframes
+  if (document.querySelector('#animation-keyframes')) {
+    var animationKeyframes = anime({
+      targets: '#animation-keyframes .el',
+      keyframes: [
+        {translateY: -40},
+        {translateX: 250},
+        {translateY: 40},
+        {translateX: 0},
+        {translateY: 0}
+      ],
+      duration: 4000,
+      easing: 'easeOutElastic(1, .8)',
+      loop: true
+    });
+  }
+
+  // property keyframes
+  if (document.querySelector('#property-keyframes')) {
+    var propertyKeyframes = anime({
+      targets: '#property-keyframes .el',
+      translateX: [
+        { value: 250, duration: 1000, delay: 500 },
+        { value: 0, duration: 1000, delay: 500 }
+      ],
+      translateY: [
+        { value: -40, duration: 500 },
+        { value: 40, duration: 500, delay: 1000 },
+        { value: 0, duration: 500, delay: 1000 }
+      ],
+      scaleX: [
+        { value: 4, duration: 100, delay: 500, easing: 'easeOutExpo' },
+        { value: 1, duration: 900 },
+        { value: 4, duration: 100, delay: 500, easing: 'easeOutExpo' },
+        { value: 1, duration: 900 }
+      ],
+      scaleY: [
+        { value: [1.75, 1], duration: 500 },
+        { value: 2, duration: 50, delay: 1000, easing: 'easeOutExpo' },
+        { value: 1, duration: 450 },
+        { value: 1.75, duration: 50, delay: 1000, easing: 'easeOutExpo' },
+        { value: 1, duration: 450 }
+      ],
+      easing: 'easeOutElastic(1, .8)',
+      loop: true
+    });
+  }
+};</script><br><div class="license"><p><a href="https://github.com/juliangarnier/anime/blob/master/LICENSE.md">MIT license</a>.
+&copy; 2017 Julian Garnier.</p><p>このコンテンツはJulian Garnier(juliangarnier)による<a href="http://animejs.com/documentation/">anime.jsドキュメント</a>を翻訳/改変したものです。</p></div></div></div></div></div><footer><span> &copy; <span id="copy_year">2017</span> tobijibu</span></footer></div><noscript id="deferred-styles"><link href="./css/lazy.css" rel="stylesheet"></noscript><script src="./js/main.js" defer></script><script src="./js/anime.min.js"></script><div id="src" hidden></div></body></html>

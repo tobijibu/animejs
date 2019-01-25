@@ -1,0 +1,462 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><title>Staggering | anime.js - にほんご。</title><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta property="og:title" content="Staggering | anime.js - にほんご。"><meta property="og:url"><meta property="og:type" content="article"><link rel="icon" href="https://tr.you84815.space/animejs/favicon.ico"><link rel="stylesheet" href="./css/main.css"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-106478577-1', 'auto');</script></head><body><div id="container"><header><div class="icon"><a class="no-barba" href="https://tr.you84815.space/"><svg width="16" height="16"><rect width="16" height="16" fill="#e0e0e0"></rect></svg></a></div><div class="navi_toggle" onclick="toggleMenu()"><svg id="menu_close" width="24" height="24" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg><svg id="menu_open" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></div><div class="title">anime.js - <a class="no-barba" href="https://tr.you84815.space/">にほんご。</a></div></header><div class="navi" id="navi"><ul class="menu"><li><a class="index" href="./index.html">Home</a></li><li><a class="introduction" href="./introduction.html">Introduction</a></li><li><a class="getting-started" href="./getting-started.html">Getting Started</a></li><li><a class="targets" href="./targets.html">Targets</a><ul class="hidden" id="navi_targets"><li><a href="./targets.html#css-selector">CSSセレクタ</a></li><li><a href="./targets.html#dom-node">DOM Node / NodeList</a></li><li><a href="./targets.html#object">JavaScriptオブジェクト</a></li><li><a href="./targets.html#array">配列</a></li></ul></li><li><a class="properties" href="./properties.html">Properties</a><ul class="hidden" id="navi_properties"><li><a href="./properties.html#css">CSSプロパティ</a></li><li><a href="./properties.html#css-transforms">CSS transform</a></li><li><a href="./properties.html#object-properties">オブジェクトプロパティ</a></li><li><a href="./properties.html#dom-attributes">DOM属性</a></li><li><a href="./properties.html#svg-attributes">SVG属性</a></li></ul></li><li><a class="property-parameters" href="./property-parameters.html">Property Parameters</a><ul class="hidden" id="navi_property-parameters"><li><a href="./property-parameters.html#p-duration">duration(時間)</a></li><li><a href="./property-parameters.html#p-delay">delay(開始遅延)</a></li><li><a href="./property-parameters.html#p-end-delay">endDelay(終了遅延)</a></li><li><a href="./property-parameters.html#p-easing">easing(イージング)</a></li><li><a href="./property-parameters.html#p-round">round(数値の丸め)</a></li><li><a href="./property-parameters.html#p-specific-property">特定のプロパティ</a></li><li><a href="./property-parameters.html#p-function-based-parameters">関数指定パラメータ</a></li></ul></li><li><a class="animation-parameters" href="./animation-parameters.html">Animation Parameters</a><ul class="hidden" id="navi_animation-parameters"><li><a href="./animation-parameters.html#ap-direction">再生方向</a></li><li><a href="./animation-parameters.html#ap-loop">ループ</a></li><li><a href="./animation-parameters.html#ap-autoplay">自動再生</a></li></ul></li><li><a class="values" href="./values.html">Values</a><ul class="hidden" id="navi_values"><li><a href="./values.html#unitless">単位無指定</a></li><li><a href="./values.html#specific-unit">単位指定</a></li><li><a href="./values.html#relative">相対値</a></li><li><a href="./values.html#v-colors">カラー</a></li><li><a href="./values.html#specific-initial-value">初期値指定</a></li><li><a href="./values.html#function-based-values">関数ベース値</a></li></ul></li><li><a class="keyframes" href="./keyframes.html">Keyframes</a><ul class="hidden" id="navi_keyframes"><li><a href="./keyframes.html#animation-keyframes">アニメーションキーフレーム</a></li><li><a href="./keyframes.html#property-keyframes">プロパティキーフレーム</a></li></ul></li><li><a class="staggering active" href="./staggering.html">Staggering</a><ul id="navi_staggering"><li><a href="./staggering.html#s-staggering-basics">staggerの基本</a></li><li><a href="./staggering.html#s-start-value">開始タイミング</a></li><li><a href="./staggering.html#s-range-value">範囲指定</a></li><li><a href="./staggering.html#s-from-value">開始位置指定</a></li><li><a href="./staggering.html#s-direction">direction(アニメーションの順序)</a></li><li><a href="./staggering.html#s-easing">easing(イージング)</a></li><li><a href="./staggering.html#s-grid">grid</a></li><li><a href="./staggering.html#s-axis">axis</a></li></ul></li><li><a class="timeline" href="./timeline.html">Timeline</a><ul class="hidden" id="navi_timeline"><li><a href="./timeline.html#basic-timeline">タイムラインの基本</a></li><li><a href="./timeline.html#time-offset">タイムオフセット</a></li><li><a href="./timeline.html#parameters-inheritance">パラメータの継承</a></li></ul></li><li><a class="controls" href="./controls.html">Controls</a><ul class="hidden" id="navi_controls"><li><a href="./controls.html#play-pause">再生 / 停止</a></li><li><a href="./controls.html#restart">リスタート</a></li><li><a href="./controls.html#reverse">逆再生</a></li><li><a href="./controls.html#seek">シーク</a></li><li><a href="./controls.html#timeline-controls">タイムラインコントロール</a></li></ul></li><li><a class="callback" href="./callback-promises.html">Callback & Promises</a><ul class="hidden" id="navi_callback"><li><a href="./callback-promises.html#c-update">update</a></li><li><a href="./callback-promises.html#c-begin">begin &amp; complete</a></li><li><a href="./callback-promises.html#c-loop-begin">loopBegin &amp; loopComplete</a></li><li><a href="./callback-promises.html#c-change">change</a></li><li><a href="./callback-promises.html#c-change-begin">changeBegin &amp; changeComplete</a></li><li><a href="./callback-promises.html#c-finished">終了Promise</a></li></ul></li><li><a class="svg" href="./svg.html">SVG</a><ul class="hidden" id="navi_svg"><li><a href="./svg.html#motion-path">モーションパス</a></li><li><a href="./svg.html#morphing">モーフィング</a></li><li><a href="./svg.html#line-drawing">線画アニメーション</a></li></ul></li><li><a class="easing" href="./easing.html">Easing</a><ul class="hidden" id="navi_easing"><li><a href="./easing.html#e-linear">linear</a></li><li><a href="./easing.html#e-penners-functions">Robert Pennerのeasing関数</a></li><li><a href="./easing.html#e-cubic-bezier-curve">3次ベジェ曲線</a></li><li><a href="./easing.html#e-spring">spring</a></li><li><a href="./easing.html#e-elastic">elastic</a></li><li><a href="./easing.html#e-steps">steps</a></li><li><a href="./easing.html#e-custom-easing">カスタムイージング</a></li></ul></li><li><a class="helper" href="./helper.html">Helpers</a><ul class="hidden" id="navi_helper"><li><a href="./helper.html#h-remove">remove</a></li><li><a href="./helper.html#h-get">get</a></li><li><a href="./helper.html#h-set">set</a></li><li><a href="./helper.html#h-random">random</a></li><li><a href="./helper.html#h-tick">tick</a></li><li><a href="./helper.html#h-running">running</a></li></ul></li></ul></div><div id="content"><div id="main"><div id="barba-wrapper"><div class="barba-container"><h1>Staggering</h1><div id="update_date"><span>作成日: 2019.01.23
+</span></div><h2 id="s-staggering-basics">staggerの基本</h2><p>staggerを使用すると、複数の要素を
+"継続する動きと後追いの動き"(アニメーションの12の基本原則の一つ)
+でアニメーションすることができます。</p><pre><code>anime.stagger(value, options)</code></pre><br><div class="table-box"><table class="my-table"><tr><th>引数</th><th>type</th><th class="detail">内容</th><th>必須</th></tr><tr><td><code>value</code></td><td><code>number</code>、<code>string</code>、<code>array</code></td><td>変更する内容</td><td>○</td></tr><tr><td><code>options</code></td><td><code>object</code></td><td>staggerパラメータ</td><td>☓</td></tr></table></div><pre><code>anime({
+  <span class="hljs-attr">targets</span>: <span class="hljs-string">'.basic-staggering-demo .el'</span>,
+  <span class="hljs-attr">translateX</span>: <span class="hljs-number">270</span>,
+  <span class="hljs-attr">delay</span>: anime.stagger(<span class="hljs-number">100</span>) <span class="hljs-comment">// それぞれの要素を100msずつ遅延させます</span>
+});</code></pre><h3>デモ</h3><p>要素をクリックするとアニメーションを開始します。</p><div id="staggering-basics"><div class="label small">delay = (100 * 0) ms</div><div class="square small shadow"></div><div class="square small el"></div><div class="label small">delay = (100 * 1) ms</div><div class="square small shadow"></div><div class="square small el"></div><div class="label small">delay = (100 * 2) ms</div><div class="square small shadow"></div><div class="square small el"></div><div class="label small">delay = (100 * 3) ms</div><div class="square small shadow"></div><div class="square small el"></div><div class="label small">delay = (100 * 4) ms</div><div class="square small shadow"></div><div class="square small el"></div><div class="label small">delay = (100 * 5) ms</div><div class="square small shadow"></div><div class="square small el"></div></div><h5>JavaScript</h5><pre><code><span class="hljs-keyword">var</span> staggeringBasics = anime({
+  <span class="hljs-attr">targets</span>: <span class="hljs-string">'#staggering-basics .el'</span>,
+  <span class="hljs-attr">translateX</span>: <span class="hljs-number">320</span>,
+  <span class="hljs-attr">delay</span>: anime.stagger(<span class="hljs-number">100</span>) <span class="hljs-comment">// それぞれの要素を100msずつ遅延させます</span>
+});</code></pre><h5>HTML</h5><pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"staggering-basics"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"label small"</span>&gt;</span>delay = (100 * 0) ms<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"label small"</span>&gt;</span>delay = (100 * 1) ms<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"label small"</span>&gt;</span>delay = (100 * 2) ms<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"label small"</span>&gt;</span>delay = (100 * 3) ms<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"label small"</span>&gt;</span>delay = (100 * 4) ms<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"label small"</span>&gt;</span>delay = (100 * 5) ms<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><h5>CSS</h5><pre><code><span class="hljs-selector-class">.shadow</span> {
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">opacity</span>: .<span class="hljs-number">2</span>;
+}
+
+<span class="hljs-selector-class">.square</span> {
+  <span class="hljs-attribute">pointer-events</span>: none;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">28px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">28px</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">1px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">12px</span>;
+}
+
+<span class="hljs-selector-class">.small</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">18px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">18px</span>;
+}
+
+<span class="hljs-selector-class">.label</span> {
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">opacity</span>: .<span class="hljs-number">5</span>;
+  <span class="hljs-attribute">text-align</span>: left;
+  <span class="hljs-attribute">padding-left</span>: <span class="hljs-number">38px</span>;
+}
+
+<span class="hljs-selector-class">.label</span><span class="hljs-selector-class">.small</span> {
+  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">20px</span>;
+}</code></pre><br><h2 id="s-start-value">開始タイミング</h2><p>指定したタイミングでstagger効果を開始します。</p><pre><code>anime.stagger(value, {<span class="hljs-attr">start</span>: startValue})</code></pre><br><div class="table-box"><table class="my-table"><tr><th>type</th><th class="detail">内容</th></tr><tr><td><code>number</code>、<code>string</code></td><td>プロパティと同様です。<a href="./values.html">Values</a>を参照してください。</td></tr></table></div><pre><code>anime({
+  <span class="hljs-attr">targets</span>: <span class="hljs-string">'.staggering-start-value-demo .el'</span>,
+  <span class="hljs-attr">translateX</span>: <span class="hljs-number">270</span>,
+  <span class="hljs-attr">delay</span>: anime.stagger(<span class="hljs-number">100</span>, {<span class="hljs-attr">start</span>: <span class="hljs-number">500</span>}) <span class="hljs-comment">// 開始タイミングを500ms遅延させて、それぞれの要素を100msずつ遅延させます。</span>
+});</code></pre><h3>デモ</h3><p>要素をクリックするとアニメーションを開始します。</p><div id="start-value"><div class="label small">delay = 500 + (100 * 0) ms</div><div class="square small shadow"></div><div class="square small el"></div><div class="label small">delay = 500 + (100 * 1) ms</div><div class="square small shadow"></div><div class="square small el"></div><div class="label small">delay = 500 + (100 * 2) ms</div><div class="square small shadow"></div><div class="square small el"></div><div class="label small">delay = 500 + (100 * 3) ms</div><div class="square small shadow"></div><div class="square small el"></div><div class="label small">delay = 500 + (100 * 4) ms</div><div class="square small shadow"></div><div class="square small el"></div><div class="label small">delay = 500 + (100 * 5) ms</div><div class="square small shadow"></div><div class="square small el"></div></div><h5>JavaScript</h5><pre><code><span class="hljs-keyword">var</span> startValue = anime({
+  <span class="hljs-attr">targets</span>: <span class="hljs-string">'#start-value .el'</span>,
+  <span class="hljs-attr">translateX</span>: <span class="hljs-number">320</span>,
+  <span class="hljs-attr">delay</span>: anime.stagger(<span class="hljs-number">100</span>, {<span class="hljs-attr">start</span>: <span class="hljs-number">500</span>}) <span class="hljs-comment">// 開始タイミングを500ms遅延させて、それぞれの要素を100msずつ遅延させます。</span>
+});</code></pre><h5>HTML</h5><pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"start-value"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"label small"</span>&gt;</span>delay = 500 + (100 * 0) ms<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"label small"</span>&gt;</span>delay = 500 + (100 * 1) ms<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"label small"</span>&gt;</span>delay = 500 + (100 * 2) ms<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"label small"</span>&gt;</span>delay = 500 + (100 * 3) ms<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"label small"</span>&gt;</span>delay = 500 + (100 * 4) ms<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"label small"</span>&gt;</span>delay = 500 + (100 * 5) ms<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><h5>CSS</h5><pre><code><span class="hljs-selector-class">.shadow</span> {
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">opacity</span>: .<span class="hljs-number">2</span>;
+}
+
+<span class="hljs-selector-class">.square</span> {
+  <span class="hljs-attribute">pointer-events</span>: none;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">28px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">28px</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">1px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">12px</span>;
+}
+
+<span class="hljs-selector-class">.small</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">18px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">18px</span>;
+}
+
+<span class="hljs-selector-class">.label</span> {
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">opacity</span>: .<span class="hljs-number">5</span>;
+  <span class="hljs-attribute">text-align</span>: left;
+  <span class="hljs-attribute">padding-left</span>: <span class="hljs-number">38px</span>;
+}
+
+<span class="hljs-selector-class">.label</span><span class="hljs-selector-class">.small</span> {
+  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">20px</span>;
+}</code></pre><br><h2 id="s-range-value">範囲指定</h2><p>2つの数値間を均等に分割してアニメーションします。</p><pre><code>anime.stagger([startValue, endValue])</code></pre><br><div class="table-box"><table class="my-table"><tr><th>type</th><th class="detail">内容</th></tr><tr><td><code>'easingName'</code></td><td>使用可能なイージング名は全て指定することができます。<a href="./easing.html">Easing</a>を参照してください。</td></tr><tr><td><code>function(i)</code></td><td>カスタムイージング関数を指定することができます。<a href="./easing.html#custom-easing">カスタムイージング</a>を参照してください。</td></tr></table></div><pre><code>anime({
+  <span class="hljs-attr">targets</span>: <span class="hljs-string">'.range-value-staggering-demo .el'</span>,
+  <span class="hljs-attr">translateX</span>: <span class="hljs-number">270</span>,
+  <span class="hljs-attr">rotate</span>: anime.stagger([<span class="hljs-number">-360</span>, <span class="hljs-number">360</span>]), <span class="hljs-comment">// -360degから360degの範囲を均等に分割して回転アニメーションします。</span>
+  easing: <span class="hljs-string">'easeInOutQuad'</span>
+});</code></pre><h3>デモ</h3><p>要素をクリックするとアニメーションを開始します。</p><div id="range-value"><div class="label small">rotate = ((360 - (-360)) / 0) * 0</div><div class="square small shadow"></div><div class="square small el"></div><div class="label small">rotate = ((360 - (-360)) / 1) * 0</div><div class="square small shadow"></div><div class="square small el"></div><div class="label small">rotate = ((360 - (-360)) / 2) * 0</div><div class="square small shadow"></div><div class="square small el"></div><div class="label small">rotate = ((360 - (-360)) / 3) * 0</div><div class="square small shadow"></div><div class="square small el"></div><div class="label small">rotate = ((360 - (-360)) / 4) * 0</div><div class="square small shadow"></div><div class="square small el"></div><div class="label small">rotate = ((360 - (-360)) / 5) * 0</div><div class="square small shadow"></div><div class="square small el"></div></div><h5>JavaScript</h5><pre><code><span class="hljs-keyword">var</span> rangeValue = anime({
+  <span class="hljs-attr">targets</span>: <span class="hljs-string">'#range-value .el'</span>,
+  <span class="hljs-attr">translateX</span>: <span class="hljs-number">320</span>,
+  <span class="hljs-attr">rotate</span>: anime.stagger([<span class="hljs-number">-360</span>, <span class="hljs-number">360</span>]), <span class="hljs-comment">// -360degから360degの範囲を均等に分割して回転アニメーションします。</span>
+  easing: <span class="hljs-string">'easeInOutQuad'</span>
+});</code></pre><h5>HTML</h5><pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"range-value"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"label small"</span>&gt;</span>rotate = ((360 - (-360)) / 0) * 0<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"label small"</span>&gt;</span>rotate = ((360 - (-360)) / 1) * 0<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"label small"</span>&gt;</span>rotate = ((360 - (-360)) / 2) * 0<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"label small"</span>&gt;</span>rotate = ((360 - (-360)) / 3) * 0<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"label small"</span>&gt;</span>rotate = ((360 - (-360)) / 4) * 0<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"label small"</span>&gt;</span>rotate = ((360 - (-360)) / 5) * 0<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><h5>CSS</h5><pre><code><span class="hljs-selector-class">.shadow</span> {
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">opacity</span>: .<span class="hljs-number">2</span>;
+}
+
+<span class="hljs-selector-class">.square</span> {
+  <span class="hljs-attribute">pointer-events</span>: none;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">28px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">28px</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">1px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">12px</span>;
+}
+
+<span class="hljs-selector-class">.small</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">18px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">18px</span>;
+}
+
+<span class="hljs-selector-class">.label</span> {
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">opacity</span>: .<span class="hljs-number">5</span>;
+  <span class="hljs-attribute">text-align</span>: left;
+  <span class="hljs-attribute">padding-left</span>: <span class="hljs-number">38px</span>;
+}
+
+<span class="hljs-selector-class">.label</span><span class="hljs-selector-class">.small</span> {
+  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">20px</span>;
+}</code></pre><br><h2 id="s-from-value">開始位置指定</h2><p>指定した位置からstagger効果を開始します。</p><pre><code>anime.stagger(value, {<span class="hljs-attr">from</span>: startingPosition})</code></pre><br><div class="table-box"><table class="my-table"><tr><th>options</th><th>type</th><th class="detail">内容</th></tr><tr><td><code>'first'</code>(初期値)</td><td><code>'string'</code></td><td>最初の要素からstaggerを開始します。</td></tr><tr><td><code>'last'</code></td><td><code>'string'</code></td><td>最後の要素からstaggerを開始します。</td></tr><tr><td><code>'last'</code></td><td><code>'string'</code></td><td>中央の要素からstaggerを開始します。</td></tr><tr><td><code>index</code></td><td><code>number</code></td><td>指定したインデックスのの要素からstaggerを開始します。</td></tr></table></div><pre><code>anime({
+  <span class="hljs-attr">targets</span>: <span class="hljs-string">'.staggering-from-demo .el'</span>,
+  <span class="hljs-attr">translateX</span>: <span class="hljs-number">270</span>,
+  <span class="hljs-attr">delay</span>: anime.stagger(<span class="hljs-number">100</span>, {<span class="hljs-attr">from</span>: <span class="hljs-string">'center'</span>})
+});</code></pre><h3>デモ</h3><p>要素をクリックするとアニメーションを開始します。</p><div id="from-value"><div class="square small shadow"></div><div class="square small el"></div><div class="square small shadow"></div><div class="square small el"></div><div class="square small shadow"></div><div class="square small el"></div><div class="square small shadow"></div><div class="square small el"></div><div class="square small shadow"></div><div class="square small el"></div><div class="square small shadow"></div><div class="square small el"></div></div><h5>JavaScript</h5><pre><code><span class="hljs-keyword">var</span> fromValue = anime({
+  <span class="hljs-attr">targets</span>: <span class="hljs-string">'#from-value .el'</span>,
+  <span class="hljs-attr">translateX</span>: <span class="hljs-number">320</span>,
+  <span class="hljs-attr">delay</span>: anime.stagger(<span class="hljs-number">100</span>, {<span class="hljs-attr">from</span>: <span class="hljs-string">'center'</span>})
+});</code></pre><h5>HTML</h5><pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"from-value"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><h5>CSS</h5><pre><code><span class="hljs-selector-class">.shadow</span> {
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">opacity</span>: .<span class="hljs-number">2</span>;
+}
+
+<span class="hljs-selector-class">.square</span> {
+  <span class="hljs-attribute">pointer-events</span>: none;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">28px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">28px</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">1px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">12px</span>;
+}
+
+<span class="hljs-selector-class">.small</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">18px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">18px</span>;
+}</code></pre><br><h2 id="s-direction">direction(アニメーションの順序)</h2><p>staggerの動作順序を変更します。</p><pre><code>anime.stagger(value, {<span class="hljs-attr">direction</span>: <span class="hljs-string">'reverse'</span>})</code></pre><br><div class="table-box"><table class="my-table"><tr><th>options</th><th class="detail">内容</th></tr><tr><td><code>'normal'</code>(初期値)</td><td>通常のstaggerです。アニメーションの順序が最初の要素から最後の要素の向きになります。</td></tr><tr><td><code>'reverse'</code></td><td>逆順のstaggerです。アニメーションの順序が最後の要素から最初の要素の向きになります。</td></tr></table></div><pre><code>anime({
+  <span class="hljs-attr">targets</span>: <span class="hljs-string">'.staggering-direction-demo .el'</span>,
+  <span class="hljs-attr">translateX</span>: <span class="hljs-number">270</span>,
+  <span class="hljs-attr">delay</span>: anime.stagger(<span class="hljs-number">100</span>, {<span class="hljs-attr">direction</span>: <span class="hljs-string">'reverse'</span>})
+});</code></pre><h3>デモ</h3><p>要素をクリックするとアニメーションを開始します。</p><div id="direction"><div class="square small shadow"></div><div class="square small el"></div><div class="square small shadow"></div><div class="square small el"></div><div class="square small shadow"></div><div class="square small el"></div><div class="square small shadow"></div><div class="square small el"></div><div class="square small shadow"></div><div class="square small el"></div><div class="square small shadow"></div><div class="square small el"></div></div><h5>JavaScript</h5><pre><code><span class="hljs-keyword">var</span> direction = anime({
+  <span class="hljs-attr">targets</span>: <span class="hljs-string">'#direction .el'</span>,
+  <span class="hljs-attr">translateX</span>: <span class="hljs-number">320</span>,
+  <span class="hljs-attr">delay</span>: anime.stagger(<span class="hljs-number">100</span>, {<span class="hljs-attr">direction</span>: <span class="hljs-string">'reverse'</span>})
+});</code></pre><h5>HTML</h5><pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"direction"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><h5>CSS</h5><pre><code><span class="hljs-selector-class">.shadow</span> {
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">opacity</span>: .<span class="hljs-number">2</span>;
+}
+
+<span class="hljs-selector-class">.square</span> {
+  <span class="hljs-attribute">pointer-events</span>: none;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">28px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">28px</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">1px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">12px</span>;
+}
+
+<span class="hljs-selector-class">.small</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">18px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">18px</span>;
+}</code></pre><br><h2 id="s-easing">easing(イージング)</h2><p>イージングを使用してstaggerに時差を発生させます。</p><pre><code>anime.stagger(value, {<span class="hljs-attr">easing</span>: <span class="hljs-string">'easingName'</span>})</code></pre><br><div class="table-box"><table class="my-table"><tr><th>type</th><th class="detail">内容</th></tr><tr><td><code>'string'</code></td><td>使用可能なイージング名は全て指定することができます。<a href="./easing.html">Easing</a>を参照してください。</td></tr><tr><td><code>function(i)</code></td><td>カスタムイージング関数を指定することができます。<a href="./easing.html#custom-easing">カスタムイージング</a>を参照してください。</td></tr></table></div><pre><code>anime({
+  <span class="hljs-attr">targets</span>: <span class="hljs-string">'.staggering-easing-demo .el'</span>,
+  <span class="hljs-attr">translateX</span>: <span class="hljs-number">270</span>,
+  <span class="hljs-attr">delay</span>: anime.stagger(<span class="hljs-number">300</span>, {<span class="hljs-attr">easing</span>: <span class="hljs-string">'easeOutQuad'</span>})
+});</code></pre><h3>デモ</h3><p>要素をクリックするとアニメーションを開始します。</p><div id="easing"><div class="square small shadow"></div><div class="square small el"></div><div class="square small shadow"></div><div class="square small el"></div><div class="square small shadow"></div><div class="square small el"></div><div class="square small shadow"></div><div class="square small el"></div><div class="square small shadow"></div><div class="square small el"></div><div class="square small shadow"></div><div class="square small el"></div></div><h5>JavaScript</h5><pre><code><span class="hljs-keyword">var</span> easing = anime({
+  <span class="hljs-attr">targets</span>: <span class="hljs-string">'#easing .el'</span>,
+  <span class="hljs-attr">translateX</span>: <span class="hljs-number">320</span>,
+  <span class="hljs-attr">delay</span>: anime.stagger(<span class="hljs-number">300</span>, {<span class="hljs-attr">easing</span>: <span class="hljs-string">'easeOutQuad'</span>})
+});</code></pre><h5>HTML</h5><pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"easing"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><h5>CSS</h5><pre><code><span class="hljs-selector-class">.shadow</span> {
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">opacity</span>: .<span class="hljs-number">2</span>;
+}
+
+<span class="hljs-selector-class">.square</span> {
+  <span class="hljs-attribute">pointer-events</span>: none;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">28px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">28px</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">1px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">12px</span>;
+}
+
+<span class="hljs-selector-class">.small</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">18px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">18px</span>;
+}</code></pre><br><h2 id="s-grid">grid</h2><p>2次元配列を基にripple effect(波紋効果)を発生させます。</p><pre><code>anime.stagger(value, {<span class="hljs-attr">grid</span>: [rows, columns]})</code></pre><br><div class="table-box"><table class="my-table"><tr><th>type</th><th class="detail">内容</th></tr><tr><td><code>array</code></td><td>2要素の配列を指定します。
+最初の要素は行数、2つ目の要素は列数です。</td></tr></table></div><pre><code>anime({
+  <span class="hljs-attr">targets</span>: <span class="hljs-string">'.staggering-grid-demo .el'</span>,
+  <span class="hljs-attr">scale</span>: [
+    {<span class="hljs-attr">value</span>: <span class="hljs-number">.1</span>, <span class="hljs-attr">easing</span>: <span class="hljs-string">'easeOutSine'</span>, <span class="hljs-attr">duration</span>: <span class="hljs-number">500</span>},
+    {<span class="hljs-attr">value</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">easing</span>: <span class="hljs-string">'easeInOutQuad'</span>, <span class="hljs-attr">duration</span>: <span class="hljs-number">1200</span>}
+  ],
+  <span class="hljs-attr">delay</span>: anime.stagger(<span class="hljs-number">200</span>, {<span class="hljs-attr">grid</span>: [<span class="hljs-number">14</span>, <span class="hljs-number">5</span>], <span class="hljs-attr">from</span>: <span class="hljs-string">'center'</span>})
+});</code></pre><h3>デモ</h3><p>要素をクリックするとアニメーションを開始します。</p><div id="grid" style="position:relative;height: 8em;"><div class="grid"><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div></div><div class="grid"><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div></div></div><h5>JavaScript</h5><pre><code><span class="hljs-keyword">var</span> axis = anime({
+  <span class="hljs-attr">targets</span>: <span class="hljs-string">'#axis .el'</span>,
+  <span class="hljs-attr">translateX</span>: anime.stagger(<span class="hljs-number">10</span>, {<span class="hljs-attr">grid</span>: [<span class="hljs-number">14</span>, <span class="hljs-number">5</span>], <span class="hljs-attr">from</span>: <span class="hljs-string">'center'</span>, <span class="hljs-attr">axis</span>: <span class="hljs-string">'x'</span>}),
+  <span class="hljs-attr">translateY</span>: anime.stagger(<span class="hljs-number">10</span>, {<span class="hljs-attr">grid</span>: [<span class="hljs-number">14</span>, <span class="hljs-number">5</span>], <span class="hljs-attr">from</span>: <span class="hljs-string">'center'</span>, <span class="hljs-attr">axis</span>: <span class="hljs-string">'y'</span>}),
+  <span class="hljs-attr">rotateZ</span>: anime.stagger([<span class="hljs-number">0</span>, <span class="hljs-number">90</span>], {<span class="hljs-attr">grid</span>: [<span class="hljs-number">14</span>, <span class="hljs-number">5</span>], <span class="hljs-attr">from</span>: <span class="hljs-string">'center'</span>, <span class="hljs-attr">axis</span>: <span class="hljs-string">'x'</span>}),
+  <span class="hljs-attr">delay</span>: anime.stagger(<span class="hljs-number">200</span>, {<span class="hljs-attr">grid</span>: [<span class="hljs-number">14</span>, <span class="hljs-number">5</span>], <span class="hljs-attr">from</span>: <span class="hljs-string">'center'</span>}),
+  <span class="hljs-attr">easing</span>: <span class="hljs-string">'easeInOutQuad'</span>
+});</code></pre><h5>HTML</h5><pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"grid"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><span class="hljs-comment">&lt;!-- 計70個--&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><span class="hljs-comment">&lt;!-- 計70個--&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><h5>CSS</h5><pre><code><span class="hljs-selector-class">.shadow</span> {
+  <span class="hljs-attribute">position</span>: relative;
+  <span class="hljs-attribute">opacity</span>: .<span class="hljs-number">2</span>;
+}
+
+<span class="hljs-selector-class">.square</span> {
+  <span class="hljs-attribute">pointer-events</span>: none;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">28px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">28px</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">1px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">12px</span>;
+}
+
+<span class="hljs-selector-class">.small</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">18px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">18px</span>;
+}
+
+<span class="hljs-selector-class">.grid</span> {
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-wrap</span>: wrap;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">290px</span>;
+}</code></pre><br><h2 id="s-axis">axis</h2><p>グリッドスターリング効果<sup>*1</sup>の方向を指定します。</p><blockquote>*1
+リンク先が存在せず、どのような効果か判断できませんでした。
+グリッドが扇状に広がっていく効果かもしれません。</blockquote><pre><code>anime.stagger(value, {<span class="hljs-attr">grid</span>: [rows, columns], <span class="hljs-attr">axis</span>: <span class="hljs-string">'x'</span>})</code></pre><br><div class="table-box"><table class="my-table"><tr><th>パラメータ</th><th class="detail">内容</th></tr><tr><td><code>'x'</code></td><td>X軸に従います。</td></tr><tr><td><code>'y'</code></td><td>Y軸に従います。</td></tr></table></div><pre><code>anime({
+  <span class="hljs-attr">targets</span>: <span class="hljs-string">'.staggering-axis-grid-demo .el'</span>,
+  <span class="hljs-attr">translateX</span>: anime.stagger(<span class="hljs-number">10</span>, {<span class="hljs-attr">grid</span>: [<span class="hljs-number">14</span>, <span class="hljs-number">5</span>], <span class="hljs-attr">from</span>: <span class="hljs-string">'center'</span>, <span class="hljs-attr">axis</span>: <span class="hljs-string">'x'</span>}),
+  <span class="hljs-attr">translateY</span>: anime.stagger(<span class="hljs-number">10</span>, {<span class="hljs-attr">grid</span>: [<span class="hljs-number">14</span>, <span class="hljs-number">5</span>], <span class="hljs-attr">from</span>: <span class="hljs-string">'center'</span>, <span class="hljs-attr">axis</span>: <span class="hljs-string">'y'</span>}),
+  <span class="hljs-attr">rotateZ</span>: anime.stagger([<span class="hljs-number">0</span>, <span class="hljs-number">90</span>], {<span class="hljs-attr">grid</span>: [<span class="hljs-number">14</span>, <span class="hljs-number">5</span>], <span class="hljs-attr">from</span>: <span class="hljs-string">'center'</span>, <span class="hljs-attr">axis</span>: <span class="hljs-string">'x'</span>}),
+  <span class="hljs-attr">delay</span>: anime.stagger(<span class="hljs-number">200</span>, {<span class="hljs-attr">grid</span>: [<span class="hljs-number">14</span>, <span class="hljs-number">5</span>], <span class="hljs-attr">from</span>: <span class="hljs-string">'center'</span>}),
+  <span class="hljs-attr">easing</span>: <span class="hljs-string">'easeInOutQuad'</span>
+});</code></pre><h3>デモ</h3><p>要素をクリックするとアニメーションを開始します。</p><div id="axis" style="position:relative;height: 8em;"><div class="grid"><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div><div class="square small el"></div></div><div class="grid"><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div><div class="square small shadow"></div></div></div><h5>JavaScript</h5><pre><code><span class="hljs-keyword">var</span> easing = anime({
+  <span class="hljs-attr">targets</span>: <span class="hljs-string">'#easing .el'</span>,
+  <span class="hljs-attr">translateX</span>: <span class="hljs-number">320</span>,
+  <span class="hljs-attr">delay</span>: anime.stagger(<span class="hljs-number">300</span>, {<span class="hljs-attr">easing</span>: <span class="hljs-string">'easeOutQuad'</span>})
+});</code></pre><h5>HTML</h5><pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"axis"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><span class="hljs-comment">&lt;!-- 計70個--&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><span class="hljs-comment">&lt;!-- 計70個--&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><h5>CSS</h5><pre><code><span class="hljs-selector-class">.shadow</span> {
+  <span class="hljs-attribute">position</span>: relative;
+  <span class="hljs-attribute">opacity</span>: .<span class="hljs-number">2</span>;
+}
+
+<span class="hljs-selector-class">.square</span> {
+  <span class="hljs-attribute">pointer-events</span>: none;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">28px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">28px</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">1px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">12px</span>;
+}
+
+<span class="hljs-selector-class">.small</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">18px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">18px</span>;
+}
+
+<span class="hljs-selector-class">.grid</span> {
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-wrap</span>: wrap;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">290px</span>;
+}</code></pre><br><script class="load">createObj = function() {
+  // staggering basics
+  if (document.querySelector('#staggering-basics')) {
+    var staggeringBasics = anime({
+      targets: '#staggering-basics .el',
+      translateX: 320,
+      delay: anime.stagger(100) // それぞれの要素を100msずつ遅延させます
+    });
+    document.querySelector('#staggering-basics').onclick = staggeringBasics.restart;
+  }
+
+  // start value
+  if (document.querySelector('#start-value')) {
+    var startValue = anime({
+      targets: '#start-value .el',
+      translateX: 320,
+      delay: anime.stagger(100, {start: 500}) // 開始タイミングを500ms遅延させて、それぞれの要素を100msずつ遅延させます。
+    });
+    document.querySelector('#start-value').onclick = startValue.restart;
+  }
+
+  // range value
+  if (document.querySelector('#range-value')) {
+    var rangeValue = anime({
+      targets: '#range-value .el',
+      translateX: 320,
+      rotate: anime.stagger([-360, 360]), // -360degから360degの範囲を均等に分割して回転アニメーションします。
+      easing: 'easeInOutQuad'
+    });
+    document.querySelector('#range-value').onclick = rangeValue.restart;
+  }
+
+  // from value
+  if (document.querySelector('#from-value')) {
+    var fromValue = anime({
+      targets: '#from-value .el',
+      translateX: 320,
+      delay: anime.stagger(100, {from: 'center'})
+    });
+    document.querySelector('#from-value').onclick = fromValue.restart;
+  }
+
+  // direction
+  if (document.querySelector('#direction')) {
+    var direction = anime({
+      targets: '#direction .el',
+      translateX: 320,
+      delay: anime.stagger(100, {direction: 'reverse'})
+    });
+    document.querySelector('#direction').onclick = direction.restart;
+  }
+
+  // easing
+  if (document.querySelector('#easing')) {
+    var easing = anime({
+      targets: '#easing .el',
+      translateX: 320,
+      delay: anime.stagger(300, {easing: 'easeOutQuad'})
+    });
+    document.querySelector('#easing').onclick = easing.restart;
+  }
+
+  // grid
+  if (document.querySelector('#grid')) {
+    var grid = anime({
+      targets: '#grid .el',
+      scale: [
+        {value: .1, easing: 'easeOutSine', duration: 500},
+        {value: 1, easing: 'easeInOutQuad', duration: 1200}
+      ],
+      delay: anime.stagger(200, {grid: [14, 5], from: 'center'})
+    });
+    document.querySelector('#grid').onclick = grid.restart;
+  }
+
+  // axis
+  if (document.querySelector('#axis')) {
+    var axis = anime({
+      targets: '#axis .el',
+      translateX: anime.stagger(10, {grid: [14, 5], from: 'center', axis: 'x'}),
+      translateY: anime.stagger(10, {grid: [14, 5], from: 'center', axis: 'y'}),
+      rotateZ: anime.stagger([0, 90], {grid: [14, 5], from: 'center', axis: 'x'}),
+      delay: anime.stagger(200, {grid: [14, 5], from: 'center'}),
+      easing: 'easeInOutQuad'
+    });
+    document.querySelector('#axis').onclick = axis.restart;
+  }
+
+
+};</script><br><div class="license"><p><a href="https://github.com/juliangarnier/anime/blob/master/LICENSE.md">MIT license</a>.
+&copy; 2017 Julian Garnier.</p><p>このコンテンツはJulian Garnier(juliangarnier)による<a href="http://animejs.com/documentation/">anime.jsドキュメント</a>を翻訳/改変したものです。</p></div></div></div></div></div><footer><span> &copy; <span id="copy_year">2017</span> tobijibu</span></footer></div><noscript id="deferred-styles"><link href="./css/lazy.css" rel="stylesheet"></noscript><script src="./js/main.js" defer></script><script src="./js/anime.min.js"></script><div id="src" hidden></div></body></html>
