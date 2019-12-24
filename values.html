@@ -1,21 +1,217 @@
-<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><title>Values | anime.js - にほんご。</title><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta property="og:title" content="Values | anime.js - にほんご。"><meta property="og:url"><meta property="og:type" content="article"><link rel="icon" href="https://tr.you84815.space/animejs/favicon.ico"><link rel="stylesheet" href="./css/main.css"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-106478577-1', 'auto');</script></head><body><div id="container"><header><div class="icon"><a class="no-barba" href="https://tr.you84815.space/"><svg width="16" height="16"><rect width="16" height="16" fill="#e0e0e0"></rect></svg></a></div><div class="navi_toggle" onclick="toggleMenu()"><svg id="menu_close" width="24" height="24" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg><svg id="menu_open" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></div><div class="title">anime.js - <a class="no-barba" href="https://tr.you84815.space/">にほんご。</a></div></header><div class="navi" id="navi"><ul class="menu"><li><a class="index" href="./index.html">Home</a></li><li><a class="introduction" href="./introduction.html">Introduction</a></li><li><a class="getting-started" href="./getting-started.html">Getting Started</a></li><li><a class="targets" href="./targets.html">Targets</a><ul class="hidden" id="navi_targets"><li><a href="./targets.html#css-selector">CSSセレクタ</a></li><li><a href="./targets.html#dom-node">DOM Node / NodeList</a></li><li><a href="./targets.html#object">JavaScriptオブジェクト</a></li><li><a href="./targets.html#array">配列</a></li></ul></li><li><a class="properties" href="./properties.html">Properties</a><ul class="hidden" id="navi_properties"><li><a href="./properties.html#css">CSSプロパティ</a></li><li><a href="./properties.html#css-transforms">CSS transform</a></li><li><a href="./properties.html#object-properties">オブジェクトプロパティ</a></li><li><a href="./properties.html#dom-attributes">DOM属性</a></li><li><a href="./properties.html#svg-attributes">SVG属性</a></li></ul></li><li><a class="property-parameters" href="./property-parameters.html">Property Parameters</a><ul class="hidden" id="navi_property-parameters"><li><a href="./property-parameters.html#p-duration">duration(時間)</a></li><li><a href="./property-parameters.html#p-delay">delay(開始遅延)</a></li><li><a href="./property-parameters.html#p-end-delay">endDelay(終了遅延)</a></li><li><a href="./property-parameters.html#p-easing">easing(イージング)</a></li><li><a href="./property-parameters.html#p-round">round(数値の丸め)</a></li><li><a href="./property-parameters.html#p-specific-property">特定のプロパティ</a></li><li><a href="./property-parameters.html#p-function-based-parameters">関数指定パラメータ</a></li></ul></li><li><a class="animation-parameters" href="./animation-parameters.html">Animation Parameters</a><ul class="hidden" id="navi_animation-parameters"><li><a href="./animation-parameters.html#ap-direction">再生方向</a></li><li><a href="./animation-parameters.html#ap-loop">ループ</a></li><li><a href="./animation-parameters.html#ap-autoplay">自動再生</a></li></ul></li><li><a class="values active" href="./values.html">Values</a><ul id="navi_values"><li><a href="./values.html#unitless">単位無指定</a></li><li><a href="./values.html#specific-unit">単位指定</a></li><li><a href="./values.html#relative">相対値</a></li><li><a href="./values.html#v-colors">カラー</a></li><li><a href="./values.html#specific-initial-value">初期値指定</a></li><li><a href="./values.html#function-based-values">関数ベース値</a></li></ul></li><li><a class="keyframes" href="./keyframes.html">Keyframes</a><ul class="hidden" id="navi_keyframes"><li><a href="./keyframes.html#animation-keyframes">アニメーションキーフレーム</a></li><li><a href="./keyframes.html#property-keyframes">プロパティキーフレーム</a></li></ul></li><li><a class="staggering" href="./staggering.html">Staggering</a><ul class="hidden" id="navi_staggering"><li><a href="./staggering.html#s-staggering-basics">staggerの基本</a></li><li><a href="./staggering.html#s-start-value">開始タイミング</a></li><li><a href="./staggering.html#s-range-value">範囲指定</a></li><li><a href="./staggering.html#s-from-value">開始位置指定</a></li><li><a href="./staggering.html#s-direction">direction(アニメーションの順序)</a></li><li><a href="./staggering.html#s-easing">easing(イージング)</a></li><li><a href="./staggering.html#s-grid">grid</a></li><li><a href="./staggering.html#s-axis">axis</a></li></ul></li><li><a class="timeline" href="./timeline.html">Timeline</a><ul class="hidden" id="navi_timeline"><li><a href="./timeline.html#basic-timeline">タイムラインの基本</a></li><li><a href="./timeline.html#time-offset">タイムオフセット</a></li><li><a href="./timeline.html#parameters-inheritance">パラメータの継承</a></li></ul></li><li><a class="controls" href="./controls.html">Controls</a><ul class="hidden" id="navi_controls"><li><a href="./controls.html#play-pause">再生 / 停止</a></li><li><a href="./controls.html#restart">リスタート</a></li><li><a href="./controls.html#reverse">逆再生</a></li><li><a href="./controls.html#seek">シーク</a></li><li><a href="./controls.html#timeline-controls">タイムラインコントロール</a></li></ul></li><li><a class="callback" href="./callback-promises.html">Callback & Promises</a><ul class="hidden" id="navi_callback"><li><a href="./callback-promises.html#c-update">update</a></li><li><a href="./callback-promises.html#c-begin">begin &amp; complete</a></li><li><a href="./callback-promises.html#c-loop-begin">loopBegin &amp; loopComplete</a></li><li><a href="./callback-promises.html#c-change">change</a></li><li><a href="./callback-promises.html#c-change-begin">changeBegin &amp; changeComplete</a></li><li><a href="./callback-promises.html#c-finished">終了Promise</a></li></ul></li><li><a class="svg" href="./svg.html">SVG</a><ul class="hidden" id="navi_svg"><li><a href="./svg.html#motion-path">モーションパス</a></li><li><a href="./svg.html#morphing">モーフィング</a></li><li><a href="./svg.html#line-drawing">線画アニメーション</a></li></ul></li><li><a class="easing" href="./easing.html">Easing</a><ul class="hidden" id="navi_easing"><li><a href="./easing.html#e-linear">linear</a></li><li><a href="./easing.html#e-penners-functions">Robert Pennerのeasing関数</a></li><li><a href="./easing.html#e-cubic-bezier-curve">3次ベジェ曲線</a></li><li><a href="./easing.html#e-spring">spring</a></li><li><a href="./easing.html#e-elastic">elastic</a></li><li><a href="./easing.html#e-steps">steps</a></li><li><a href="./easing.html#e-custom-easing">カスタムイージング</a></li></ul></li><li><a class="helper" href="./helper.html">Helpers</a><ul class="hidden" id="navi_helper"><li><a href="./helper.html#h-remove">remove</a></li><li><a href="./helper.html#h-get">get</a></li><li><a href="./helper.html#h-set">set</a></li><li><a href="./helper.html#h-random">random</a></li><li><a href="./helper.html#h-tick">tick</a></li><li><a href="./helper.html#h-running">running</a></li></ul></li></ul></div><div id="content"><div id="main"><div id="barba-wrapper"><div class="barba-container"><h1>Values</h1><div id="update_date"><span>作成日: 2019.01.23
-</span></div><h2 id="unitless">単位無指定</h2><p>元の値に単位があれば、アニメーションの値に自動的に単位を追加します。</p><div class="table-box"><table class="my-table"><tr><th>type</th><th>例</th></tr><tr><td><code>number</code></td><td><code>translateX: 250</code></td></tr></table></div><pre><code>anime({
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Values | anime.js - にほんご。</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:title" content="Values | anime.js - にほんご。">
+    <meta property="og:url">
+    <meta property="og:type" content="article">
+    <link rel="icon" href="https://tr.you84815.space/animejs/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <link id="theme_style" rel="stylesheet" type="text/css" href="">
+    <script id="srcTheme" src="./js/toggleTheme.js" data-dir="animejs"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-106478577-1', 'auto');
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      <header>
+        <div class="icon"><a class="no-barba" href="https://tr.you84815.space/">
+            <svg width="16" height="16">
+              <rect width="16" height="16" fill="#e0e0e0"></rect>
+            </svg></a></div>
+        <div class="navi_toggle" onclick="toggleMenu()">
+          <svg id="menu_close" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+            <path d="M0 0h24v24H0z" fill="none"></path>
+          </svg>
+          <svg id="menu_open" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
+          </svg>
+        </div>
+        <div class="title">anime.js - <a class="no-barba" href="https://tr.you84815.space/">にほんご。</a></div><span id="toggleTheme">
+          <svg role="img" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path d="M8 256c0 136.966 111.033 248 248 248s248-111.034 248-248S392.966 8 256 8 8 119.033 8 256zm248 184V72c101.705 0 184 82.311 184 184 0 101.705-82.311 184-184 184z"></path>
+          </svg></span>
+      </header>
+      <div class="navi" id="navi">
+        <ul class="menu">
+          <li><a class="index" href="./index.html">Home</a></li>
+          <li><a class="introduction" href="./introduction.html">Introduction</a></li>
+          <li><a class="getting-started" href="./getting-started.html">Getting Started</a></li>
+          <li><a class="targets" href="./targets.html">Targets</a>
+            <ul class="hidden" id="navi_targets">
+              <li><a href="./targets.html#css-selector">CSSセレクタ</a></li>
+              <li><a href="./targets.html#dom-node">DOM Node / NodeList</a></li>
+              <li><a href="./targets.html#object">JavaScriptオブジェクト</a></li>
+              <li><a href="./targets.html#array">配列</a></li>
+            </ul>
+          </li>
+          <li><a class="properties" href="./properties.html">Properties</a>
+            <ul class="hidden" id="navi_properties">
+              <li><a href="./properties.html#css">CSSプロパティ</a></li>
+              <li><a href="./properties.html#css-transforms">CSS transform</a></li>
+              <li><a href="./properties.html#object-properties">オブジェクトプロパティ</a></li>
+              <li><a href="./properties.html#dom-attributes">DOM属性</a></li>
+              <li><a href="./properties.html#svg-attributes">SVG属性</a></li>
+            </ul>
+          </li>
+          <li><a class="property-parameters" href="./property-parameters.html">Property Parameters</a>
+            <ul class="hidden" id="navi_property-parameters">
+              <li><a href="./property-parameters.html#p-duration">duration(時間)</a></li>
+              <li><a href="./property-parameters.html#p-delay">delay(開始遅延)</a></li>
+              <li><a href="./property-parameters.html#p-end-delay">endDelay(終了遅延)</a></li>
+              <li><a href="./property-parameters.html#p-easing">easing(イージング)</a></li>
+              <li><a href="./property-parameters.html#p-round">round(数値の丸め)</a></li>
+              <li><a href="./property-parameters.html#p-specific-property">特定のプロパティ</a></li>
+              <li><a href="./property-parameters.html#p-function-based-parameters">関数指定パラメータ</a></li>
+            </ul>
+          </li>
+          <li><a class="animation-parameters" href="./animation-parameters.html">Animation Parameters</a>
+            <ul class="hidden" id="navi_animation-parameters">
+              <li><a href="./animation-parameters.html#ap-direction">再生方向</a></li>
+              <li><a href="./animation-parameters.html#ap-loop">ループ</a></li>
+              <li><a href="./animation-parameters.html#ap-autoplay">自動再生</a></li>
+            </ul>
+          </li>
+          <li><a class="values active" href="./values.html">Values</a>
+            <ul id="navi_values">
+              <li><a href="./values.html#unitless">単位無指定</a></li>
+              <li><a href="./values.html#specific-unit">単位指定</a></li>
+              <li><a href="./values.html#relative">相対値</a></li>
+              <li><a href="./values.html#v-colors">カラー</a></li>
+              <li><a href="./values.html#specific-initial-value">初期値指定</a></li>
+              <li><a href="./values.html#function-based-values">関数ベース値</a></li>
+            </ul>
+          </li>
+          <li><a class="keyframes" href="./keyframes.html">Keyframes</a>
+            <ul class="hidden" id="navi_keyframes">
+              <li><a href="./keyframes.html#animation-keyframes">アニメーションキーフレーム</a></li>
+              <li><a href="./keyframes.html#property-keyframes">プロパティキーフレーム</a></li>
+            </ul>
+          </li>
+          <li><a class="staggering" href="./staggering.html">Staggering</a>
+            <ul class="hidden" id="navi_staggering">
+              <li><a href="./staggering.html#s-staggering-basics">staggerの基本</a></li>
+              <li><a href="./staggering.html#s-start-value">開始タイミング</a></li>
+              <li><a href="./staggering.html#s-range-value">範囲指定</a></li>
+              <li><a href="./staggering.html#s-from-value">開始位置指定</a></li>
+              <li><a href="./staggering.html#s-direction">direction(アニメーションの順序)</a></li>
+              <li><a href="./staggering.html#s-easing">easing(イージング)</a></li>
+              <li><a href="./staggering.html#s-grid">grid</a></li>
+              <li><a href="./staggering.html#s-axis">axis</a></li>
+            </ul>
+          </li>
+          <li><a class="timeline" href="./timeline.html">Timeline</a>
+            <ul class="hidden" id="navi_timeline">
+              <li><a href="./timeline.html#basic-timeline">タイムラインの基本</a></li>
+              <li><a href="./timeline.html#time-offset">タイムオフセット</a></li>
+              <li><a href="./timeline.html#parameters-inheritance">パラメータの継承</a></li>
+            </ul>
+          </li>
+          <li><a class="controls" href="./controls.html">Controls</a>
+            <ul class="hidden" id="navi_controls">
+              <li><a href="./controls.html#play-pause">再生 / 停止</a></li>
+              <li><a href="./controls.html#restart">リスタート</a></li>
+              <li><a href="./controls.html#reverse">逆再生</a></li>
+              <li><a href="./controls.html#seek">シーク</a></li>
+              <li><a href="./controls.html#timeline-controls">タイムラインコントロール</a></li>
+            </ul>
+          </li>
+          <li><a class="callback" href="./callback-promises.html">Callback & Promises</a>
+            <ul class="hidden" id="navi_callback">
+              <li><a href="./callback-promises.html#c-update">update</a></li>
+              <li><a href="./callback-promises.html#c-begin">begin &amp; complete</a></li>
+              <li><a href="./callback-promises.html#c-loop-begin">loopBegin &amp; loopComplete</a></li>
+              <li><a href="./callback-promises.html#c-change">change</a></li>
+              <li><a href="./callback-promises.html#c-change-begin">changeBegin &amp; changeComplete</a></li>
+              <li><a href="./callback-promises.html#c-finished">終了Promise</a></li>
+            </ul>
+          </li>
+          <li><a class="svg" href="./svg.html">SVG</a>
+            <ul class="hidden" id="navi_svg">
+              <li><a href="./svg.html#motion-path">モーションパス</a></li>
+              <li><a href="./svg.html#morphing">モーフィング</a></li>
+              <li><a href="./svg.html#line-drawing">線画アニメーション</a></li>
+            </ul>
+          </li>
+          <li><a class="easing" href="./easing.html">Easing</a>
+            <ul class="hidden" id="navi_easing">
+              <li><a href="./easing.html#e-linear">linear</a></li>
+              <li><a href="./easing.html#e-penners-functions">Robert Pennerのeasing関数</a></li>
+              <li><a href="./easing.html#e-cubic-bezier-curve">3次ベジェ曲線</a></li>
+              <li><a href="./easing.html#e-spring">spring</a></li>
+              <li><a href="./easing.html#e-elastic">elastic</a></li>
+              <li><a href="./easing.html#e-steps">steps</a></li>
+              <li><a href="./easing.html#e-custom-easing">カスタムイージング</a></li>
+            </ul>
+          </li>
+          <li><a class="helper" href="./helper.html">Helpers</a>
+            <ul class="hidden" id="navi_helper">
+              <li><a href="./helper.html#h-remove">remove</a></li>
+              <li><a href="./helper.html#h-get">get</a></li>
+              <li><a href="./helper.html#h-set">set</a></li>
+              <li><a href="./helper.html#h-random">random</a></li>
+              <li><a href="./helper.html#h-tick">tick</a></li>
+              <li><a href="./helper.html#h-running">running</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div id="content">
+        <div id="main">
+          <div id="barba-wrapper">
+            <div class="barba-container">
+              <h1>Values</h1>
+              <div id="update_date"><span>作成日: 2019.01.23
+</span>
+              </div>
+              <h2 id="unitless">単位無指定</h2>
+              <p>元の値に単位があれば、アニメーションの値に自動的に単位を追加します。</p>
+              <div class="table-box">
+                <table class="my-table">
+                  <tr>
+                    <th>type</th>
+                    <th>例</th>
+                  </tr>
+                  <tr>
+                    <td><code>number</code></td>
+                    <td><code>translateX: 250</code></td>
+                  </tr>
+                </table>
+              </div>
+              <pre><code>anime({
   <span class="hljs-attr">targets</span>: <span class="hljs-string">'.unitless-values-demo .el'</span>,
   <span class="hljs-attr">translateX</span>: <span class="hljs-number">250</span>, <span class="hljs-comment">// -&gt; '250px'</span>
-  rotate: <span class="hljs-number">540</span> <span class="hljs-comment">// -&gt; '540deg'</span>
-});</code></pre><h3>デモ</h3><p>要素をクリックするとアニメーションを開始します。</p><div id="unitlessValue"><div class="square shadow"></div><div class="square el"></div></div><h5>JavaScript</h5><pre><code><span class="hljs-keyword">var</span> unitlessValue = anime({
+  <span class="hljs-attr">rotate</span>: <span class="hljs-number">540</span> <span class="hljs-comment">// -&gt; '540deg'</span>
+});</code></pre>
+              <h3>デモ</h3>
+              <p>要素をクリックするとアニメーションを開始します。</p>
+              <div id="unitlessValue">
+                <div class="square shadow"></div>
+                <div class="square el"></div>
+              </div>
+              <h5>JavaScript</h5>
+              <pre><code><span class="hljs-keyword">var</span> unitlessValue = anime({
   <span class="hljs-attr">targets</span>: <span class="hljs-string">'#unitlessValue .el'</span>,
   <span class="hljs-attr">translateX</span>: <span class="hljs-number">250</span>, <span class="hljs-comment">// -&gt; '250px'</span>
-  rotate: <span class="hljs-number">540</span> <span class="hljs-comment">// -&gt; '540deg'</span>
-});</code></pre><h5>HTML</h5><pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"unitlessValue"</span>&gt;</span>
+  <span class="hljs-attr">rotate</span>: <span class="hljs-number">540</span> <span class="hljs-comment">// -&gt; '540deg'</span>
+});</code></pre>
+              <h5>HTML</h5>
+              <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"unitlessValue"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><h5>CSS</h5><pre><code><span class="hljs-selector-class">.shadow</span> {
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+              <h5>CSS</h5>
+              <pre><code><span class="hljs-selector-class">.shadow</span> {
   <span class="hljs-attribute">position</span>: absolute;
   <span class="hljs-attribute">opacity</span>: .<span class="hljs-number">2</span>;
 }
@@ -26,25 +222,57 @@ ga('create', 'UA-106478577-1', 'auto');</script></head><body><div id="container"
   <span class="hljs-attribute">height</span>: <span class="hljs-number">28px</span>;
   <span class="hljs-attribute">margin</span>: <span class="hljs-number">1px</span>;
   <span class="hljs-attribute">font-size</span>: <span class="hljs-number">12px</span>;
-}</code></pre><br><h2 id="specific-unit">単位指定</h2><p>アニメーションに指定した単位を使用し、
-ターゲットの初期値を自動変換します。</p><blockquote>変換精度は使用する単位によって異なります。
-配列を使用し、アニメーションの初期値を直接定義することもできます。
-詳しくは<a href="#specific-initial-value">初期値指定</a>を参照してください。</blockquote><div class="table-box"><table class="my-table"><tr><th>type</th><th>例</th></tr><tr><td><code>string</code></td><td><code>width: '100%'</code></td></tr></table></div><pre><code>anime({
+}</code></pre><br>
+              <h2 id="specific-unit">単位指定</h2>
+              <p>
+                アニメーションに指定した単位を使用し、
+                ターゲットの初期値を自動変換します。
+              </p>
+              <blockquote>
+                変換精度は使用する単位によって異なります。
+                配列を使用し、アニメーションの初期値を直接定義することもできます。
+                詳しくは<a href="#specific-initial-value">初期値指定</a>を参照してください。
+              </blockquote>
+              <div class="table-box">
+                <table class="my-table">
+                  <tr>
+                    <th>type</th>
+                    <th>例</th>
+                  </tr>
+                  <tr>
+                    <td><code>string</code></td>
+                    <td><code>width: '100%'</code></td>
+                  </tr>
+                </table>
+              </div>
+              <pre><code>anime({
   <span class="hljs-attr">targets</span>: <span class="hljs-string">'.specific-unit-values-demo .el'</span>,
   <span class="hljs-attr">width</span>: <span class="hljs-string">'100%'</span>, <span class="hljs-comment">// -&gt; from '28px' to '100%',</span>
-  easing: <span class="hljs-string">'easeInOutQuad'</span>,
+  <span class="hljs-attr">easing</span>: <span class="hljs-string">'easeInOutQuad'</span>,
   <span class="hljs-attr">direction</span>: <span class="hljs-string">'alternate'</span>,
   <span class="hljs-attr">loop</span>: <span class="hljs-literal">true</span>
-});</code></pre><h3>デモ</h3><p>要素をクリックするとアニメーションを開始します。</p><div class="demo" id="specificUnitValue"><div class="square shadow"></div><div class="square el"></div></div><h5>JavaScript</h5><pre><code><span class="hljs-keyword">var</span> specificUnitValue = anime({
+});</code></pre>
+              <h3>デモ</h3>
+              <p>要素をクリックするとアニメーションを開始します。</p>
+              <div class="demo" id="specificUnitValue">
+                <div class="square shadow"></div>
+                <div class="square el"></div>
+              </div>
+              <h5>JavaScript</h5>
+              <pre><code><span class="hljs-keyword">var</span> specificUnitValue = anime({
   <span class="hljs-attr">targets</span>: <span class="hljs-string">'#specificUnitValue .el'</span>,
   <span class="hljs-attr">width</span>: <span class="hljs-string">'100%'</span>, <span class="hljs-comment">// -&gt; from '28px' to '100%',</span>
-  easing: <span class="hljs-string">'easeInOutQuad'</span>,
+  <span class="hljs-attr">easing</span>: <span class="hljs-string">'easeInOutQuad'</span>,
   <span class="hljs-attr">direction</span>: <span class="hljs-string">'alternate'</span>,
   <span class="hljs-attr">loop</span>: <span class="hljs-literal">true</span>
-});</code></pre><h5>HTML</h5><pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"demo"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"specificUnitValue"</span>&gt;</span>
+});</code></pre>
+              <h5>HTML</h5>
+              <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"demo"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"specificUnitValue"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><h5>CSS</h5><pre><code><span class="hljs-selector-class">.demo</span> {
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+              <h5>CSS</h5>
+              <pre><code><span class="hljs-selector-class">.demo</span> {
   <span class="hljs-attribute">width</span>: <span class="hljs-number">290px</span>;
   <span class="hljs-attribute">position</span>:relative;
 }
@@ -60,49 +288,88 @@ ga('create', 'UA-106478577-1', 'auto');</script></head><body><div id="container"
   <span class="hljs-attribute">height</span>: <span class="hljs-number">28px</span>;
   <span class="hljs-attribute">margin</span>: <span class="hljs-number">1px</span>;
   <span class="hljs-attribute">font-size</span>: <span class="hljs-number">12px</span>;
-}</code></pre><br><h2 id="relative">相対値</h2><p>元の値を加算、減算、乗算します。</p><div class="table-box"><table class="my-table"><tr><th>値</th><th>効果</th><th>例</th></tr><tr><td><code>'+='</code></td><td>加算</td><td><code>'+=100'</code></td></tr><tr><td><code>'-='</code></td><td>減算</td><td><code>'-=2turn'</code></td></tr><tr><td><code>'*='</code></td><td>乗算</td><td><code>'*=10'</code></td></tr></table></div><pre><code><span class="hljs-keyword">var</span> relativeEl = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'.el.relative-values'</span>);
+}</code></pre><br>
+              <h2 id="relative">相対値</h2>
+              <p>元の値を加算、減算、乗算します。</p>
+              <div class="table-box">
+                <table class="my-table">
+                  <tr>
+                    <th>値</th>
+                    <th>効果</th>
+                    <th>例</th>
+                  </tr>
+                  <tr>
+                    <td><code>'+='</code></td>
+                    <td>加算</td>
+                    <td><code>'+=100'</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>'-='</code></td>
+                    <td>減算</td>
+                    <td><code>'-=2turn'</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>'*='</code></td>
+                    <td>乗算</td>
+                    <td><code>'*=10'</code></td>
+                  </tr>
+                </table>
+              </div>
+              <pre><code><span class="hljs-keyword">var</span> relativeEl = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'.el.relative-values'</span>);
 relativeEl.style.transform = <span class="hljs-string">'translateX(100px)'</span>;
 
 anime({
   <span class="hljs-attr">targets</span>: <span class="hljs-string">'.el.relative-values'</span>,
   <span class="hljs-attr">translateX</span>: {
     <span class="hljs-attr">value</span>: <span class="hljs-string">'*=2.5'</span>, <span class="hljs-comment">// 100px * 2.5 = '250px'</span>
-    duration: <span class="hljs-number">1000</span>
+    <span class="hljs-attr">duration</span>: <span class="hljs-number">1000</span>
   },
   <span class="hljs-attr">width</span>: {
     <span class="hljs-attr">value</span>: <span class="hljs-string">'-=20px'</span>, <span class="hljs-comment">// 28 - 20 = '8px'</span>
-    duration: <span class="hljs-number">1800</span>,
+    <span class="hljs-attr">duration</span>: <span class="hljs-number">1800</span>,
     <span class="hljs-attr">easing</span>: <span class="hljs-string">'easeInOutSine'</span>
   },
   <span class="hljs-attr">rotate</span>: {
     <span class="hljs-attr">value</span>: <span class="hljs-string">'+=2turn'</span>, <span class="hljs-comment">// 0 * 2 = '2turn'</span>
-    duration: <span class="hljs-number">1800</span>,
+    <span class="hljs-attr">duration</span>: <span class="hljs-number">1800</span>,
     <span class="hljs-attr">easing</span>: <span class="hljs-string">'easeInOutSine'</span>
   },
   <span class="hljs-attr">direction</span>: <span class="hljs-string">'alternate'</span>
-});</code></pre><h3>デモ</h3><p>要素をクリックするとアニメーションを開始します。</p><div id="relativeValues"><div class="circle shadow"></div><div class="circle el"></div></div><h5>JavaScript</h5><pre><code><span class="hljs-keyword">var</span> relativeEl = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#relativeValues .el'</span>);
+});</code></pre>
+              <h3>デモ</h3>
+              <p>要素をクリックするとアニメーションを開始します。</p>
+              <div id="relativeValues">
+                <div class="circle shadow"></div>
+                <div class="circle el"></div>
+              </div>
+              <h5>JavaScript</h5>
+              <pre><code><span class="hljs-keyword">var</span> relativeEl = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#relativeValues .el'</span>);
 relativeEl.style.transform = <span class="hljs-string">'translateX(100px)'</span>;
 <span class="hljs-keyword">var</span> relativeValues = anime({
   <span class="hljs-attr">targets</span>: <span class="hljs-string">'#relativeValues .el'</span>,
   <span class="hljs-attr">translateX</span>: {
     <span class="hljs-attr">value</span>: <span class="hljs-string">'*=2.5'</span>, <span class="hljs-comment">// 100px * 2.5 = '250px'</span>
-    duration: <span class="hljs-number">1000</span>
+    <span class="hljs-attr">duration</span>: <span class="hljs-number">1000</span>
   },
   <span class="hljs-attr">width</span>: {
     <span class="hljs-attr">value</span>: <span class="hljs-string">'-=20px'</span>, <span class="hljs-comment">// 28 - 20 = '8px'</span>
-    duration: <span class="hljs-number">1800</span>,
+    <span class="hljs-attr">duration</span>: <span class="hljs-number">1800</span>,
     <span class="hljs-attr">easing</span>: <span class="hljs-string">'easeInOutSine'</span>
   },
   <span class="hljs-attr">rotate</span>: {
     <span class="hljs-attr">value</span>: <span class="hljs-string">'+=2turn'</span>, <span class="hljs-comment">// 0 * 2 = '2turn'</span>
-    duration: <span class="hljs-number">1800</span>,
+    <span class="hljs-attr">duration</span>: <span class="hljs-number">1800</span>,
     <span class="hljs-attr">easing</span>: <span class="hljs-string">'easeInOutSine'</span>
   },
   <span class="hljs-attr">direction</span>: <span class="hljs-string">'alternate'</span>
-});</code></pre><h5>HTML</h5><pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"relativeValues"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height: 120px"</span>&gt;</span>
+});</code></pre>
+              <h5>HTML</h5>
+              <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"relativeValues"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height: 120px"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"circle shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"circle el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><h5>CSS</h5><pre><code><span class="hljs-selector-class">.shadow</span> {
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+              <h5>CSS</h5>
+              <pre><code><span class="hljs-selector-class">.shadow</span> {
   <span class="hljs-attribute">position</span>: absolute;
   <span class="hljs-attribute">opacity</span>: .<span class="hljs-number">2</span>;
 }
@@ -114,7 +381,39 @@ relativeEl.style.transform = <span class="hljs-string">'translateX(100px)'</span
   <span class="hljs-attribute">margin</span>: <span class="hljs-number">1px</span>;
   <span class="hljs-attribute">font-size</span>: <span class="hljs-number">12px</span>;
   <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">50%</span>;
-}</code></pre><br><h2 id="v-colors">カラー</h2><p>anime.jsは16進トリプレット、RGB、RGBA、HSL、HSLAのカラー値を指定することができます。</p><blockquote>CSSカラーコード(例えば<code>'red'</code>、<code>'yellow'</code>、<code>'aqua'</code>等)はサポートしていません。</blockquote><div class="table-box"><table class="my-table"><tr><th>type</th><th>例</th></tr><tr><td>16進トリプレット</td><td><code>'#FFF'</code>、<code>'#FFFFFF'</code></td></tr><tr><td>RGB</td><td><code>'rgb(255, 255, 255)'</code></td></tr><tr><td>RGBA</td><td><code>'rgba(255, 255, 255, .2)'</code></td></tr><tr><td>HSL</td><td><code>'hsl(0, 100%, 100%)'</code></td></tr><tr><td>HSLA</td><td><code>'hsla(0, 100%, 100%, .2)'</code></td></tr></table></div><pre><code><span class="hljs-keyword">var</span> colorsExamples = anime.timeline({
+}</code></pre><br>
+              <h2 id="v-colors">カラー</h2>
+              <p>anime.jsは16進トリプレット、RGB、RGBA、HSL、HSLAのカラー値を指定することができます。</p>
+              <blockquote>CSSカラーコード(例えば<code>'red'</code>、<code>'yellow'</code>、<code>'aqua'</code>等)はサポートしていません。</blockquote>
+              <div class="table-box">
+                <table class="my-table">
+                  <tr>
+                    <th>type</th>
+                    <th>例</th>
+                  </tr>
+                  <tr>
+                    <td>16進トリプレット</td>
+                    <td><code>'#FFF'</code>、<code>'#FFFFFF'</code></td>
+                  </tr>
+                  <tr>
+                    <td>RGB</td>
+                    <td><code>'rgb(255, 255, 255)'</code></td>
+                  </tr>
+                  <tr>
+                    <td>RGBA</td>
+                    <td><code>'rgba(255, 255, 255, .2)'</code></td>
+                  </tr>
+                  <tr>
+                    <td>HSL</td>
+                    <td><code>'hsl(0, 100%, 100%)'</code></td>
+                  </tr>
+                  <tr>
+                    <td>HSLA</td>
+                    <td><code>'hsla(0, 100%, 100%, .2)'</code></td>
+                  </tr>
+                </table>
+              </div>
+              <pre><code><span class="hljs-keyword">var</span> colorsExamples = anime.timeline({
   <span class="hljs-attr">endDelay</span>: <span class="hljs-number">1000</span>,
   <span class="hljs-attr">easing</span>: <span class="hljs-string">'easeInOutQuad'</span>,
   <span class="hljs-attr">direction</span>: <span class="hljs-string">'alternate'</span>,
@@ -125,7 +424,27 @@ relativeEl.style.transform = <span class="hljs-string">'translateX(100px)'</span
 .add({ <span class="hljs-attr">targets</span>: <span class="hljs-string">'.color-hsl'</span>,  <span class="hljs-attr">background</span>: <span class="hljs-string">'hsl(0, 100%, 100%)'</span> }, <span class="hljs-number">0</span>)
 .add({ <span class="hljs-attr">targets</span>: <span class="hljs-string">'.color-rgba'</span>, <span class="hljs-attr">background</span>: <span class="hljs-string">'rgba(255,255,255, .2)'</span> }, <span class="hljs-number">0</span>)
 .add({ <span class="hljs-attr">targets</span>: <span class="hljs-string">'.color-hsla'</span>, <span class="hljs-attr">background</span>: <span class="hljs-string">'hsla(0, 100%, 100%, .2)'</span> }, <span class="hljs-number">0</span>)
-.add({ <span class="hljs-attr">targets</span>: <span class="hljs-string">'.colors-demo .el'</span>, <span class="hljs-attr">translateX</span>: <span class="hljs-number">270</span> }, <span class="hljs-number">0</span>);</code></pre><h3>デモ</h3><div id="colors"><div class="label small">HEX</div><div class="circle small shadow"></div><div class="circle small el color-hex"></div><div class="label small">RGB</div><div class="circle small shadow"></div><div class="circle small el color-rgb"></div><div class="label small">RGBA</div><div class="circle small shadow"></div><div class="circle small el color-rgba"></div><div class="label small">HSL</div><div class="circle small shadow"></div><div class="circle small el color-hsl"></div><div class="label small">HSLA</div><div class="circle small shadow"></div><div class="circle small el color-hsla"></div></div><h5>JavaScript</h5><pre><code><span class="hljs-keyword">var</span> colors = anime.timeline({
+.add({ <span class="hljs-attr">targets</span>: <span class="hljs-string">'.colors-demo .el'</span>, <span class="hljs-attr">translateX</span>: <span class="hljs-number">270</span> }, <span class="hljs-number">0</span>);</code></pre>
+              <h3>デモ</h3>
+              <div id="colors">
+                <div class="label small">HEX</div>
+                <div class="circle small shadow"></div>
+                <div class="circle small el color-hex"></div>
+                <div class="label small">RGB</div>
+                <div class="circle small shadow"></div>
+                <div class="circle small el color-rgb"></div>
+                <div class="label small">RGBA</div>
+                <div class="circle small shadow"></div>
+                <div class="circle small el color-rgba"></div>
+                <div class="label small">HSL</div>
+                <div class="circle small shadow"></div>
+                <div class="circle small el color-hsl"></div>
+                <div class="label small">HSLA</div>
+                <div class="circle small shadow"></div>
+                <div class="circle small el color-hsla"></div>
+              </div>
+              <h5>JavaScript</h5>
+              <pre><code><span class="hljs-keyword">var</span> colors = anime.timeline({
   <span class="hljs-attr">endDelay</span>: <span class="hljs-number">1000</span>,
   <span class="hljs-attr">easing</span>: <span class="hljs-string">'easeInOutQuad'</span>,
   <span class="hljs-attr">direction</span>: <span class="hljs-string">'alternate'</span>,
@@ -136,7 +455,9 @@ relativeEl.style.transform = <span class="hljs-string">'translateX(100px)'</span
 .add({ <span class="hljs-attr">targets</span>: <span class="hljs-string">'#colors .color-hsl'</span>,  <span class="hljs-attr">background</span>: <span class="hljs-string">'hsl(0, 0%, 80%)'</span> }, <span class="hljs-number">0</span>)
 .add({ <span class="hljs-attr">targets</span>: <span class="hljs-string">'#colors .color-rgba'</span>, <span class="hljs-attr">background</span>: <span class="hljs-string">'rgba(204,204,204, .5)'</span> }, <span class="hljs-number">0</span>)
 .add({ <span class="hljs-attr">targets</span>: <span class="hljs-string">'#colors .color-hsla'</span>, <span class="hljs-attr">background</span>: <span class="hljs-string">'hsla(0, 0%, 80%, .5)'</span> }, <span class="hljs-number">0</span>)
-.add({ <span class="hljs-attr">targets</span>: <span class="hljs-string">'#colors .el'</span>, <span class="hljs-attr">translateX</span>: <span class="hljs-number">270</span> }, <span class="hljs-number">0</span>);</code></pre><h5>HTML</h5><pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"colors"</span>&gt;</span>
+.add({ <span class="hljs-attr">targets</span>: <span class="hljs-string">'#colors .el'</span>, <span class="hljs-attr">translateX</span>: <span class="hljs-number">270</span> }, <span class="hljs-number">0</span>);</code></pre>
+              <h5>HTML</h5>
+              <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"colors"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"label small"</span>&gt;</span>HEX<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"circle small shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"circle small el color-hex"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
@@ -152,7 +473,9 @@ relativeEl.style.transform = <span class="hljs-string">'translateX(100px)'</span
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"label small"</span>&gt;</span>HSLA<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"circle small shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"circle small el color-hsla"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><h5>CSS</h5><pre><code><span class="hljs-selector-class">.shadow</span> {
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+              <h5>CSS</h5>
+              <pre><code><span class="hljs-selector-class">.shadow</span> {
   <span class="hljs-attribute">position</span>: absolute;
   <span class="hljs-attribute">opacity</span>: .<span class="hljs-number">2</span>;
 }
@@ -178,22 +501,48 @@ relativeEl.style.transform = <span class="hljs-string">'translateX(100px)'</span
 
 <span class="hljs-selector-class">.label</span><span class="hljs-selector-class">.small</span> {
   <span class="hljs-attribute">line-height</span>: <span class="hljs-number">20px</span>;
-}</code></pre><br><h2 id="specific-initial-value">初期値指定</h2><p>特定の値からアニメーションを開始することができます。</p><div class="table-box"><table class="my-table"><tr><th>type</th><th>例</th></tr><tr><td><code>array</code></td><td><code>['50%', '100%']</code></td></tr></table></div><pre><code>anime({
+}</code></pre><br>
+              <h2 id="specific-initial-value">初期値指定</h2>
+              <p>特定の値からアニメーションを開始することができます。</p>
+              <div class="table-box">
+                <table class="my-table">
+                  <tr>
+                    <th>type</th>
+                    <th>例</th>
+                  </tr>
+                  <tr>
+                    <td><code>array</code></td>
+                    <td><code>['50%', '100%']</code></td>
+                  </tr>
+                </table>
+              </div>
+              <pre><code>anime({
   <span class="hljs-attr">targets</span>: <span class="hljs-string">'.el.from-to-values'</span>,
   <span class="hljs-attr">translateX</span>: [<span class="hljs-number">100</span>, <span class="hljs-number">250</span>], <span class="hljs-comment">// from 100 to 250</span>
-  delay: <span class="hljs-number">500</span>,
+  <span class="hljs-attr">delay</span>: <span class="hljs-number">500</span>,
   <span class="hljs-attr">direction</span>: <span class="hljs-string">'alternate'</span>,
   <span class="hljs-attr">loop</span>: <span class="hljs-literal">true</span>
-});</code></pre><h3>デモ</h3><div id="specificInitialValue"><div class="circle shadow"></div><div class="circle el"></div></div><h5>JavaScript</h5><pre><code><span class="hljs-keyword">var</span> specificInitialValue = anime({
+});</code></pre>
+              <h3>デモ</h3>
+              <div id="specificInitialValue">
+                <div class="circle shadow"></div>
+                <div class="circle el"></div>
+              </div>
+              <h5>JavaScript</h5>
+              <pre><code><span class="hljs-keyword">var</span> specificInitialValue = anime({
   <span class="hljs-attr">targets</span>: <span class="hljs-string">'#specificInitialValue .el'</span>,
   <span class="hljs-attr">translateX</span>: [<span class="hljs-number">100</span>, <span class="hljs-number">250</span>],
   <span class="hljs-attr">delay</span>: <span class="hljs-number">500</span>,
   <span class="hljs-attr">direction</span>: <span class="hljs-string">'alternate'</span>,
   <span class="hljs-attr">loop</span>: <span class="hljs-literal">true</span>
-});</code></pre><h5>HTML</h5><pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"specificInitialValue"</span>&gt;</span>
+});</code></pre>
+              <h5>HTML</h5>
+              <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"specificInitialValue"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><h5>CSS</h5><pre><code><span class="hljs-selector-class">.shadow</span> {
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+              <h5>CSS</h5>
+              <pre><code><span class="hljs-selector-class">.shadow</span> {
   <span class="hljs-attribute">position</span>: absolute;
   <span class="hljs-attribute">opacity</span>: .<span class="hljs-number">2</span>;
 }
@@ -205,7 +554,31 @@ relativeEl.style.transform = <span class="hljs-string">'translateX(100px)'</span
   <span class="hljs-attribute">margin</span>: <span class="hljs-number">1px</span>;
   <span class="hljs-attribute">font-size</span>: <span class="hljs-number">12px</span>;
   <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">50%</span>;
-}</code></pre><br><h2 id="function-based-values">関数ベース値</h2><p>アニメーションのターゲットとプロパティごとに異なる値を取得します。</p><p>関数は3つの引数を受け取ります。</p><div class="table-box"><table class="my-table"><tr><th>引数</th><th class="detail">説明</th></tr><tr><td><code>target</code></td><td>アニメーション対象の要素。</td></tr><tr><td><code>index</code></td><td>アニメーション対象要素のindex。</td></tr><tr><td><code>targetsLength</code></td><td>アニメーション対象要素の個数。</td></tr></table></div><pre><code>anime({
+}</code></pre><br>
+              <h2 id="function-based-values">関数ベース値</h2>
+              <p>アニメーションのターゲットとプロパティごとに異なる値を取得します。</p>
+              <p>関数は3つの引数を受け取ります。</p>
+              <div class="table-box">
+                <table class="my-table">
+                  <tr>
+                    <th>引数</th>
+                    <th class="detail">説明</th>
+                  </tr>
+                  <tr>
+                    <td><code>target</code></td>
+                    <td>アニメーション対象の要素。</td>
+                  </tr>
+                  <tr>
+                    <td><code>index</code></td>
+                    <td>アニメーション対象要素のindex。</td>
+                  </tr>
+                  <tr>
+                    <td><code>targetsLength</code></td>
+                    <td>アニメーション対象要素の個数。</td>
+                  </tr>
+                </table>
+              </div>
+              <pre><code>anime({
   <span class="hljs-attr">targets</span>: <span class="hljs-string">'.function-based-values-demo .el'</span>,
   <span class="hljs-attr">translateX</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">el</span>) </span>{
     <span class="hljs-keyword">return</span> el.getAttribute(<span class="hljs-string">'data-x'</span>);
@@ -222,7 +595,24 @@ relativeEl.style.transform = <span class="hljs-string">'translateX(100px)'</span
   <span class="hljs-attr">delay</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ <span class="hljs-keyword">return</span> anime.random(<span class="hljs-number">0</span>, <span class="hljs-number">400</span>); },
   <span class="hljs-attr">direction</span>: <span class="hljs-string">'alternate'</span>,
   <span class="hljs-attr">loop</span>: <span class="hljs-literal">true</span>
-});</code></pre><h3>デモ</h3><div id="functionBasedPropVal"><div class="line"><div class="circle small shadow"></div><div class="circle small el" data-x="160"></div></div><div class="line"><div class="circle small shadow"></div><div class="circle small el" data-x="80"></div></div><div class="line"><div class="circle small shadow"></div><div class="circle small el" data-x="250"></div></div></div><h5>JavaScript</h5><pre><code><span class="hljs-keyword">var</span> functionBasedPropVal = anime({
+});</code></pre>
+              <h3>デモ</h3>
+              <div id="functionBasedPropVal">
+                <div class="line">
+                  <div class="circle small shadow"></div>
+                  <div class="circle small el" data-x="160"></div>
+                </div>
+                <div class="line">
+                  <div class="circle small shadow"></div>
+                  <div class="circle small el" data-x="80"></div>
+                </div>
+                <div class="line">
+                  <div class="circle small shadow"></div>
+                  <div class="circle small el" data-x="250"></div>
+                </div>
+              </div>
+              <h5>JavaScript</h5>
+              <pre><code><span class="hljs-keyword">var</span> functionBasedPropVal = anime({
   <span class="hljs-attr">targets</span>: <span class="hljs-string">'#functionBasedPropVal .el'</span>,
   <span class="hljs-attr">translateX</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">el</span>) </span>{
     <span class="hljs-keyword">return</span> el.getAttribute(<span class="hljs-string">'data-x'</span>);
@@ -240,7 +630,9 @@ relativeEl.style.transform = <span class="hljs-string">'translateX(100px)'</span
   <span class="hljs-attr">delay</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ <span class="hljs-keyword">return</span> anime.random(<span class="hljs-number">0</span>, <span class="hljs-number">1000</span>); },
   <span class="hljs-attr">direction</span>: <span class="hljs-string">'alternate'</span>,
   <span class="hljs-attr">loop</span>: <span class="hljs-literal">true</span>
-});</code></pre><h5>HTML</h5><pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"functionBasedPropVal"</span>&gt;</span>
+});</code></pre>
+              <h5>HTML</h5>
+              <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"functionBasedPropVal"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"line"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small el"</span> <span class="hljs-attr">data-x</span>=<span class="hljs-string">"160"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
@@ -253,7 +645,9 @@ relativeEl.style.transform = <span class="hljs-string">'translateX(100px)'</span
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small el"</span> <span class="hljs-attr">data-x</span>=<span class="hljs-string">"250"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><h5>CSS</h5><pre><code><span class="hljs-selector-class">.shadow</span> {
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+              <h5>CSS</h5>
+              <pre><code><span class="hljs-selector-class">.shadow</span> {
   <span class="hljs-attribute">position</span>: absolute;
   <span class="hljs-attribute">opacity</span>: .<span class="hljs-number">2</span>;
 }
@@ -271,103 +665,125 @@ relativeEl.style.transform = <span class="hljs-string">'translateX(100px)'</span
   <span class="hljs-attribute">width</span>: <span class="hljs-number">18px</span>;
   <span class="hljs-attribute">height</span>: <span class="hljs-number">18px</span>;
 }
-</code></pre><script class="load">createObj = function() {
-  // unitless
-  if (document.querySelector('#unitlessValue')) {
-    var unitlessValue = anime({
-      targets: '#unitlessValue .el',
-      translateX: 250, // -> '250px'
-      rotate: 540 // -> '540deg'
-    });
-    document.querySelector('#unitlessValue').onclick = unitlessValue.restart;
-  }
-
-  // specific unit value
-  if (document.querySelector('#specificUnitValue')) {
-    var specificUnitValue = anime({
-      targets: '#specificUnitValue .el',
-      width: '100%', // -> from '28px' to '100%',
-      easing: 'easeInOutQuad',
-      direction: 'alternate',
-      loop: true
-    });
-  }
-
-  // relative values
-  if (document.querySelector('#relativeValues')) {
-    var relativeEl = document.querySelector('#relativeValues .el');
-    relativeEl.style.transform = 'translateX(100px)';
-    var relativeValues = anime({
-      targets: '#relativeValues .el',
-      translateX: {
-        value: '*=2.5', // 100px * 2.5 = '250px'
-        duration: 1000
-      },
-      width: {
-        value: '-=20px', // 28 - 20 = '8px'
-        duration: 1800,
-        easing: 'easeInOutSine'
-      },
-      rotate: {
-        value: '+=2turn', // 0 * 2 = '2turn'
-        duration: 1800,
-        easing: 'easeInOutSine'
-      },
-      direction: 'alternate'
-    });
-    document.querySelector('#relativeValues').onclick = relativeValues.restart;
-  }
-
-  // colors
-  if (document.querySelector('#colors')) {
-    var colors = anime.timeline({
-      endDelay: 1000,
-      easing: 'easeInOutQuad',
-      direction: 'alternate',
-      loop: true
-    })
-    .add({ targets: '#colors .color-hex',  background: '#CCC' }, 0)
-    .add({ targets: '#colors .color-rgb',  background: 'rgb(204,204,204)' }, 0)
-    .add({ targets: '#colors .color-hsl',  background: 'hsl(0, 0%, 80%)' }, 0)
-    .add({ targets: '#colors .color-rgba', background: 'rgba(204,204,204, .5)' }, 0)
-    .add({ targets: '#colors .color-hsla', background: 'hsla(0, 0%, 80%, .5)' }, 0)
-    .add({ targets: '#colors .el', translateX: 270 }, 0);
-  }
-
-  // specific initial value
-  if (document.querySelector('#specificInitialValue')) {
-    var specificInitialValue = anime({
-      targets: '#specificInitialValue .el',
-      translateX: [100, 250],
-      delay: 500,
-      direction: 'alternate',
-      loop: true
-    });
-    document.querySelector('#specificInitialValue').onclick = specificInitialValue.restart;
-  }
-
-  // function based values
-  if (document.querySelector('#functionBasedPropVal')) {
-    var functionBasedPropVal = anime({
-      targets: '#functionBasedPropVal .el',
-      translateX: function(el) {
-        return el.getAttribute('data-x');
-      },
-      translateY: function(el, i) {
-        return 50 + (-50 * i);
-      },
-      scale: function(el, i, l) {
-        return (l - i) + .25;
-      },
-      rotate: function() { return anime.random(-360, 360); },
-      borderRadius: function() { return ['50%', anime.random(10, 35) + '%']; },
-      duration: function() { return anime.random(1200, 1800); },
-      duration: function() { return anime.random(800, 1600); },
-      delay: function() { return anime.random(0, 1000); },
-      direction: 'alternate',
-      loop: true
-    });
-  }
-
-};</script><br><div class="license"><p><a href="https://github.com/juliangarnier/anime/blob/master/LICENSE.md">MIT license</a>.
-&copy; 2017 Julian Garnier.</p><p>このコンテンツはJulian Garnier(juliangarnier)による<a href="http://animejs.com/documentation/">anime.jsドキュメント</a>を翻訳/改変したものです。</p></div></div></div></div></div><footer><span> &copy; <span id="copy_year">2017</span> tobijibu</span></footer></div><noscript id="deferred-styles"><link href="./css/lazy.css" rel="stylesheet"></noscript><script src="./js/main.js" defer></script><script src="./js/anime.min.js"></script><div id="src" hidden></div></body></html>
+</code></pre>
+              <script class="load">
+                createObj = function() {
+                  // unitless
+                  if (document.querySelector('#unitlessValue')) {
+                    var unitlessValue = anime({
+                      targets: '#unitlessValue .el',
+                      translateX: 250, // -> '250px'
+                      rotate: 540 // -> '540deg'
+                    });
+                    document.querySelector('#unitlessValue').onclick = unitlessValue.restart;
+                  }
+                
+                  // specific unit value
+                  if (document.querySelector('#specificUnitValue')) {
+                    var specificUnitValue = anime({
+                      targets: '#specificUnitValue .el',
+                      width: '100%', // -> from '28px' to '100%',
+                      easing: 'easeInOutQuad',
+                      direction: 'alternate',
+                      loop: true
+                    });
+                  }
+                
+                  // relative values
+                  if (document.querySelector('#relativeValues')) {
+                    var relativeEl = document.querySelector('#relativeValues .el');
+                    relativeEl.style.transform = 'translateX(100px)';
+                    var relativeValues = anime({
+                      targets: '#relativeValues .el',
+                      translateX: {
+                        value: '*=2.5', // 100px * 2.5 = '250px'
+                        duration: 1000
+                      },
+                      width: {
+                        value: '-=20px', // 28 - 20 = '8px'
+                        duration: 1800,
+                        easing: 'easeInOutSine'
+                      },
+                      rotate: {
+                        value: '+=2turn', // 0 * 2 = '2turn'
+                        duration: 1800,
+                        easing: 'easeInOutSine'
+                      },
+                      direction: 'alternate'
+                    });
+                    document.querySelector('#relativeValues').onclick = relativeValues.restart;
+                  }
+                
+                  // colors
+                  if (document.querySelector('#colors')) {
+                    var colors = anime.timeline({
+                      endDelay: 1000,
+                      easing: 'easeInOutQuad',
+                      direction: 'alternate',
+                      loop: true
+                    })
+                    .add({ targets: '#colors .color-hex',  background: '#CCC' }, 0)
+                    .add({ targets: '#colors .color-rgb',  background: 'rgb(204,204,204)' }, 0)
+                    .add({ targets: '#colors .color-hsl',  background: 'hsl(0, 0%, 80%)' }, 0)
+                    .add({ targets: '#colors .color-rgba', background: 'rgba(204,204,204, .5)' }, 0)
+                    .add({ targets: '#colors .color-hsla', background: 'hsla(0, 0%, 80%, .5)' }, 0)
+                    .add({ targets: '#colors .el', translateX: 270 }, 0);
+                  }
+                
+                  // specific initial value
+                  if (document.querySelector('#specificInitialValue')) {
+                    var specificInitialValue = anime({
+                      targets: '#specificInitialValue .el',
+                      translateX: [100, 250],
+                      delay: 500,
+                      direction: 'alternate',
+                      loop: true
+                    });
+                    document.querySelector('#specificInitialValue').onclick = specificInitialValue.restart;
+                  }
+                
+                  // function based values
+                  if (document.querySelector('#functionBasedPropVal')) {
+                    var functionBasedPropVal = anime({
+                      targets: '#functionBasedPropVal .el',
+                      translateX: function(el) {
+                        return el.getAttribute('data-x');
+                      },
+                      translateY: function(el, i) {
+                        return 50 + (-50 * i);
+                      },
+                      scale: function(el, i, l) {
+                        return (l - i) + .25;
+                      },
+                      rotate: function() { return anime.random(-360, 360); },
+                      borderRadius: function() { return ['50%', anime.random(10, 35) + '%']; },
+                      duration: function() { return anime.random(1200, 1800); },
+                      duration: function() { return anime.random(800, 1600); },
+                      delay: function() { return anime.random(0, 1000); },
+                      direction: 'alternate',
+                      loop: true
+                    });
+                  }
+                
+                };
+              </script><br>
+              <div class="license">
+                <p><a href="https://github.com/juliangarnier/anime/blob/master/LICENSE.md">MIT license</a>.
+                  &copy; 2017 Julian Garnier.
+                </p>
+                <p>このコンテンツはJulian Garnier(juliangarnier)による<a href="http://animejs.com/documentation/">anime.jsドキュメント</a>を翻訳/改変したものです。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer><span>&copy; <span id="copy_year">2017</span> tobijibu</span></footer>
+    </div>
+    <noscript id="deferred-styles">
+      <link href="./css/lazy.css" rel="stylesheet">
+    </noscript>
+    <script src="./js/main.js" defer></script>
+    <script src="./js/anime.min.js"></script>
+    <div id="src" hidden></div>
+  </body>
+</html>

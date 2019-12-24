@@ -1,27 +1,214 @@
-<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><title>Easing | anime.js - にほんご。</title><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta property="og:title" content="Easing | anime.js - にほんご。"><meta property="og:url"><meta property="og:type" content="article"><link rel="icon" href="https://tr.you84815.space/animejs/favicon.ico"><link rel="stylesheet" href="./css/main.css"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-106478577-1', 'auto');</script></head><body><div id="container"><header><div class="icon"><a class="no-barba" href="https://tr.you84815.space/"><svg width="16" height="16"><rect width="16" height="16" fill="#e0e0e0"></rect></svg></a></div><div class="navi_toggle" onclick="toggleMenu()"><svg id="menu_close" width="24" height="24" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg><svg id="menu_open" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></div><div class="title">anime.js - <a class="no-barba" href="https://tr.you84815.space/">にほんご。</a></div></header><div class="navi" id="navi"><ul class="menu"><li><a class="index" href="./index.html">Home</a></li><li><a class="introduction" href="./introduction.html">Introduction</a></li><li><a class="getting-started" href="./getting-started.html">Getting Started</a></li><li><a class="targets" href="./targets.html">Targets</a><ul class="hidden" id="navi_targets"><li><a href="./targets.html#css-selector">CSSセレクタ</a></li><li><a href="./targets.html#dom-node">DOM Node / NodeList</a></li><li><a href="./targets.html#object">JavaScriptオブジェクト</a></li><li><a href="./targets.html#array">配列</a></li></ul></li><li><a class="properties" href="./properties.html">Properties</a><ul class="hidden" id="navi_properties"><li><a href="./properties.html#css">CSSプロパティ</a></li><li><a href="./properties.html#css-transforms">CSS transform</a></li><li><a href="./properties.html#object-properties">オブジェクトプロパティ</a></li><li><a href="./properties.html#dom-attributes">DOM属性</a></li><li><a href="./properties.html#svg-attributes">SVG属性</a></li></ul></li><li><a class="property-parameters" href="./property-parameters.html">Property Parameters</a><ul class="hidden" id="navi_property-parameters"><li><a href="./property-parameters.html#p-duration">duration(時間)</a></li><li><a href="./property-parameters.html#p-delay">delay(開始遅延)</a></li><li><a href="./property-parameters.html#p-end-delay">endDelay(終了遅延)</a></li><li><a class="active" href="./property-parameters.html#p-easing">easing(イージング)</a></li><li><a href="./property-parameters.html#p-round">round(数値の丸め)</a></li><li><a href="./property-parameters.html#p-specific-property">特定のプロパティ</a></li><li><a href="./property-parameters.html#p-function-based-parameters">関数指定パラメータ</a></li></ul></li><li><a class="animation-parameters" href="./animation-parameters.html">Animation Parameters</a><ul class="hidden" id="navi_animation-parameters"><li><a href="./animation-parameters.html#ap-direction">再生方向</a></li><li><a href="./animation-parameters.html#ap-loop">ループ</a></li><li><a href="./animation-parameters.html#ap-autoplay">自動再生</a></li></ul></li><li><a class="values" href="./values.html">Values</a><ul class="hidden" id="navi_values"><li><a href="./values.html#unitless">単位無指定</a></li><li><a href="./values.html#specific-unit">単位指定</a></li><li><a href="./values.html#relative">相対値</a></li><li><a href="./values.html#v-colors">カラー</a></li><li><a href="./values.html#specific-initial-value">初期値指定</a></li><li><a href="./values.html#function-based-values">関数ベース値</a></li></ul></li><li><a class="keyframes" href="./keyframes.html">Keyframes</a><ul class="hidden" id="navi_keyframes"><li><a href="./keyframes.html#animation-keyframes">アニメーションキーフレーム</a></li><li><a href="./keyframes.html#property-keyframes">プロパティキーフレーム</a></li></ul></li><li><a class="staggering" href="./staggering.html">Staggering</a><ul class="hidden" id="navi_staggering"><li><a href="./staggering.html#s-staggering-basics">staggerの基本</a></li><li><a href="./staggering.html#s-start-value">開始タイミング</a></li><li><a href="./staggering.html#s-range-value">範囲指定</a></li><li><a href="./staggering.html#s-from-value">開始位置指定</a></li><li><a href="./staggering.html#s-direction">direction(アニメーションの順序)</a></li><li><a class="active" href="./staggering.html#s-easing">easing(イージング)</a></li><li><a href="./staggering.html#s-grid">grid</a></li><li><a href="./staggering.html#s-axis">axis</a></li></ul></li><li><a class="timeline" href="./timeline.html">Timeline</a><ul class="hidden" id="navi_timeline"><li><a href="./timeline.html#basic-timeline">タイムラインの基本</a></li><li><a href="./timeline.html#time-offset">タイムオフセット</a></li><li><a href="./timeline.html#parameters-inheritance">パラメータの継承</a></li></ul></li><li><a class="controls" href="./controls.html">Controls</a><ul class="hidden" id="navi_controls"><li><a href="./controls.html#play-pause">再生 / 停止</a></li><li><a href="./controls.html#restart">リスタート</a></li><li><a href="./controls.html#reverse">逆再生</a></li><li><a href="./controls.html#seek">シーク</a></li><li><a href="./controls.html#timeline-controls">タイムラインコントロール</a></li></ul></li><li><a class="callback" href="./callback-promises.html">Callback & Promises</a><ul class="hidden" id="navi_callback"><li><a href="./callback-promises.html#c-update">update</a></li><li><a href="./callback-promises.html#c-begin">begin &amp; complete</a></li><li><a href="./callback-promises.html#c-loop-begin">loopBegin &amp; loopComplete</a></li><li><a href="./callback-promises.html#c-change">change</a></li><li><a href="./callback-promises.html#c-change-begin">changeBegin &amp; changeComplete</a></li><li><a href="./callback-promises.html#c-finished">終了Promise</a></li></ul></li><li><a class="svg" href="./svg.html">SVG</a><ul class="hidden" id="navi_svg"><li><a href="./svg.html#motion-path">モーションパス</a></li><li><a href="./svg.html#morphing">モーフィング</a></li><li><a href="./svg.html#line-drawing">線画アニメーション</a></li></ul></li><li><a class="easing active" href="./easing.html">Easing</a><ul id="navi_easing"><li><a href="./easing.html#e-linear">linear</a></li><li><a href="./easing.html#e-penners-functions">Robert Pennerのeasing関数</a></li><li><a href="./easing.html#e-cubic-bezier-curve">3次ベジェ曲線</a></li><li><a href="./easing.html#e-spring">spring</a></li><li><a href="./easing.html#e-elastic">elastic</a></li><li><a href="./easing.html#e-steps">steps</a></li><li><a href="./easing.html#e-custom-easing">カスタムイージング</a></li></ul></li><li><a class="helper" href="./helper.html">Helpers</a><ul class="hidden" id="navi_helper"><li><a href="./helper.html#h-remove">remove</a></li><li><a href="./helper.html#h-get">get</a></li><li><a href="./helper.html#h-set">set</a></li><li><a href="./helper.html#h-random">random</a></li><li><a href="./helper.html#h-tick">tick</a></li><li><a href="./helper.html#h-running">running</a></li></ul></li></ul></div><div id="content"><div id="main"><div id="barba-wrapper"><div class="barba-container"><h1>Easing</h1><div id="update_date"><span>更新日: 2019.01.24
-</span></div><h2 id="e-linear">linear</h2><p>アニメーションにイージングを適用しません。</p><p>不透明度や色変化アニメーションに便利です。</p><pre><code>easing: <span class="hljs-string">'linear'</span></code></pre><br><pre><code>anime({
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Easing | anime.js - にほんご。</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:title" content="Easing | anime.js - にほんご。">
+    <meta property="og:url">
+    <meta property="og:type" content="article">
+    <link rel="icon" href="https://tr.you84815.space/animejs/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <link id="theme_style" rel="stylesheet" type="text/css" href="">
+    <script id="srcTheme" src="./js/toggleTheme.js" data-dir="animejs"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-106478577-1', 'auto');
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      <header>
+        <div class="icon"><a class="no-barba" href="https://tr.you84815.space/">
+            <svg width="16" height="16">
+              <rect width="16" height="16" fill="#e0e0e0"></rect>
+            </svg></a></div>
+        <div class="navi_toggle" onclick="toggleMenu()">
+          <svg id="menu_close" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+            <path d="M0 0h24v24H0z" fill="none"></path>
+          </svg>
+          <svg id="menu_open" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
+          </svg>
+        </div>
+        <div class="title">anime.js - <a class="no-barba" href="https://tr.you84815.space/">にほんご。</a></div><span id="toggleTheme">
+          <svg role="img" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path d="M8 256c0 136.966 111.033 248 248 248s248-111.034 248-248S392.966 8 256 8 8 119.033 8 256zm248 184V72c101.705 0 184 82.311 184 184 0 101.705-82.311 184-184 184z"></path>
+          </svg></span>
+      </header>
+      <div class="navi" id="navi">
+        <ul class="menu">
+          <li><a class="index" href="./index.html">Home</a></li>
+          <li><a class="introduction" href="./introduction.html">Introduction</a></li>
+          <li><a class="getting-started" href="./getting-started.html">Getting Started</a></li>
+          <li><a class="targets" href="./targets.html">Targets</a>
+            <ul class="hidden" id="navi_targets">
+              <li><a href="./targets.html#css-selector">CSSセレクタ</a></li>
+              <li><a href="./targets.html#dom-node">DOM Node / NodeList</a></li>
+              <li><a href="./targets.html#object">JavaScriptオブジェクト</a></li>
+              <li><a href="./targets.html#array">配列</a></li>
+            </ul>
+          </li>
+          <li><a class="properties" href="./properties.html">Properties</a>
+            <ul class="hidden" id="navi_properties">
+              <li><a href="./properties.html#css">CSSプロパティ</a></li>
+              <li><a href="./properties.html#css-transforms">CSS transform</a></li>
+              <li><a href="./properties.html#object-properties">オブジェクトプロパティ</a></li>
+              <li><a href="./properties.html#dom-attributes">DOM属性</a></li>
+              <li><a href="./properties.html#svg-attributes">SVG属性</a></li>
+            </ul>
+          </li>
+          <li><a class="property-parameters" href="./property-parameters.html">Property Parameters</a>
+            <ul class="hidden" id="navi_property-parameters">
+              <li><a href="./property-parameters.html#p-duration">duration(時間)</a></li>
+              <li><a href="./property-parameters.html#p-delay">delay(開始遅延)</a></li>
+              <li><a href="./property-parameters.html#p-end-delay">endDelay(終了遅延)</a></li>
+              <li><a class="active" href="./property-parameters.html#p-easing">easing(イージング)</a></li>
+              <li><a href="./property-parameters.html#p-round">round(数値の丸め)</a></li>
+              <li><a href="./property-parameters.html#p-specific-property">特定のプロパティ</a></li>
+              <li><a href="./property-parameters.html#p-function-based-parameters">関数指定パラメータ</a></li>
+            </ul>
+          </li>
+          <li><a class="animation-parameters" href="./animation-parameters.html">Animation Parameters</a>
+            <ul class="hidden" id="navi_animation-parameters">
+              <li><a href="./animation-parameters.html#ap-direction">再生方向</a></li>
+              <li><a href="./animation-parameters.html#ap-loop">ループ</a></li>
+              <li><a href="./animation-parameters.html#ap-autoplay">自動再生</a></li>
+            </ul>
+          </li>
+          <li><a class="values" href="./values.html">Values</a>
+            <ul class="hidden" id="navi_values">
+              <li><a href="./values.html#unitless">単位無指定</a></li>
+              <li><a href="./values.html#specific-unit">単位指定</a></li>
+              <li><a href="./values.html#relative">相対値</a></li>
+              <li><a href="./values.html#v-colors">カラー</a></li>
+              <li><a href="./values.html#specific-initial-value">初期値指定</a></li>
+              <li><a href="./values.html#function-based-values">関数ベース値</a></li>
+            </ul>
+          </li>
+          <li><a class="keyframes" href="./keyframes.html">Keyframes</a>
+            <ul class="hidden" id="navi_keyframes">
+              <li><a href="./keyframes.html#animation-keyframes">アニメーションキーフレーム</a></li>
+              <li><a href="./keyframes.html#property-keyframes">プロパティキーフレーム</a></li>
+            </ul>
+          </li>
+          <li><a class="staggering" href="./staggering.html">Staggering</a>
+            <ul class="hidden" id="navi_staggering">
+              <li><a href="./staggering.html#s-staggering-basics">staggerの基本</a></li>
+              <li><a href="./staggering.html#s-start-value">開始タイミング</a></li>
+              <li><a href="./staggering.html#s-range-value">範囲指定</a></li>
+              <li><a href="./staggering.html#s-from-value">開始位置指定</a></li>
+              <li><a href="./staggering.html#s-direction">direction(アニメーションの順序)</a></li>
+              <li><a class="active" href="./staggering.html#s-easing">easing(イージング)</a></li>
+              <li><a href="./staggering.html#s-grid">grid</a></li>
+              <li><a href="./staggering.html#s-axis">axis</a></li>
+            </ul>
+          </li>
+          <li><a class="timeline" href="./timeline.html">Timeline</a>
+            <ul class="hidden" id="navi_timeline">
+              <li><a href="./timeline.html#basic-timeline">タイムラインの基本</a></li>
+              <li><a href="./timeline.html#time-offset">タイムオフセット</a></li>
+              <li><a href="./timeline.html#parameters-inheritance">パラメータの継承</a></li>
+            </ul>
+          </li>
+          <li><a class="controls" href="./controls.html">Controls</a>
+            <ul class="hidden" id="navi_controls">
+              <li><a href="./controls.html#play-pause">再生 / 停止</a></li>
+              <li><a href="./controls.html#restart">リスタート</a></li>
+              <li><a href="./controls.html#reverse">逆再生</a></li>
+              <li><a href="./controls.html#seek">シーク</a></li>
+              <li><a href="./controls.html#timeline-controls">タイムラインコントロール</a></li>
+            </ul>
+          </li>
+          <li><a class="callback" href="./callback-promises.html">Callback & Promises</a>
+            <ul class="hidden" id="navi_callback">
+              <li><a href="./callback-promises.html#c-update">update</a></li>
+              <li><a href="./callback-promises.html#c-begin">begin &amp; complete</a></li>
+              <li><a href="./callback-promises.html#c-loop-begin">loopBegin &amp; loopComplete</a></li>
+              <li><a href="./callback-promises.html#c-change">change</a></li>
+              <li><a href="./callback-promises.html#c-change-begin">changeBegin &amp; changeComplete</a></li>
+              <li><a href="./callback-promises.html#c-finished">終了Promise</a></li>
+            </ul>
+          </li>
+          <li><a class="svg" href="./svg.html">SVG</a>
+            <ul class="hidden" id="navi_svg">
+              <li><a href="./svg.html#motion-path">モーションパス</a></li>
+              <li><a href="./svg.html#morphing">モーフィング</a></li>
+              <li><a href="./svg.html#line-drawing">線画アニメーション</a></li>
+            </ul>
+          </li>
+          <li><a class="easing active" href="./easing.html">Easing</a>
+            <ul id="navi_easing">
+              <li><a href="./easing.html#e-linear">linear</a></li>
+              <li><a href="./easing.html#e-penners-functions">Robert Pennerのeasing関数</a></li>
+              <li><a href="./easing.html#e-cubic-bezier-curve">3次ベジェ曲線</a></li>
+              <li><a href="./easing.html#e-spring">spring</a></li>
+              <li><a href="./easing.html#e-elastic">elastic</a></li>
+              <li><a href="./easing.html#e-steps">steps</a></li>
+              <li><a href="./easing.html#e-custom-easing">カスタムイージング</a></li>
+            </ul>
+          </li>
+          <li><a class="helper" href="./helper.html">Helpers</a>
+            <ul class="hidden" id="navi_helper">
+              <li><a href="./helper.html#h-remove">remove</a></li>
+              <li><a href="./helper.html#h-get">get</a></li>
+              <li><a href="./helper.html#h-set">set</a></li>
+              <li><a href="./helper.html#h-random">random</a></li>
+              <li><a href="./helper.html#h-tick">tick</a></li>
+              <li><a href="./helper.html#h-running">running</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div id="content">
+        <div id="main">
+          <div id="barba-wrapper">
+            <div class="barba-container">
+              <h1>Easing</h1>
+              <div id="update_date"><span>更新日: 2019.01.24
+</span>
+              </div>
+              <h2 id="e-linear">linear</h2>
+              <p>アニメーションにイージングを適用しません。</p>
+              <p>不透明度や色変化アニメーションに便利です。</p>
+              <pre><code>easing: <span class="hljs-string">'linear'</span></code></pre><br>
+              <pre><code>anime({
   <span class="hljs-attr">targets</span>: <span class="hljs-string">'.linear-easing-demo .el'</span>,
   <span class="hljs-attr">translateX</span>: <span class="hljs-number">250</span>,
   <span class="hljs-attr">direction</span>: <span class="hljs-string">'alternate'</span>,
   <span class="hljs-attr">loop</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">easing</span>: <span class="hljs-string">'linear'</span>
-});</code></pre><h3>デモ</h3><div id="linear"><div class="line"><div class="square shadow"></div><div class="square el"></div></div></div><h5>JavaScript</h5><pre><code><span class="hljs-keyword">var</span> linear = anime({
+});</code></pre>
+              <h3>デモ</h3>
+              <div id="linear">
+                <div class="line">
+                  <div class="square shadow"></div>
+                  <div class="square el"></div>
+                </div>
+              </div>
+              <h5>JavaScript</h5>
+              <pre><code><span class="hljs-keyword">var</span> linear = anime({
   <span class="hljs-attr">targets</span>: <span class="hljs-string">'#linear .el'</span>,
   <span class="hljs-attr">translateX</span>: <span class="hljs-number">250</span>,
   <span class="hljs-attr">direction</span>: <span class="hljs-string">'alternate'</span>,
   <span class="hljs-attr">loop</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">easing</span>: <span class="hljs-string">'linear'</span>
-});</code></pre><h5>HTML</h5><pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"linear"</span>&gt;</span>
+});</code></pre>
+              <h5>HTML</h5>
+              <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"linear"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"line"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><h5>CSS</h5><pre><code><span class="hljs-selector-class">.shadow</span> {
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+              <h5>CSS</h5>
+              <pre><code><span class="hljs-selector-class">.shadow</span> {
   <span class="hljs-attribute">position</span>: absolute;
   <span class="hljs-attribute">opacity</span>: .<span class="hljs-number">2</span>;
 }
@@ -32,7 +219,62 @@ ga('create', 'UA-106478577-1', 'auto');</script></head><body><div id="container"
   <span class="hljs-attribute">height</span>: <span class="hljs-number">28px</span>;
   <span class="hljs-attribute">margin</span>: <span class="hljs-number">1px</span>;
   <span class="hljs-attribute">font-size</span>: <span class="hljs-number">12px</span>;
-}</code></pre><br><h2 id="e-penners-functions">Robert Pennerのeasing関数</h2><p><a href="http://robertpenner.com/easing/" target="_blank" rel="noopener noreferrer">Robert Pennerのeasing関数</a>が組み込まれています。</p><blockquote><a href="//easings.net/ja" target="_blank" rel="noopener noreferrer">easings.net</a>で動きを確認してください。</blockquote><pre><code>easing: <span class="hljs-string">'easeInOutSine'</span></code></pre><h4>指定可能なイージング</h4><div class="table-box"><table class="my-table"><tr><th>In</th><th>Out</th><th>In-Out</th></tr><tr><td><code>easeInQuad</code></td><td><code>easeOutQuad</code></td><td><code>easeInOutQuad</code></td></tr><tr><td><code>easeInCubic</code></td><td><code>easeOutCubic</code></td><td><code>easeInOutCubic</code></td></tr><tr><td><code>easeInQuart</code></td><td><code>easeOutQuart</code></td><td><code>easeInOutQuart</code></td></tr><tr><td><code>easeInQuint</code></td><td><code>easeOutQuint</code></td><td><code>easeInOutQuint</code></td></tr><tr><td><code>easeInSine</code></td><td><code>easeOutSine</code></td><td><code>easeInOutSine</code></td></tr><tr><td><code>easeInExpo</code></td><td><code>easeOutExpo</code></td><td><code>easeInOutExpo</code></td></tr><tr><td><code>easeInCirc</code></td><td><code>easeOutCirc</code></td><td><code>easeInOutCirc</code></td></tr><tr><td><code>easeInBack</code></td><td><code>easeOutBack</code></td><td><code>easeInOutBack</code></td></tr></table></div><br><pre><code><span class="hljs-keyword">var</span> demoContentEl = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'.penner-equations-demo'</span>);
+}</code></pre><br>
+              <h2 id="e-penners-functions">Robert Pennerのeasing関数</h2>
+              <p><a href="http://robertpenner.com/easing/" target="_blank" rel="noopener noreferrer">Robert Pennerのeasing関数</a>が組み込まれています。</p>
+              <blockquote><a href="//easings.net/ja" target="_blank" rel="noopener noreferrer">easings.net</a>で動きを確認してください。</blockquote>
+              <pre><code>easing: <span class="hljs-string">'easeInOutSine'</span></code></pre>
+              <h4>指定可能なイージング</h4>
+              <div class="table-box">
+                <table class="my-table">
+                  <tr>
+                    <th>In</th>
+                    <th>Out</th>
+                    <th>In-Out</th>
+                  </tr>
+                  <tr>
+                    <td><code>easeInQuad</code></td>
+                    <td><code>easeOutQuad</code></td>
+                    <td><code>easeInOutQuad</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>easeInCubic</code></td>
+                    <td><code>easeOutCubic</code></td>
+                    <td><code>easeInOutCubic</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>easeInQuart</code></td>
+                    <td><code>easeOutQuart</code></td>
+                    <td><code>easeInOutQuart</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>easeInQuint</code></td>
+                    <td><code>easeOutQuint</code></td>
+                    <td><code>easeInOutQuint</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>easeInSine</code></td>
+                    <td><code>easeOutSine</code></td>
+                    <td><code>easeInOutSine</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>easeInExpo</code></td>
+                    <td><code>easeOutExpo</code></td>
+                    <td><code>easeInOutExpo</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>easeInCirc</code></td>
+                    <td><code>easeOutCirc</code></td>
+                    <td><code>easeInOutCirc</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>easeInBack</code></td>
+                    <td><code>easeOutBack</code></td>
+                    <td><code>easeInOutBack</code></td>
+                  </tr>
+                </table>
+              </div><br>
+              <pre><code><span class="hljs-keyword">var</span> demoContentEl = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'.penner-equations-demo'</span>);
 <span class="hljs-keyword">var</span> fragment = <span class="hljs-built_in">document</span>.createDocumentFragment();
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createEasingDemo</span>(<span class="hljs-params">easing</span>) </span>{
@@ -57,7 +299,11 @@ ga('create', 'UA-106478577-1', 'auto');</script></head><body><div id="container"
 }
 
 demoContentEl.innerHTML = <span class="hljs-string">''</span>;
-demoContentEl.appendChild(fragment);</code></pre><h3>デモ</h3><div id="penner"></div><h5>JavaScript</h5><pre><code><span class="hljs-keyword">var</span> demoContentEl = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#penner'</span>);
+demoContentEl.appendChild(fragment);</code></pre>
+              <h3>デモ</h3>
+              <div id="penner"></div>
+              <h5>JavaScript</h5>
+              <pre><code><span class="hljs-keyword">var</span> demoContentEl = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#penner'</span>);
 <span class="hljs-keyword">var</span> fragment = <span class="hljs-built_in">document</span>.createDocumentFragment();
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createEasingDemo</span>(<span class="hljs-params">easing</span>) </span>{
@@ -82,7 +328,11 @@ demoContentEl.appendChild(fragment);</code></pre><h3>デモ</h3><div id="penner"
 }
 
 demoContentEl.innerHTML = <span class="hljs-string">''</span>;
-demoContentEl.appendChild(fragment);</code></pre><h5>HTML</h5><pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"penner"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><h5>CSS</h5><pre><code><span class="hljs-selector-class">.shadow</span> {
+demoContentEl.appendChild(fragment);</code></pre>
+              <h5>HTML</h5>
+              <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"penner"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+              <h5>CSS</h5>
+              <pre><code><span class="hljs-selector-class">.shadow</span> {
   <span class="hljs-attribute">position</span>: absolute;
   <span class="hljs-attribute">opacity</span>: .<span class="hljs-number">2</span>;
 }
@@ -97,24 +347,42 @@ demoContentEl.appendChild(fragment);</code></pre><h5>HTML</h5><pre><code><span c
 
 <span class="hljs-selector-class">.stretched</span> {
   <span class="hljs-attribute">height</span>: <span class="hljs-number">2px</span>;
-}</code></pre><br><h2 id="e-cubic-bezier-curve">3次ベジェ曲線</h2><p>独自の3次ベジェ曲線を指定するには<code>cubicBezier(x1, y1, x2, y2)</code>を使用してください。</p><pre><code>easing: <span class="hljs-string">'cubicBezier(.5, .05, .1, .3)'</span></code></pre><blockquote>独自のベジェ曲線を作成するにあたり、<a href="//matthewlein.com/tools/ceaser" target="_blank" rel="noopener noreferrer">Ceaser</a>のようなベジェ曲線ジェネレーターを使うことができます。</blockquote><br><pre><code>anime({
+}</code></pre><br>
+              <h2 id="e-cubic-bezier-curve">3次ベジェ曲線</h2>
+              <p>独自の3次ベジェ曲線を指定するには<code>cubicBezier(x1, y1, x2, y2)</code>を使用してください。</p>
+              <pre><code>easing: <span class="hljs-string">'cubicBezier(.5, .05, .1, .3)'</span></code></pre>
+              <blockquote>独自のベジェ曲線を作成するにあたり、<a href="//matthewlein.com/tools/ceaser" target="_blank" rel="noopener noreferrer">Ceaser</a>のようなベジェ曲線ジェネレーターを使うことができます。</blockquote><br>
+              <pre><code>anime({
   <span class="hljs-attr">targets</span>: <span class="hljs-string">'.cubic-bezier-demo .el'</span>,
   <span class="hljs-attr">translateX</span>: <span class="hljs-number">250</span>,
   <span class="hljs-attr">direction</span>: <span class="hljs-string">'alternate'</span>,
   <span class="hljs-attr">loop</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">easing</span>: <span class="hljs-string">'cubicBezier(.5, .05, .1, .3)'</span>
-})</code></pre><h3>デモ</h3><div id="customBezier"><div class="line"><div class="square shadow"></div><div class="square el"></div></div></div><h5>JavaScript</h5><pre><code><span class="hljs-keyword">var</span> customBezier = anime({
+})</code></pre>
+              <h3>デモ</h3>
+              <div id="customBezier">
+                <div class="line">
+                  <div class="square shadow"></div>
+                  <div class="square el"></div>
+                </div>
+              </div>
+              <h5>JavaScript</h5>
+              <pre><code><span class="hljs-keyword">var</span> customBezier = anime({
   <span class="hljs-attr">targets</span>: <span class="hljs-string">'#customBezier .el'</span>,
   <span class="hljs-attr">translateX</span>: <span class="hljs-number">250</span>,
   <span class="hljs-attr">direction</span>: <span class="hljs-string">'alternate'</span>,
   <span class="hljs-attr">loop</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">easing</span>: <span class="hljs-string">'cubicBezier(.5, .05, .1, .3)'</span>
-});</code></pre><h5>HTML</h5><pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"customBezier"</span>&gt;</span>
+});</code></pre>
+              <h5>HTML</h5>
+              <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"customBezier"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"line"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><h5>CSS</h5><pre><code><span class="hljs-selector-class">.shadow</span> {
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+              <h5>CSS</h5>
+              <pre><code><span class="hljs-selector-class">.shadow</span> {
   <span class="hljs-attribute">position</span>: absolute;
   <span class="hljs-attribute">opacity</span>: .<span class="hljs-number">2</span>;
 }
@@ -125,25 +393,78 @@ demoContentEl.appendChild(fragment);</code></pre><h5>HTML</h5><pre><code><span c
   <span class="hljs-attribute">height</span>: <span class="hljs-number">28px</span>;
   <span class="hljs-attribute">margin</span>: <span class="hljs-number">1px</span>;
   <span class="hljs-attribute">font-size</span>: <span class="hljs-number">12px</span>;
-}</code></pre><br><h2 id="e-spring">spring</h2><p>ばねの力学に基づいたイージングです。</p><pre><code>easing: <span class="hljs-string">'spring(mass, stiffness, damping, velocity)'</span></code></pre><blockquote>ばねアニメーションの長さは<code>spring</code>パラメータで定義されます。
-<code>duration</code>パラメータは考慮されません。</blockquote><div class="table-box"><table class="my-table"><tr><th>パラメータ</th><th>初期値</th><th>min</th><th>max</th></tr><tr><td>Mass(質量)</td><td><code>1</code></td><td><code>0</code></td><td><code>100</code></td></tr><tr><td>Stiffness(剛性)</td><td><code>100</code></td><td><code>0</code></td><td><code>100</code></td></tr><tr><td>Damping(減衰)</td><td><code>10</code></td><td><code>0</code></td><td><code>100</code></td></tr><tr><td>Velocity(速度)</td><td><code>0</code></td><td><code>0</code></td><td><code>100</code></td></tr></table></div><br><pre><code>anime({
+}</code></pre><br>
+              <h2 id="e-spring">spring</h2>
+              <p>ばねの力学に基づいたイージングです。</p>
+              <pre><code>easing: <span class="hljs-string">'spring(mass, stiffness, damping, velocity)'</span></code></pre>
+              <blockquote>ばねアニメーションの長さは<code>spring</code>パラメータで定義されます。
+                <code>duration</code>パラメータは考慮されません。
+              </blockquote>
+              <div class="table-box">
+                <table class="my-table">
+                  <tr>
+                    <th>パラメータ</th>
+                    <th>初期値</th>
+                    <th>min</th>
+                    <th>max</th>
+                  </tr>
+                  <tr>
+                    <td>Mass(質量)</td>
+                    <td><code>1</code></td>
+                    <td><code>0</code></td>
+                    <td><code>100</code></td>
+                  </tr>
+                  <tr>
+                    <td>Stiffness(剛性)</td>
+                    <td><code>100</code></td>
+                    <td><code>0</code></td>
+                    <td><code>100</code></td>
+                  </tr>
+                  <tr>
+                    <td>Damping(減衰)</td>
+                    <td><code>10</code></td>
+                    <td><code>0</code></td>
+                    <td><code>100</code></td>
+                  </tr>
+                  <tr>
+                    <td>Velocity(速度)</td>
+                    <td><code>0</code></td>
+                    <td><code>0</code></td>
+                    <td><code>100</code></td>
+                  </tr>
+                </table>
+              </div><br>
+              <pre><code>anime({
   <span class="hljs-attr">targets</span>: <span class="hljs-string">'.spring-physics-demo .el'</span>,
   <span class="hljs-attr">translateX</span>: <span class="hljs-number">250</span>,
   <span class="hljs-attr">direction</span>: <span class="hljs-string">'alternate'</span>,
   <span class="hljs-attr">loop</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">easing</span>: <span class="hljs-string">'spring(1, 80, 10, 0)'</span>
-})</code></pre><h3>デモ</h3><div id="spring"><div class="line"><div class="square shadow"></div><div class="square el"></div></div></div><h5>JavaScript</h5><pre><code><span class="hljs-keyword">var</span> spring = anime({
+})</code></pre>
+              <h3>デモ</h3>
+              <div id="spring">
+                <div class="line">
+                  <div class="square shadow"></div>
+                  <div class="square el"></div>
+                </div>
+              </div>
+              <h5>JavaScript</h5>
+              <pre><code><span class="hljs-keyword">var</span> spring = anime({
   <span class="hljs-attr">targets</span>: <span class="hljs-string">'#spring .el'</span>,
   <span class="hljs-attr">translateX</span>: <span class="hljs-number">250</span>,
   <span class="hljs-attr">direction</span>: <span class="hljs-string">'alternate'</span>,
   <span class="hljs-attr">loop</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">easing</span>: <span class="hljs-string">'spring(1, 80, 10, 0)'</span>
-})</code></pre><h5>HTML</h5><pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"spring"</span>&gt;</span>
+})</code></pre>
+              <h5>HTML</h5>
+              <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"spring"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"line"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><h5>CSS</h5><pre><code><span class="hljs-selector-class">.shadow</span> {
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+              <h5>CSS</h5>
+              <pre><code><span class="hljs-selector-class">.shadow</span> {
   <span class="hljs-attribute">position</span>: absolute;
   <span class="hljs-attribute">opacity</span>: .<span class="hljs-number">2</span>;
 }
@@ -154,21 +475,81 @@ demoContentEl.appendChild(fragment);</code></pre><h5>HTML</h5><pre><code><span c
   <span class="hljs-attribute">height</span>: <span class="hljs-number">28px</span>;
   <span class="hljs-attribute">margin</span>: <span class="hljs-number">1px</span>;
   <span class="hljs-attribute">font-size</span>: <span class="hljs-number">12px</span>;
-}</code></pre><br><h2 id="e-elastic">elastic</h2><p>弾性イージング。</p><pre><code>easing: <span class="hljs-string">'easeOutElastic(amplitude, period)'</span></code></pre><br><div class="table-box"><table class="my-table"><tr><th>In</th><th>Out</th><th>In-Out</th></tr><tr><td><code>'inElastic'</code></td><td><code>'outElastic'</code></td><td><code>'inOutElastic'</code></td></tr></table></div><br><div class="table-box"><table class="my-table"><tr><th>パラメータ</th><th>初期値</th><th>min</th><th>max</th><th class="detail">内容</th></tr><tr><td>Amplitude(振幅)</td><td><code>1</code></td><td><code>1</code></td><td><code>10</code></td><td>オーバーシュートする幅を指定します。<br>値が大きいほど大きくオーバーシュートします。</td></tr><tr><td>Period(往復数)</td><td><code>.5</code></td><td><code>0.1</code></td><td><code>2</code></td><td>何度も往復する回数を指定します。<br>値が大きいほど揺れ幅が小さくなります。</td></tr></table></div><br><pre><code>anime({
+}</code></pre><br>
+              <h2 id="e-elastic">elastic</h2>
+              <p>弾性イージング。</p>
+              <pre><code>easing: <span class="hljs-string">'easeOutElastic(amplitude, period)'</span></code></pre><br>
+              <div class="table-box">
+                <table class="my-table">
+                  <tr>
+                    <th>In</th>
+                    <th>Out</th>
+                    <th>In-Out</th>
+                  </tr>
+                  <tr>
+                    <td><code>'inElastic'</code></td>
+                    <td><code>'outElastic'</code></td>
+                    <td><code>'inOutElastic'</code></td>
+                  </tr>
+                </table>
+              </div><br>
+              <div class="table-box">
+                <table class="my-table">
+                  <tr>
+                    <th>パラメータ</th>
+                    <th>初期値</th>
+                    <th>min</th>
+                    <th>max</th>
+                    <th class="detail">内容</th>
+                  </tr>
+                  <tr>
+                    <td>Amplitude(振幅)</td>
+                    <td><code>1</code></td>
+                    <td><code>1</code></td>
+                    <td><code>10</code></td>
+                    <td>オーバーシュートする幅を指定します。<br>値が大きいほど大きくオーバーシュートします。</td>
+                  </tr>
+                  <tr>
+                    <td>Period(往復数)</td>
+                    <td><code>.5</code></td>
+                    <td><code>0.1</code></td>
+                    <td><code>2</code></td>
+                    <td>何度も往復する回数を指定します。<br>値が大きいほど揺れ幅が小さくなります。</td>
+                  </tr>
+                </table>
+              </div><br>
+              <pre><code>anime({
   <span class="hljs-attr">targets</span>: <span class="hljs-string">'.elastic-easing-demo .el'</span>,
   <span class="hljs-attr">translateX</span>: <span class="hljs-number">270</span>,
   <span class="hljs-attr">easing</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">el</span>) </span>{
     <span class="hljs-keyword">return</span> el.getAttribute(<span class="hljs-string">'data-ease'</span>);
   },
   <span class="hljs-attr">duration</span>: <span class="hljs-number">1000</span>
-})</code></pre><h3>デモ</h3><p>要素をクリックするとアニメーションを開始します。</p><div id="elastic"><div class="label small">easeInElastic(1, .6)</div><div class="square small shadow"></div><div class="square small el" data-ease="easeInElastic(1, .6)"></div><div class="label small">easeOutElastic(1, .6)</div><div class="square small shadow"></div><div class="square small el" data-ease="easeOutElastic(1, .6)"></div><div class="label small">easeInOutElastic(1, .6)</div><div class="square small shadow"></div><div class="square small el" data-ease="easeInOutElastic(1, .6)"></div></div><h5>JavaScript</h5><pre><code><span class="hljs-keyword">var</span> elastic = anime({
+})</code></pre>
+              <h3>デモ</h3>
+              <p>要素をクリックするとアニメーションを開始します。</p>
+              <div id="elastic">
+                <div class="label small">easeInElastic(1, .6)</div>
+                <div class="square small shadow"></div>
+                <div class="square small el" data-ease="easeInElastic(1, .6)"></div>
+                <div class="label small">easeOutElastic(1, .6)</div>
+                <div class="square small shadow"></div>
+                <div class="square small el" data-ease="easeOutElastic(1, .6)"></div>
+                <div class="label small">easeInOutElastic(1, .6)</div>
+                <div class="square small shadow"></div>
+                <div class="square small el" data-ease="easeInOutElastic(1, .6)"></div>
+              </div>
+              <h5>JavaScript</h5>
+              <pre><code><span class="hljs-keyword">var</span> elastic = anime({
   <span class="hljs-attr">targets</span>: <span class="hljs-string">'#elastic .el'</span>,
   <span class="hljs-attr">translateX</span>: <span class="hljs-number">270</span>,
   <span class="hljs-attr">easing</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">el</span>) </span>{
     <span class="hljs-keyword">return</span> el.getAttribute(<span class="hljs-string">'data-ease'</span>);
   },
   <span class="hljs-attr">duration</span>: <span class="hljs-number">1000</span>
-});</code></pre><h5>HTML</h5><pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"elastic"</span>&gt;</span>
+});</code></pre>
+              <h5>HTML</h5>
+              <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"elastic"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"label small"</span>&gt;</span>easeInElastic(1, .6)<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small el"</span> <span class="hljs-attr">data-ease</span>=<span class="hljs-string">"easeInElastic(1, .6)"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
@@ -178,7 +559,9 @@ demoContentEl.appendChild(fragment);</code></pre><h5>HTML</h5><pre><code><span c
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"label small"</span>&gt;</span>easeInOutElastic(1, .6)<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small el"</span> <span class="hljs-attr">data-ease</span>=<span class="hljs-string">"easeInOutElastic(1, .6)"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><h5>CSS</h5><pre><code><span class="hljs-selector-class">.shadow</span> {
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+              <h5>CSS</h5>
+              <pre><code><span class="hljs-selector-class">.shadow</span> {
   <span class="hljs-attribute">position</span>: absolute;
   <span class="hljs-attribute">opacity</span>: .<span class="hljs-number">2</span>;
 }
@@ -205,24 +588,57 @@ demoContentEl.appendChild(fragment);</code></pre><h5>HTML</h5><pre><code><span c
 
 <span class="hljs-selector-class">.label</span><span class="hljs-selector-class">.small</span> {
   <span class="hljs-attribute">line-height</span>: <span class="hljs-number">20px</span>;
-}</code></pre><br><h2 id="e-steps">steps</h2><p>アニメーションの開始から終了までのステップ数を指定します。</p><pre><code>easing: <span class="hljs-string">'steps(numberOfSteps)'</span></code></pre><br><div class="table-box"><table class="my-table"><tr><th>パラメータ</th><th>初期値</th><th>min</th><th>max</th></tr><tr><td>ステップ数</td><td><code>10</code></td><td><code>1</code></td><td>∞</td></tr></table></div><pre><code>anime({
+}</code></pre><br>
+              <h2 id="e-steps">steps</h2>
+              <p>アニメーションの開始から終了までのステップ数を指定します。</p>
+              <pre><code>easing: <span class="hljs-string">'steps(numberOfSteps)'</span></code></pre><br>
+              <div class="table-box">
+                <table class="my-table">
+                  <tr>
+                    <th>パラメータ</th>
+                    <th>初期値</th>
+                    <th>min</th>
+                    <th>max</th>
+                  </tr>
+                  <tr>
+                    <td>ステップ数</td>
+                    <td><code>10</code></td>
+                    <td><code>1</code></td>
+                    <td>∞</td>
+                  </tr>
+                </table>
+              </div>
+              <pre><code>anime({
   <span class="hljs-attr">targets</span>: <span class="hljs-string">'.step-easing-demo .el'</span>,
   <span class="hljs-attr">translateX</span>: <span class="hljs-number">250</span>,
   <span class="hljs-attr">direction</span>: <span class="hljs-string">'alternate'</span>,
   <span class="hljs-attr">loop</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">easing</span>: <span class="hljs-string">'steps(5)'</span>
-})</code></pre><h3>デモ</h3><div id="steps"><div class="line"><div class="square shadow"></div><div class="square el"></div></div></div><h5>JavaScript</h5><pre><code><span class="hljs-keyword">var</span> steps = anime({
+})</code></pre>
+              <h3>デモ</h3>
+              <div id="steps">
+                <div class="line">
+                  <div class="square shadow"></div>
+                  <div class="square el"></div>
+                </div>
+              </div>
+              <h5>JavaScript</h5>
+              <pre><code><span class="hljs-keyword">var</span> steps = anime({
   <span class="hljs-attr">targets</span>: <span class="hljs-string">'#steps .el'</span>,
   <span class="hljs-attr">translateX</span>: <span class="hljs-number">250</span>,
   <span class="hljs-attr">direction</span>: <span class="hljs-string">'alternate'</span>,
   <span class="hljs-attr">loop</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">easing</span>: <span class="hljs-string">'steps(5)'</span>
-});</code></pre><h5>HTML</h5><pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"spteps"</span>&gt;</span>
+});</code></pre>
+              <h5>HTML</h5>
+              <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"spteps"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"line"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><h5>CSS</h5><pre><code><span class="hljs-selector-class">.shadow</span> {
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+              <h5>CSS</h5>
+              <pre><code><span class="hljs-selector-class">.shadow</span> {
   <span class="hljs-attribute">position</span>: absolute;
   <span class="hljs-attribute">opacity</span>: .<span class="hljs-number">2</span>;
 }
@@ -233,7 +649,23 @@ demoContentEl.appendChild(fragment);</code></pre><h5>HTML</h5><pre><code><span c
   <span class="hljs-attribute">height</span>: <span class="hljs-number">28px</span>;
   <span class="hljs-attribute">margin</span>: <span class="hljs-number">1px</span>;
   <span class="hljs-attribute">font-size</span>: <span class="hljs-number">12px</span>;
-}</code></pre><br><h2 id="e-custom-easing">カスタムイージング</h2><p>カスタムイージング関数は<a href="./values.html#function-based-values">関数ベース値</a>で返す必要があります。</p><pre><code>easing: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">time</span>) </span>{ <span class="hljs-keyword">return</span> time * i} }</code></pre><br><div class="table-box"><table class="my-table"><tr><th>パラメータ</th><th class="detail">内容</th></tr><tr><td><code>time</code></td><td>アニメーションの現在時刻を返します。</td></tr></table></div><pre><code>anime({
+}</code></pre><br>
+              <h2 id="e-custom-easing">カスタムイージング</h2>
+              <p>カスタムイージング関数は<a href="./values.html#function-based-values">関数ベース値</a>で返す必要があります。</p>
+              <pre><code>easing: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">time</span>) </span>{ <span class="hljs-keyword">return</span> time * i} }</code></pre><br>
+              <div class="table-box">
+                <table class="my-table">
+                  <tr>
+                    <th>パラメータ</th>
+                    <th class="detail">内容</th>
+                  </tr>
+                  <tr>
+                    <td><code>time</code></td>
+                    <td>アニメーションの現在時刻を返します。</td>
+                  </tr>
+                </table>
+              </div>
+              <pre><code>anime({
   <span class="hljs-attr">targets</span>: <span class="hljs-string">'.custom-easing-demo .el'</span>,
   <span class="hljs-attr">translateX</span>: <span class="hljs-number">270</span>,
   <span class="hljs-attr">direction</span>: <span class="hljs-string">'alternate'</span>,
@@ -244,7 +676,18 @@ demoContentEl.appendChild(fragment);</code></pre><h5>HTML</h5><pre><code><span c
       <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.pow(<span class="hljs-built_in">Math</span>.sin(t * (i + <span class="hljs-number">1</span>)), total);
     }
   }
-});</code></pre><h3>デモ</h3><div id="customEasing"><div class="square small shadow"></div><div class="square small el"></div><div class="square small shadow"></div><div class="square small el"></div><div class="square small shadow"></div><div class="square small el"></div></div><h5>JavaScript</h5><pre><code><span class="hljs-keyword">var</span> customEasing = anime({
+});</code></pre>
+              <h3>デモ</h3>
+              <div id="customEasing">
+                <div class="square small shadow"></div>
+                <div class="square small el"></div>
+                <div class="square small shadow"></div>
+                <div class="square small el"></div>
+                <div class="square small shadow"></div>
+                <div class="square small el"></div>
+              </div>
+              <h5>JavaScript</h5>
+              <pre><code><span class="hljs-keyword">var</span> customEasing = anime({
   <span class="hljs-attr">targets</span>: <span class="hljs-string">'#customEasing .el'</span>,
   <span class="hljs-attr">translateX</span>: <span class="hljs-number">270</span>,
   <span class="hljs-attr">direction</span>: <span class="hljs-string">'alternate'</span>,
@@ -255,14 +698,18 @@ demoContentEl.appendChild(fragment);</code></pre><h5>HTML</h5><pre><code><span c
       <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.pow(<span class="hljs-built_in">Math</span>.sin(t * (i + <span class="hljs-number">1</span>)), total);
     }
   }
-});</code></pre><h5>HTML</h5><pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"customEasing"</span>&gt;</span>
+});</code></pre>
+              <h5>HTML</h5>
+              <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"customEasing"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small shadow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"square small el"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><h5>CSS</h5><pre><code><span class="hljs-selector-class">.shadow</span> {
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+              <h5>CSS</h5>
+              <pre><code><span class="hljs-selector-class">.shadow</span> {
   <span class="hljs-attribute">position</span>: absolute;
   <span class="hljs-attribute">opacity</span>: .<span class="hljs-number">2</span>;
 }
@@ -278,108 +725,130 @@ demoContentEl.appendChild(fragment);</code></pre><h5>HTML</h5><pre><code><span c
 <span class="hljs-selector-class">.small</span> {
   <span class="hljs-attribute">width</span>: <span class="hljs-number">18px</span>;
   <span class="hljs-attribute">height</span>: <span class="hljs-number">18px</span>;
-}</code></pre><br><script class="load">createObj = function() {
-  // linear
-  if (document.querySelector('#linear')) {
-    var linear = anime({
-      targets: '#linear .el',
-      translateX: 250,
-      direction: 'alternate',
-      loop: true,
-      easing: 'linear'
-    });
-  }
-
-  // built-in
-  if (document.querySelector('#penner')) {
-    var demoContentEl = document.querySelector('#penner');
-    var fragment = document.createDocumentFragment();
-
-    function createEasingDemo(easing) {
-      var demoEl = document.createElement('div');
-      demoEl.classList.add('stretched','square','el');
-      anime({
-        targets: demoEl,
-        translateX: 250,
-        direction: 'alternate',
-        loop: true,
-        delay: 200,
-        endDelay: 200,
-        easing: easing,
-      });
-      fragment.appendChild(demoEl);
-    }
-
-    for (var easeName in anime.penner) {
-      if (Array.isArray(anime.penner[easeName])) {
-        createEasingDemo(easeName);
-      }
-    }
-
-    demoContentEl.innerHTML = '';
-    demoContentEl.appendChild(fragment);
-  }
-
-  // custom bezier
-  if (document.querySelector('#customBezier')) {
-    var customBezier = anime({
-      targets: '#customBezier .el',
-      translateX: 250,
-      direction: 'alternate',
-      loop: true,
-      easing: 'cubicBezier(.5, .05, .1, .3)'
-    });
-  }
-
-  // spring
-  if (document.querySelector('#spring')) {
-    var spring = anime({
-      targets: '#spring .el',
-      translateX: 250,
-      direction: 'alternate',
-      loop: true,
-      easing: 'spring(1, 80, 10, 0)'
-    })
-  }
-
-  // elastic
-  if (document.querySelector('#elastic')) {
-    var elastic = anime({
-      targets: '#elastic .el',
-      translateX: 270,
-      easing: function(el) {
-        return el.getAttribute('data-ease');
-      },
-      duration: 1000
-    });
-    document.querySelector('#elastic').onclick = elastic.restart;
-  }
-
-  // steps
-  if (document.querySelector('#steps')) {
-    var steps = anime({
-      targets: '#steps .el',
-      translateX: 250,
-      direction: 'alternate',
-      loop: true,
-      easing: 'steps(5)'
-    });
-  }
-
-  // custom easing
-  if (document.querySelector('#customEasing')) {
-    var customEasing = anime({
-      targets: '#customEasing .el',
-      translateX: 270,
-      direction: 'alternate',
-      loop: true,
-      duration: 2000,
-      easing: function(el, i, total) {
-        return function(t) {
-          return Math.pow(Math.sin(t * (i + 1)), total);
-        }
-      }
-    });
-  }
-};</script><br><div class="license"><p><a href="https://github.com/juliangarnier/anime/blob/master/LICENSE.md">MIT license</a>.
-&copy; 2017 Julian Garnier.</p><p>このコンテンツはJulian Garnier(juliangarnier)による<a href="http://animejs.com/documentation/">anime.jsドキュメント</a>を翻訳/改変したものです。</p></div></div></div></div></div><footer><span> &copy; <span id="copy_year">2017</span> tobijibu</span></footer></div><noscript id="deferred-styles"><link href="./css/lazy.css" rel="stylesheet"></noscript><script src="./js/main.js" defer></script><script src="./js/anime.min.js"></script><div id="src" hidden></div></body></html>
+}</code></pre><br>
+              <script class="load">
+                createObj = function() {
+                  // linear
+                  if (document.querySelector('#linear')) {
+                    var linear = anime({
+                      targets: '#linear .el',
+                      translateX: 250,
+                      direction: 'alternate',
+                      loop: true,
+                      easing: 'linear'
+                    });
+                  }
+                
+                  // built-in
+                  if (document.querySelector('#penner')) {
+                    var demoContentEl = document.querySelector('#penner');
+                    var fragment = document.createDocumentFragment();
+                
+                    function createEasingDemo(easing) {
+                      var demoEl = document.createElement('div');
+                      demoEl.classList.add('stretched','square','el');
+                      anime({
+                        targets: demoEl,
+                        translateX: 250,
+                        direction: 'alternate',
+                        loop: true,
+                        delay: 200,
+                        endDelay: 200,
+                        easing: easing,
+                      });
+                      fragment.appendChild(demoEl);
+                    }
+                
+                    for (var easeName in anime.penner) {
+                      if (Array.isArray(anime.penner[easeName])) {
+                        createEasingDemo(easeName);
+                      }
+                    }
+                
+                    demoContentEl.innerHTML = '';
+                    demoContentEl.appendChild(fragment);
+                  }
+                
+                  // custom bezier
+                  if (document.querySelector('#customBezier')) {
+                    var customBezier = anime({
+                      targets: '#customBezier .el',
+                      translateX: 250,
+                      direction: 'alternate',
+                      loop: true,
+                      easing: 'cubicBezier(.5, .05, .1, .3)'
+                    });
+                  }
+                
+                  // spring
+                  if (document.querySelector('#spring')) {
+                    var spring = anime({
+                      targets: '#spring .el',
+                      translateX: 250,
+                      direction: 'alternate',
+                      loop: true,
+                      easing: 'spring(1, 80, 10, 0)'
+                    })
+                  }
+                
+                  // elastic
+                  if (document.querySelector('#elastic')) {
+                    var elastic = anime({
+                      targets: '#elastic .el',
+                      translateX: 270,
+                      easing: function(el) {
+                        return el.getAttribute('data-ease');
+                      },
+                      duration: 1000
+                    });
+                    document.querySelector('#elastic').onclick = elastic.restart;
+                  }
+                
+                  // steps
+                  if (document.querySelector('#steps')) {
+                    var steps = anime({
+                      targets: '#steps .el',
+                      translateX: 250,
+                      direction: 'alternate',
+                      loop: true,
+                      easing: 'steps(5)'
+                    });
+                  }
+                
+                  // custom easing
+                  if (document.querySelector('#customEasing')) {
+                    var customEasing = anime({
+                      targets: '#customEasing .el',
+                      translateX: 270,
+                      direction: 'alternate',
+                      loop: true,
+                      duration: 2000,
+                      easing: function(el, i, total) {
+                        return function(t) {
+                          return Math.pow(Math.sin(t * (i + 1)), total);
+                        }
+                      }
+                    });
+                  }
+                };
+              </script><br>
+              <div class="license">
+                <p><a href="https://github.com/juliangarnier/anime/blob/master/LICENSE.md">MIT license</a>.
+                  &copy; 2017 Julian Garnier.
+                </p>
+                <p>このコンテンツはJulian Garnier(juliangarnier)による<a href="http://animejs.com/documentation/">anime.jsドキュメント</a>を翻訳/改変したものです。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer><span>&copy; <span id="copy_year">2017</span> tobijibu</span></footer>
+    </div>
+    <noscript id="deferred-styles">
+      <link href="./css/lazy.css" rel="stylesheet">
+    </noscript>
+    <script src="./js/main.js" defer></script>
+    <script src="./js/anime.min.js"></script>
+    <div id="src" hidden></div>
+  </body>
+</html>
